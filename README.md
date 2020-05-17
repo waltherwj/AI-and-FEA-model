@@ -18,3 +18,15 @@ This project has as objectives to
 
 ## Current Work
 Implementing a 2d model for proof of concept
+
+
+
+## Relevant Links
+
+https://www.youtube.com/watch?v=bSP9pi-4QW0
+
+https://www.youtube.com/watch?v=WCsvagzvAv4
+
+https://www.youtube.com/watch?v=fOOC8XXxsKc
+
+https://ansyshelp.ansys.com/account/secured?returnurl=/Views/Secured/corp/v201/en/act_script/pt03.html
