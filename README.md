@@ -10,6 +10,12 @@ This project has as objectives to
 
 **3** - Use the trained neural network to create a new element
 
+### How?
+
+* Feed inputs and geometry, target is displacement field > learns mapping to displacement field 
+  * This step is only done so that it can learn how to map inputs to displacement and not be reliant on a third party model to generate a displacement field. The end goal is to have the displacement field be directly fed into the network experimentally.
+* Feed displacement field into another neural network, which learns a mapping from that into a simplified stress and strain output at selected nodes, in essence creating a super-element if the displacement field step, which is intermediary, is not considered.
+
 ### Bonus Objectives
 
 **1** - Have the network itself impose new conditions on the model in an adversarial  way to ensure robustness
