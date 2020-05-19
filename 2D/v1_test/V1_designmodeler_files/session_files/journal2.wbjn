@@ -12,3 +12,13 @@ geometry1.Exit()
 geometry1.Edit(IsSpaceClaimGeometry=True)
 geometry1.Edit(IsSpaceClaimGeometry=True)
 Refresh()
+Extensions.LoadExtension(
+    Id="50868b6f-02c0-4f80-90b5-7144151ad59e",
+    Version="1.0",
+    Format="Scripted")
+Save(Overwrite=True)
+Reset()
+Extensions.UnloadExtension(
+    Id="50868b6f-02c0-4f80-90b5-7144151ad59e",
+    Version="1.0",
+    Format="Scripted")
