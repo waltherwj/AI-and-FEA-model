@@ -22,16 +22,17 @@ This project has as objectives to
 1. Have the network itself impose new conditions on the model in an adversarial  way to ensure robustness
 
 ## Past Progress
-
+#### _Implementing a 2d model for proof of concept_
+  * Create script for generating correct geometry inside of SpaceClaim
 ## Current Work
 #### _Implementing a 2d model for proof of concept_
 
 ##### Tasks
 
 * Automate Geometry and Mesh Generation Step
-  * Create script for generating correct geometry inside of SpaceClaim
+
   * Create script for generating model inside of Workbench
-  * Create script for calling the geometry generating script
+  * Create script for calling the geometry-generating script
   * Create script for saving the geometry and mesh
 
 
