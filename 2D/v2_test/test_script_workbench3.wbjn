@@ -1,0 +1,13 @@
+﻿# encoding: utf-8
+# 2020 R1
+SetScriptVersion(Version="20.1.164")
+template1 = GetTemplate(
+    TemplateName="Static Structural",
+    Solver="ANSYS")
+system1 = template1.CreateSystem()
+system1 = GetSystem(Name="SYS")
+geometry1 = system1.GetContainer(ComponentName="Geometry")
+DSscript = open("D:/Ansys Simulations/Project/2D/v2_test/generate_random_triangular_element.py", "r")
+DSscriptcommand=DSscript.read()
+geometry1.SendCommand(Command=DSscriptcommand,Language="Python")
+geometry1.Edit(IsSpaceClaimGeometry=True)
