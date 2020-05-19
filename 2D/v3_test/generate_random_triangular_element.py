@@ -11,8 +11,8 @@ curves = List[ITrimmedCurve]()
 for i in range(n_points):   # creates all points
    points_temp = [0,0,0]
    for j in range(n_dimensions):
-       if (j<=1 or i>2):
-            points_temp[j] = (random.random() - 0.5)*2
+       if (j<=1 or i>2) and i>0:
+            points_temp[j] = random.random() 
             #random.jumpahead #scrambles the generated numbers to reduce correlation
            # print(random.getstate)
             
