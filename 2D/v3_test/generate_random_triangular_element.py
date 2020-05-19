@@ -18,6 +18,15 @@ for i in range(n_points):   # creates all points
             
    points.append(points_temp)
 
+# Delete Selection
+try:
+    selection = Selection.Create(GetRootPart().Bodies[:])
+    result = Delete.Execute(selection)
+except:
+    pass
+# EndBlock
+
+
 for iter, x in enumerate(combinations(points, 3)): #iterates through all combinations of 3
     #print(iter)
     #curves = List[ITrimmedCurve]()
