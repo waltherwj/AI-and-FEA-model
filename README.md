@@ -43,4 +43,6 @@ This project has as objectives to
 
 [How to execute APDL commands from python session](https://www.youtube.com/watch?v=bSP9pi-4QW0)
 
+[Use a Named Selection as Scoping of a Load or Support](https://ansyshelp.ansys.com/account/secured?returnurl=/Views/Secured/corp/v201/en/act_script/act_script_examples_NamedSelection_as_Scoping.html)
+
 [ANSYS scripting examples](https://ansyshelp.ansys.com/account/secured?returnurl=/Views/Secured/corp/v201/en/act_script/pt03.html)

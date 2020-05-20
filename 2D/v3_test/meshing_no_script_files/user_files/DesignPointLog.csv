@@ -1,0 +1,12 @@
+﻿# 
+# This file contains the parameter values of the Design Points successfully updated by ANSYS Workbench.
+# Project name: meshing_no_script
+# Creation date: 05/19/2020 19:32:08
+# 
+# 05/19/2020 19:32:08
+# The parameters defined in the project are:
+# ,P1 - Group1
+# 
+# The following header line defines the name of the columns by reference to the parameters.
+Name,P1
+DP 0,16

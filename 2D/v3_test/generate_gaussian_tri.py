@@ -18,13 +18,19 @@ for i in range(n_points):   # creates all points
             
    points.append(points_temp)
 
-# Delete Selection
+# Delete Previous Body
 try:
     selection = Selection.Create(GetRootPart().Bodies[:])
     result = Delete.Execute(selection)
 except:
     pass
-# EndBlock
+# Delete Previous Points
+try:
+    selection = Selection.Create(GetRootPart().Curves[:])
+    result = Delete.Execute(selection)
+except:
+    pass
+    # EndBlock
 
 
 for iter, x in enumerate(combinations(points, 3)): #iterates through all combinations of 3
@@ -89,3 +95,4 @@ if n_points >= 4:
 #mode = InteractionMode.Solid
 #result = ViewHelper.SetViewMode(mode, None)
 # EndBlock
+
