@@ -45,10 +45,10 @@ This project has as objectives to
 
 [Use a Named Selection as Scoping of a Load or Support](https://ansyshelp.ansys.com/account/secured?returnurl=/Views/Secured/corp/v201/en/act_script/act_script_examples_NamedSelection_as_Scoping.html)
 
-[Export Result Object to STL](https://ansyshelp.ansys.com/account/secured?returnurl=/Views/Secured/corp/v201/en/act_script/act_script_examples_export_result_object.html)
+[Export Result Object to STL](https://ansyshelp.ansys.com/account/secured?returnurl=/Views/Secured/corp/v201/en/act_script/act_script_examples_export_result_object.html) *CAN ONLY ACCES ANSYS SCRIPTING GUIDE THROUGH INSIDE OF MECHANICAL > USE SEARCH FUNCTIONS "SCRIPTING"*
 
 [Using IronPython/ACT console](https://www.youtube.com/watch?v=txPimWRh8nM) 
 
 [Creating XML and Python in Ansys](https://www.youtube.com/watch?v=fURQ-22YKmc)
 
-[ANSYS scripting examples](https://ansyshelp.ansys.com/account/secured?returnurl=/Views/Secured/corp/v201/en/act_script/pt03.html)
+[ANSYS scripting examples](https://ansyshelp.ansys.com/account/secured?returnurl=/Views/Secured/corp/v201/en/act_script/pt03.html) *CAN ONLY ACCES ANSYS SCRIPTING GUIDE THROUGH INSIDE OF MECHANICAL > USE SEARCH FUNCTIONS "SCRIPTING"*
