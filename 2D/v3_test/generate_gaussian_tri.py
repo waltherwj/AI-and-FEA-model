@@ -1,7 +1,7 @@
 # Python Script, API Version = V18
 import random
 import math
-from itertools import combinations
+from itertools import combinations, product, izip
 from System import Random
 
 n_points = 4
@@ -9,29 +9,47 @@ n_dimensions = 3
 points = []
 curves = List[ITrimmedCurve]()
 for i in range(n_points):   # creates all points
-   points_temp = [0,0,0]
-   for j in range(n_dimensions):
-       if (j<=1 or i>2) and i>0:
-            points_temp[j] = random.random() 
-            #random.jumpahead #scrambles the generated numbers to reduce correlation
-           # print(random.getstate)
+    points_temp = [0,0,0]
+    for j in range(n_dimensions):
+        random.seed()
+        if (j<=1) and i>0:
+            points_temp[j] = random.random()
+        elif (i>2):
+            points_temp[j] = random.gauss(1,0.2)
             
-   points.append(points_temp)
+    points.append(points_temp)
+    
 
-# Delete Previous Body
+
+#choose quadrant
+iter_quad = product([1, -1], repeat = 3)
+quadrant  = []
+for quad in iter_quad:
+    quadrant.append(quad)
+choice = random.choice(range(0,8))
+for i, point in enumerate(points):
+    for j, coord in enumerate(point):
+        points[i][j] = coord*quadrant[choice][j]
+
+
+
+# Delete Selection
 try:
     selection = Selection.Create(GetRootPart().Bodies[:])
     result = Delete.Execute(selection)
 except:
     pass
-# Delete Previous Points
 try:
     selection = Selection.Create(GetRootPart().Curves[:])
     result = Delete.Execute(selection)
 except:
     pass
-    # EndBlock
+# EndBlock
 
+# create points for named selection
+for point in points:
+    print(point)
+    SketchPoint.Create(Point.Create(*point))
 
 for iter, x in enumerate(combinations(points, 3)): #iterates through all combinations of 3
     #print(iter)
@@ -89,10 +107,9 @@ if n_points >= 4:
     result = RenameObject.Execute(selection,"Body")
 # EndBlock
 
-#ViewHelper.ZoomToEntity()
+ViewHelper.ZoomToEntity()
 
 # Solidify Sketch
 #mode = InteractionMode.Solid
 #result = ViewHelper.SetViewMode(mode, None)
 # EndBlock
-
