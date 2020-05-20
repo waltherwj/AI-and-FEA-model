@@ -4,7 +4,7 @@ import math
 from itertools import combinations, product, izip
 from System import Random
 
-n_points = 4
+n_points = 3
 n_dimensions = 3
 points = []
 curves = List[ITrimmedCurve]()
@@ -136,16 +136,16 @@ result = NamedSelection.Create(primarySelection, secondarySelection)
 # Rename Named Selection
 result = NamedSelection.Rename("Group2", "origin_node")
 # EndBlock
+if n_points > 3:
+    # Create Named Selection Group
+    primarySelection = Selection.Create(GetRootPart().Curves[3])
+    secondarySelection = Selection()
+    result = NamedSelection.Create(primarySelection, secondarySelection)
+    # EndBlock
 
-# Create Named Selection Group
-primarySelection = Selection.Create(GetRootPart().Curves[3])
-secondarySelection = Selection()
-result = NamedSelection.Create(primarySelection, secondarySelection)
-# EndBlock
-
-# Rename Named Selection
-result = NamedSelection.Rename("Group2", "top_node")
-# EndBlock
+    # Rename Named Selection
+    result = NamedSelection.Rename("Group2", "top_node")
+    # EndBlock
 
 # Create Named Selection Group
 primarySelection = Selection.Create(GetRootPart().Curves[1])
@@ -169,16 +169,16 @@ result = NamedSelection.Rename("Group2", "plane_node_2")
 
 
 # NAME EDGES
+if n_points > 3:
+    # Create Named Selection Group
+    primarySelection = Selection.Create(GetRootPart().Bodies[0].Edges[3])
+    secondarySelection = Selection()
+    result = NamedSelection.Create(primarySelection, secondarySelection)
+    # EndBlock
 
-# Create Named Selection Group
-primarySelection = Selection.Create(GetRootPart().Bodies[0].Edges[3])
-secondarySelection = Selection()
-result = NamedSelection.Create(primarySelection, secondarySelection)
-# EndBlock
-
-# Rename Named Selection
-result = NamedSelection.Rename("Group2", "edge_closest")
-# EndBlock
+    # Rename Named Selection
+    result = NamedSelection.Rename("Group2", "edge_closest")
+    # EndBlock
 
 
 # Create Named Selection Group
@@ -200,26 +200,26 @@ result = NamedSelection.Create(primarySelection, secondarySelection)
 # Rename Named Selection
 result = NamedSelection.Rename("Group2", "edge_plane_2")
 # EndBlock
+if n_points > 3:
+    # Create Named Selection Group
+    primarySelection = Selection.Create(GetRootPart().Bodies[0].Edges[5])
+    secondarySelection = Selection()
+    result = NamedSelection.Create(primarySelection, secondarySelection)
+    # EndBlock
 
-# Create Named Selection Group
-primarySelection = Selection.Create(GetRootPart().Bodies[0].Edges[5])
-secondarySelection = Selection()
-result = NamedSelection.Create(primarySelection, secondarySelection)
-# EndBlock
+    # Rename Named Selection
+    result = NamedSelection.Rename("Group2", "edge_far_1")
+    # EndBlock
 
-# Rename Named Selection
-result = NamedSelection.Rename("Group2", "edge_far_1")
-# EndBlock
+    # Create Named Selection Group
+    primarySelection = Selection.Create(GetRootPart().Bodies[0].Edges[1])
+    secondarySelection = Selection()
+    result = NamedSelection.Create(primarySelection, secondarySelection)
+    # EndBlock
 
-# Create Named Selection Group
-primarySelection = Selection.Create(GetRootPart().Bodies[0].Edges[1])
-secondarySelection = Selection()
-result = NamedSelection.Create(primarySelection, secondarySelection)
-# EndBlock
-
-# Rename Named Selection
-result = NamedSelection.Rename("Group2", "edge_far_2")
-# EndBlock
+    # Rename Named Selection
+    result = NamedSelection.Rename("Group2", "edge_far_2")
+    # EndBlock
 
 
 
