@@ -3,7 +3,7 @@ import random
 import math
 from itertools import combinations, product, izip
 from System import Random
-
+SpaceClaim.Api.V19.Api
 n_points = 3
 n_dimensions = 3
 points = []
