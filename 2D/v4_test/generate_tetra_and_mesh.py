@@ -4,7 +4,7 @@ import math
 from itertools import combinations, product, izip
 from System import Random
 #SpaceClaim.Api.V19.Api
-n_points = 3
+n_points = 4
 n_dimensions = 3
 points = []
 curves = List[ITrimmedCurve]()
@@ -223,24 +223,24 @@ if n_points > 3:
 
 
 
-# Create/Edit Mesh
-options = SpaceClaim.Api.V18.Scripting.Commands.CommandOptions.CreateMeshOptions()
-options.SolidElementShape = ElementShapeType.Hexahedral
-options.SurfaceElementShape = ElementShapeType.QuadDominant
-options.BlockingType = BlockingDecompositionType.Aggressive
-options.ElementSize = MM(50)
-options.DefeatureSize = MM(1)
-options.ConnectTolerance = 0.02
-options.GrowthRate = 5
-options.SizeFunctionType = SizeFunctionType.Fixed
-options.CurvatureMinimumSize = 0.00360405540659
-options.CurvatureNormalAngle = 0.523598776
-options.ProximityMinimumSize = 0.002
-options.NumberOfCellsAcrossGap = 100
-options.ProximitySizeFunctionSources = ProximitySizeFunctionSourcesType.Edges
-options.MidsideNodes = MidsideNodesType.BasedOnPhysics
-bodySelection = BodySelection.Create(GetRootPart().Bodies[0])
-sweepFaceSelection = Selection()
-result = CreateMesh.Execute(bodySelection, sweepFaceSelection, options)
-# EndBlock
+## Create/Edit Mesh
+#options = SpaceClaim.Api.V19.Scripting.Commands.CommandOptions.CreateMeshOptions()
+#options.SolidElementShape = ElementShapeType.Hexahedral
+#options.SurfaceElementShape = ElementShapeType.QuadDominant
+#options.BlockingType = BlockingDecompositionType.Aggressive
+#options.ElementSize = MM(50)
+#options.DefeatureSize = MM(1)
+#options.ConnectTolerance = 0.02
+#options.GrowthRate = 5
+#options.SizeFunctionType = SizeFunctionType.Fixed
+#options.CurvatureMinimumSize = 0.00360405540659
+#options.CurvatureNormalAngle = 0.523598776
+#options.ProximityMinimumSize = 0.002
+#options.NumberOfCellsAcrossGap = 100
+#options.ProximitySizeFunctionSources = ProximitySizeFunctionSourcesType.Edges
+#options.MidsideNodes = MidsideNodesType.BasedOnPhysics
+#bodySelection = BodySelection.Create(GetRootPart().Bodies[0])
+#sweepFaceSelection = Selection()
+#result = CreateMesh.Execute(bodySelection, sweepFaceSelection, options)
+## EndBlock
 

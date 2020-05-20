@@ -8,3 +8,5 @@ DSscriptcommand=DSscript.read()
 geometry1.SendCommand(Command=DSscriptcommand,Language="Python")
 geometry1.Edit(IsSpaceClaimGeometry=True)
 #geometry1.Exit()
+
+
