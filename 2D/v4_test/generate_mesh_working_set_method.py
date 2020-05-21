@@ -21,6 +21,8 @@ mesh_method.Location = selection
 mesh_method.Method = MethodType.HexDominant
 mesh_method.ElementOrder = ElementOrder.Quadratic
 
+# General Mesh Settings
+mesh = Model.Mesh.Properties
 
 #Generate Mesh
 Model.Mesh.GenerateMesh()
