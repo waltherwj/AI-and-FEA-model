@@ -22,7 +22,14 @@ mesh_method.Method = MethodType.HexDominant
 mesh_method.ElementOrder = ElementOrder.Quadratic
 
 # General Mesh Settings
-mesh = Model.Mesh.Properties
+mesh = Model.Mesh
+mesh.Resolution = 4
+
+# Corner node refinement
+vertex_size = []
+for i, corner in enumerate(body.Vertices):
+    selection = corner
+    vertex_size.append(Model.Mesh.AddSizing())
 
 #Generate Mesh
 Model.Mesh.GenerateMesh()

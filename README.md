@@ -31,7 +31,7 @@ This project has as objectives to
 ##### Tasks
 
 * Automate Geometry and Mesh Generation Step
-
+* Create script for generating mesh in Mechanical
   * Create script for generating model inside of Workbench
   * Create script for saving the geometry and mesh
 
