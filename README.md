@@ -25,14 +25,15 @@ This project has as objectives to
 #### _Implementing a 2d model for proof of concept_
   * Created script for generating correct geometry inside of SpaceClaim
   * Created script for calling geometry script from Workbench
+  * Create script for generating mesh in Mechanical
+  * Create script for generating model inside of Workbench
 ## Current Work
 #### _Implementing a 2d model for proof of concept_
 
 ##### Tasks
 
 * Automate Geometry and Mesh Generation Step
-* Create script for generating mesh in Mechanical
-  * Create script for generating model inside of Workbench
+  * Create script for applying forces to element
   * Create script for saving the geometry and mesh
 
 

@@ -27,7 +27,7 @@ quadrant  = []
 for quad in iter_quad:
     quadrant.append(quad)
 choice = random.choice(range(0,8))
-choice=0
+#choice=0
 for i, point in enumerate(points):
     for j, coord in enumerate(point):
         points[i][j] = coord*quadrant[choice][j]
