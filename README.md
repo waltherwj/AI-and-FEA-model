@@ -38,6 +38,36 @@ This project has as objectives to
 
 
 
+## Element Shape, Force & Nodal Displacement Generation Justification
+
+#### *Element Shape*
+
+Triangular shapes  have an advantage in relation to quadrilaterals in that it is easier to adapt them to any boundary shape. On the other hand, quadrilaterals  tend to exhibit better approximation characteristics than triangles. By creating triangular elements with the deep learning model comprised of mostly quadrilateral internal elements, the objective is that the model is able to acquire the better approximation characteristics of quadrilaterals while using triangular elements.
+
+#### *Forces*
+
+Forces and moments can be applied to any body (field load), edge (distributed load), or node (point load) of a finite element model. The idea is to try an approach where all of the types are present at first. This might make the model too complex for the computational resources I have access to, so if need be body forces will be disregarded for a while to make proof of concept quicker.
+
+#### *Nodal Displacement*
+
+In an usual FEA method the nodal displacements and the interpolation within the element is given by :
+$$
+\{u\}_e = [N]_e\{\Delta\}_e
+$$
+Where  u, N and Delta are displacement within the element, shape function and displacement at the nodes, respectively, and N is of a definite shape defined by the type of element and number of nodes.  
+
+On the other hand, Delta is given by the boundary conditions and the equilibrium equation of the element using the stiffness matrix K, with the equation:
+$$
+[K]\{\Delta\} = \{F^L\}
+$$
+Where F is the reactions (actions to be more precise, as it is the negative of the actual reactions) at the nodes. 
+
+The goal is thus that, given a set of boundary conditions and forces along the entire element, the model directly learns a certain equivalent mapping M that that maps into the displacement field within the entire element. 
+$$
+M: (F_e,  \Delta_{BC})  \mapsto u_e
+$$
+Therefore the element has to be generated with arbitrary nodal displacements to train the model.
+
 
 
 ## Relevant Links
