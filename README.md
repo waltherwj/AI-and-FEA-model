@@ -51,21 +51,21 @@ Forces and moments can be applied to any body (field load), edge (distributed lo
 #### *Nodal Displacement*
 
 In an usual FEA method the nodal displacements and the interpolation within the element is given by :
-$$
-\{u\}_e = [N]_e\{\Delta\}_e
-$$
+
+<img src="https://render.githubusercontent.com/render/math?math=\{u\}_e = [N]_e\{\Delta\}_e">
+
 Where  u, N and Delta are displacement within the element, shape function and displacement at the nodes, respectively, and N is of a definite shape defined by the type of element and number of nodes.  
 
 On the other hand, Delta is given by the boundary conditions and the equilibrium equation of the element using the stiffness matrix K, with the equation:
-$$
-[K]\{\Delta\} = \{F^L\}
-$$
+
+<img src="https://render.githubusercontent.com/render/math?math=[K]\{\Delta\} = \{F^L\}">
+
 Where F is the reactions (actions to be more precise, as it is the negative of the actual reactions) at the nodes. 
 
 The goal is thus that, given a set of boundary conditions and forces along the entire element, the model directly learns a certain equivalent mapping M that that maps into the displacement field within the entire element. 
-$$
-M: (F_e,  \Delta_{BC})  \mapsto u_e
-$$
+
+<img src="https://render.githubusercontent.com/render/math?math=M: (F_e,  \Delta_{BC})  \mapsto u_e">
+
 Therefore the element has to be generated with arbitrary nodal displacements to train the model.
 
 
