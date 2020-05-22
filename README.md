@@ -42,11 +42,11 @@ This project has as objectives to
 
 #### *Element Shape*
 
-Triangular shapes  have an advantage in relation to quadrilaterals in that it is easier to adapt them to any boundary shape. On the other hand, quadrilaterals  tend to exhibit better approximation characteristics than triangles. By creating triangular elements with the deep learning model comprised of mostly quadrilateral internal elements, the objective is that the model is able to acquire the better approximation characteristics of quadrilaterals while using triangular elements.
+Triangular shapes  have an advantage in relation to quadrilaterals in that it is easier to adapt them to any boundary shape. On the other hand, quadrilaterals  tend to exhibit better approximation characteristics than triangles. **By creating triangular elements with the deep learning model comprised of mostly quadrilateral internal elements**, the objective is that the model is able to acquire the better approximation characteristics of quadrilaterals while using triangular elements.
 
 #### *Forces*
 
-Forces and moments can be applied to any body (field load), edge (distributed load), or node (point load) of a finite element model. The idea is to try an approach where all of the types are present at first. This might make the model too complex for the computational resources I have access to, so if need be body forces will be disregarded for a while to make proof of concept quicker.
+**Forces and moments can be applied to any body (field load), edge (distributed load), or node (point load) of a finite element model**. The idea is to try an approach where all of the types are present at first. This might make the model too complex for the computational resources I have access to, so if need be body forces will be disregarded for a while to make proof of concept quicker.
 
 #### *Nodal Displacement*
 
@@ -66,7 +66,9 @@ The goal is thus that, given a set of boundary conditions and forces along the e
 
 <img src="https://render.githubusercontent.com/render/math?math=M: (F_e,  \Delta_{BC})  \mapsto u_e">
 
-Therefore the element has to be generated with arbitrary nodal displacements to train the model.
+Therefore the element has to be generated with **arbitrary nodal displacements to train the model. **
+
+This mapping function will, in essence, be encapsulating both the stiffness matrix and the shape function if the model is trained in a simulation set, or, in theory, the real world behaviour of the material if trained on actual experiments.
 
 
 
