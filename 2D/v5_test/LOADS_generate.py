@@ -22,8 +22,9 @@ random.shuffle(choose_vertices) #shuffles the list to not always choose the firs
 
     ## Delete displacements from previous analysis
 analysis = Model.Analyses[0]
-for disp in Model.Analyses[0].GetChildren(DataModelObjectCategory.Displacement, False):
-    pass
+for disp in analysis.GetChildren(DataModelObjectCategory.Displacement, False):
+    disp.Delete()
+
 displacements = []
 ii=0
 for i, vertex in enumerate(body.Vertices):
