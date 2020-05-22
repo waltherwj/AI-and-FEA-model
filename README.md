@@ -66,7 +66,7 @@ The goal is thus that, given a set of boundary conditions and forces along the e
 
 <img src="https://render.githubusercontent.com/render/math?math=M: (F_e,  \Delta_{BC})  \mapsto u_e">
 
-Therefore the element has to be generated with **arbitrary nodal displacements to train the model. **
+Therefore the element has to be generated with **arbitrary nodal displacements to train the model.**
 
 This mapping function will, in essence, be encapsulating both the stiffness matrix and the shape function if the model is trained in a simulation set, or, in theory, the real world behaviour of the material if trained on actual experiments.
 
