@@ -14,7 +14,7 @@ except:
     pass
 
 mesh_method = Model.Mesh.AddAutomaticMethod() # Adds the automatic method
-
+#Model.Mesh.Siz
 mesh_method.Location = selection
 
 #Properties
@@ -38,6 +38,8 @@ for i, corner in enumerate(body.Vertices):
 
 #Generate Mesh
 Model.Mesh.GenerateMesh()
+
+
 
 #gets body
 #elementID = geometry.Children[0].ObjectId
