@@ -31,9 +31,6 @@ vertices_not_chosen = [False] * (n_vertices-n_loaded_vertices)
 choose_vertices = vertices_chosen + vertices_not_chosen
 random.shuffle(choose_vertices) #shuffles the list to not always choose the first vertices
 
-## Choose if body force is applied or not
-choose_body = (random.random() < 0.5)
-
 forces = []
 for i, edge in enumerate(body.Edges): # forces on edges
     selection.Entities = [edge]
@@ -77,4 +74,21 @@ for i, vertex in enumerate(body.Vertices):
         else:
             forces[-1].ZComponent.Output.DiscreteValues = [Quantity('0 [N]')]
             
-
+# apply body force
+selection.Entities = [body]
+forces.append(analysis.AddForce())
+forces[-1].Location = selection
+force_magnitudes = [random.gauss(0,1), random.gauss(0,1), random.gauss(0,1)]
+        forces[-1].DefineBy = LoadDefineBy.Components
+        forces[-1].XComponent.Output.DiscreteValues = [Quantity(force_magnitudes[0].ToString() + '[N]')]
+        forces[-1].YComponent.Output.DiscreteValues = [Quantity(force_magnitudes[1].ToString() + '[N]')]
+        
+        Is_3D= False
+        for vertex in body.Vertices: #check if problem is 2d or 3d
+            if vertex.Z != 0:
+                Is_3D = True
+                break
+        if Is_3D:
+            forces[-1].ZComponent.Output.DiscreteValues = [Quantity(force_magnitudes[2].ToString() + '[N]')]
+        else:
+            forces[-1].ZComponent.Output.DiscreteValues = [Quantity('0 [N]')]
