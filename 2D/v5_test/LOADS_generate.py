@@ -27,12 +27,33 @@ for disp in analysis.GetChildren(DataModelObjectCategory.Displacement, False):
 
 displacements = []
 ii=0
-for i, vertex in enumerate(body.Vertices):
-    if choose_vertices[i]:
+
+for i, vertex in enumerate(body.Vertices): #iterates vertices
+    if choose_vertices[i]: #chooses correct vertices
         selection.Entities = [vertex]
-        displacements.append(Model.Analyses[0].AddDisplacement())
-        displacements[ii].Location = selection
-        ii += 1
+        displacements.append(Model.Analyses[0].AddDisplacement()) #creates displacement and store in list
+        displacements[-1].Location = selection #applies to vertex
+    
+    ## set values for displacements 
+    components = []
+    for j in range(3): #create list of strings for displacements
+        components.append(Quantity(random.gauss(0,1).ToString() + '[in]'))
+    ## displacements for both 3d and 2d cases
+    try:
+        displacements[-1].XComponent.Output.DiscreteValues = [components[0]]
+        displacements[-1].YComponent.Output.DiscreteValues = [components[1]]
+        
+        Is_3D = False
+        for vertex in body.Vertices: #check if problem is 2d or 3d
+            if vertex.Z != 0:
+                Is_3D = True
+                break
+        if Is_3D: #displacement for 3d case
+            displacements[-1].ZComponent.Output.DiscreteValues = [components[2]]
+        else:
+            displacements[-1].ZComponent.Output.DiscreteValues = [Quantity['0 [in]']]
+    except IndexError:
+        pass
         
     
 ## Create list of edges
