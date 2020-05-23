@@ -27,14 +27,15 @@ This project has as objectives to
   * Created script for calling geometry script from Workbench
   * Create script for generating mesh in Mechanical
   * Create script for generating model inside of Workbench
+  * Created script for applying forces to element
 ## Current Work
 #### _Implementing a 2d model for proof of concept_
 
 ##### Tasks
 
 * Automate Geometry and Mesh Generation Step
-  * Create script for applying forces to element
   * Create script for saving the geometry and mesh
+  * Create script for saving the results
 
 
 
@@ -66,9 +67,9 @@ The goal is thus that, given a set of boundary conditions and forces along the e
 
 <img src="https://render.githubusercontent.com/render/math?math=M: (F_e,  \Delta_{BC})  \mapsto u_e">
 
-Therefore the element has to be generated with **arbitrary nodal displacements to train the model.**
+Therefore the element has to be generated with **arbitrary nodal displacements to train the model.** However during the training process it became obvious that nodal displacements only on the vertices don't work well for the simulation since the "nodes" on the vertices in this case are much more malleable and are stress concetrators than the rest of the element, thus, the simulation doesn't show any interesting behaviour no matter the forces except  for a very large distortion at the vertices if the model is only held by them. To avoid that, the displacements are going to be placed on the edges of the element as a whole instead of only the vertex, in essence forcing a displacement on all the nodes of  that edge. With this in mind, an arbitrary function that generates nodal displacements with a certain continuous distribution might be valuable to generate more general data on the edges.
 
-This mapping function will, in essence, be encapsulating both the stiffness matrix and the shape function if the model is trained in a simulation set, or, in theory, the real world behaviour of the material if trained on actual experiments.
+This mapping function will, in essence, encapsulate both the stiffness matrix and the shape function if the model is trained in a simulation set, or, in theory, the real world behaviour of the material if trained on actual experiments.
 
 
 
