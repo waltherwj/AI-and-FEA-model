@@ -79,11 +79,10 @@ for i, vertex in enumerate(body.Vertices):
 # apply body force
 selection.Entities = [body]
 forces.append(analysis.AddAcceleration())
-forces[-1].Location = selection
 force_magnitudes = [random.gauss(0,1), random.gauss(0,1), random.gauss(0,1)]
 forces[-1].DefineBy = LoadDefineBy.Components
-forces[-1].XComponent.Output.DiscreteValues = [Quantity(force_magnitudes[0].ToString() + '[N]')]
-forces[-1].YComponent.Output.DiscreteValues = [Quantity(force_magnitudes[1].ToString() + '[N]')]
+forces[-1].XComponent.Output.DiscreteValues = [Quantity(force_magnitudes[0].ToString() + '[in s^-2]')]
+forces[-1].YComponent.Output.DiscreteValues = [Quantity(force_magnitudes[1].ToString() + '[in s^-2]')]
         
 Is_3D= False
 for vertex in body.Vertices: #check if problem is 2d or 3d
@@ -91,6 +90,6 @@ for vertex in body.Vertices: #check if problem is 2d or 3d
         Is_3D = True
         break
 if Is_3D:
-    forces[-1].ZComponent.Output.DiscreteValues = [Quantity(force_magnitudes[2].ToString() + '[N]')]
+    forces[-1].ZComponent.Output.DiscreteValues = [Quantity(force_magnitudes[2].ToString() + '[in s^-2]')]
 else:
-    forces[-1].ZComponent.Output.DiscreteValues = [Quantity('0 [N]')]
+    forces[-1].ZComponent.Output.DiscreteValues = [Quantity('0 [in s^-2]')]
