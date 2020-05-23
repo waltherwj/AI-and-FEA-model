@@ -29,8 +29,7 @@ for disp in analysis.GetChildren(DataModelObjectCategory.Displacement, False):
     disp.Delete()
 for fixed in analysis.GetChildren(DataModelObjectCategory.FixedSupport, False):
     fixed.Delete()
-for force in analysis.GetChildren(DataModelObjectCategory.Force, False):
-    force.Delete()
+
     ## Set displacement locations & values
 displacements = []
 for i, vertex in enumerate(body.Vertices): #iterates vertices
@@ -70,8 +69,5 @@ if not any(choose_vertices):
             selection.Entities = [vertex]
             fixed.append(analysis.AddFixedSupport())
             fixed[-1].Location = selection
-        
-        
-
 
 
