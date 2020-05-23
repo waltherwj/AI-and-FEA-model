@@ -1,6 +1,6 @@
 import random
 import itertools
-import time
+
     ## Load-in the body
     
 part = Model.Geometry.Children[0] #Get first "geometry"
@@ -24,4 +24,13 @@ edge_not_chosen = [False] * (n_edges-n_loaded_edges)
 choose_edges = edge_chosen + edge_not_chosen
 random.shuffle(choose_edges) #shuffles the list to not always choose the first vertices
 
-
+forces = []
+for i, edge in enumerate(body.Edges):
+    selection.Entities = [edge]
+    if choose_edges[i]:
+        forces.append(analysis.AddForce())
+        forces[-1].Location = selection
+    
+    
+    
+    
