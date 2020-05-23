@@ -57,11 +57,14 @@ for i, vertex in enumerate(body.Vertices): #iterates vertices
             displacements[-1].ZComponent.Output.DiscreteValues = [Quantity['0 [in]']]
     except IndexError:
         pass
+if not any(choose_vertices)
+    while not any(choose_vertices): #while choose vertices has no True values
+        for i, vertex in enumerate(choose_vertices):
+            choose_vertices[i] = (random.random()<0.5)
+            
         
-while not any(choose_vertices): #displacements is a list, and bool casts it to False if empty
-    for vertex in choose_vertices:
-        vertex = (random.random()<0.5)
-    print(stopasa)
+        
+
 ## Create list of edges
 
 
