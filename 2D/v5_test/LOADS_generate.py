@@ -58,8 +58,10 @@ for i, vertex in enumerate(body.Vertices): #iterates vertices
     except IndexError:
         pass
         
-if (not displacements): #displacements is a list, and bool casts it to False if empty
-    pass
+while not any(choose_vertices): #displacements is a list, and bool casts it to False if empty
+    for vertex in choose_vertices:
+        vertex = (random.random()<0.5)
+    print(stopasa)
 ## Create list of edges
 
 
