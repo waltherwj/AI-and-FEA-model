@@ -7,9 +7,11 @@ body = part.Children[0].GetGeoBody() #Get geometrical entities of first body
 selection = ExtAPI.SelectionManager.CreateSelectionInfo(SelectionTypeEnum.GeometryEntities)  # Create an empty selection.
 
     ## General Analysis Settings
+    
 settings = Model.Analyses[0].AnalysisSettings
 settings.LargeDeflection = True
 settings.WeakSprings = WeakSpringsType.ProgramControlled
+settings.StoreResultsAt =  TimePointsOptions.LastTimePoints
     ## Create vector conditions
     
 n_vertices = len(body.Vertices)
