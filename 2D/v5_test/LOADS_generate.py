@@ -30,7 +30,8 @@ for i, edge in enumerate(body.Edges):
     if choose_edges[i]:
         forces.append(analysis.AddForce())
         forces[-1].Location = selection
-    
+        # create forces
+        forces[-1].Magnitude.Output.DiscreteValues = [Quantity(random.gauss(0,1).ToString() + '[N]')]
     
     
     
