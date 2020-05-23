@@ -1,5 +1,6 @@
 import random
 import itertools
+import time
     ## Load-in the body
     
 part = Model.Geometry.Children[0] #Get first "geometry"
@@ -13,7 +14,6 @@ settings.LargeDeflection = True
 settings.WeakSprings = WeakSpringsType.ProgramControlled
 settings.StoreResultsAt =  TimePointsOptions.LastTimePoints
     ## Create vector conditions
-    
 n_vertices = len(body.Vertices)
 displaced_vertices = random.choice(range(0, n_vertices+1)) #number of vertices w/ a boundary displacement condition
 choose_vertices = []
@@ -22,13 +22,14 @@ vert_not_chosen = [False] * (n_vertices-displaced_vertices)
 choose_vertices = vert_chosen + vert_not_chosen
 random.shuffle(choose_vertices) #shuffles the list to not always choose the first vertices
 
-    ## Delete displacements from previous analysis
+    ## Delete conditions from previous analysis
 analysis = Model.Analyses[0]
 for disp in analysis.GetChildren(DataModelObjectCategory.Displacement, False):
     disp.Delete()
-
+for fixed in analysis.GetChildren(DataModelObjectCategory.FixedSupport, False):
+    fixed.Delete()
+    
 displacements = []
-ii=0
 
 for i, vertex in enumerate(body.Vertices): #iterates vertices
     if choose_vertices[i]: #chooses correct vertices
@@ -57,7 +58,8 @@ for i, vertex in enumerate(body.Vertices): #iterates vertices
     except IndexError:
         pass
         
-    
+if (not displacements): #displacements is a list, and bool casts it to False if empty
+    pass
 ## Create list of edges
 
 
