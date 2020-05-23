@@ -41,7 +41,7 @@ for i, vertex in enumerate(body.Vertices): #iterates vertices
     ## set values for displacements 
     components = []
     for j in range(3): #create list of strings for displacements
-        components.append(Quantity(random.gauss(0,1).ToString() + '[in]'))
+        components.append(Quantity(random.gauss(0,0.01).ToString() + '[in]'))
     ## displacements for both 3d and 2d cases
     try:
         displacements[-1].XComponent.Output.DiscreteValues = [components[0]]
