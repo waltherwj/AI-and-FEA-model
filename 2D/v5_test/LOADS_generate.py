@@ -40,7 +40,7 @@ for i, edge in enumerate(body.Edges): # forces on edges
         forces.append(analysis.AddForce())
         forces[-1].Location = selection
         # create forces
-        force_magnitudes = [random.gauss(0,1), random.gauss(0,1), random.gauss(0,1)]
+        force_magnitudes = [random.gauss(0,100), random.gauss(0,100), random.gauss(0,100)]
         forces[-1].DefineBy = LoadDefineBy.Components
         forces[-1].XComponent.Output.DiscreteValues = [Quantity(force_magnitudes[0].ToString() + '[N]')]
         forces[-1].YComponent.Output.DiscreteValues = [Quantity(force_magnitudes[1].ToString() + '[N]')]
@@ -54,14 +54,14 @@ for i, edge in enumerate(body.Edges): # forces on edges
             forces[-1].ZComponent.Output.DiscreteValues = [Quantity(force_magnitudes[2].ToString() + '[N]')]
         else:
             forces[-1].ZComponent.Output.DiscreteValues = [Quantity('0 [N]')]
-
+"""
 for i, vertex in enumerate(body.Vertices):
     selection.Entities = [vertex]
     if choose_vertices[i]:
         forces.append(analysis.AddForce())
         forces[-1].Location = selection
         # create forces
-        force_magnitudes = [random.gauss(0,1), random.gauss(0,1), random.gauss(0,1)]
+        force_magnitudes = [random.gauss(0,100), random.gauss(0,100), random.gauss(0,100)]
         forces[-1].DefineBy = LoadDefineBy.Components
         forces[-1].XComponent.Output.DiscreteValues = [Quantity(force_magnitudes[0].ToString() + '[N]')]
         forces[-1].YComponent.Output.DiscreteValues = [Quantity(force_magnitudes[1].ToString() + '[N]')]
@@ -75,11 +75,11 @@ for i, vertex in enumerate(body.Vertices):
             forces[-1].ZComponent.Output.DiscreteValues = [Quantity(force_magnitudes[2].ToString() + '[N]')]
         else:
             forces[-1].ZComponent.Output.DiscreteValues = [Quantity('0 [N]')]
-            
+            """
 # apply body force
 selection.Entities = [body]
 forces.append(analysis.AddAcceleration())
-force_magnitudes = [random.gauss(0,1), random.gauss(0,1), random.gauss(0,1)]
+force_magnitudes = [random.gauss(0,300), random.gauss(0,300), random.gauss(0,300)]
 forces[-1].DefineBy = LoadDefineBy.Components
 forces[-1].XComponent.Output.DiscreteValues = [Quantity(force_magnitudes[0].ToString() + '[in s^-2]')]
 forces[-1].YComponent.Output.DiscreteValues = [Quantity(force_magnitudes[1].ToString() + '[in s^-2]')]
