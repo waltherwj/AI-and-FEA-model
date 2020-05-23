@@ -14,14 +14,14 @@ settings.LargeDeflection = True
 settings.WeakSprings = WeakSpringsType.ProgramControlled
 settings.StoreResultsAt =  TimePointsOptions.LastTimePoints
 
-    ## Create vector to choose vertices
-n_vertices = len(body.Vertices)
-displaced_vertices = random.choice(range(0, n_vertices+1)) #number of vertices w/ a boundary displacement condition
-choose_vertices = []
-vert_chosen = [True] * displaced_vertices
-vert_not_chosen = [False] * (n_vertices-displaced_vertices)
-choose_vertices = vert_chosen + vert_not_chosen
-random.shuffle(choose_vertices) #shuffles the list to not always choose the first vertices
+    ## Create vector to choose edges
+n_edges = len(body.Edges)
+displaced_edges = random.choice(range(0, n_edges+1)) #number of vertices w/ a boundary displacement condition
+choose_edges = []
+edge_chosen = [True] * displaced_edges
+edge_not_chosen = [False] * (n_edges-displaced_edges)
+choose_edges = edge_chosen + edge_not_chosen
+random.shuffle(choose_edges) #shuffles the list to not always choose the first edges
 
     ## Delete conditions from previous analysis
 analysis = Model.Analyses[0]
@@ -32,9 +32,9 @@ for fixed in analysis.GetChildren(DataModelObjectCategory.FixedSupport, False):
 
     ## Set displacement locations & values
 displacements = []
-for i, vertex in enumerate(body.Vertices): #iterates vertices
-    if choose_vertices[i]: #chooses correct vertices
-        selection.Entities = [vertex]
+for i, edge in enumerate(body.Edges): #iterates vertices
+    if choose_edges[i]: #chooses correct vertices
+        selection.Entities = [edge]
         displacements.append(analysis.AddDisplacement()) #creates displacement and store in list
         displacements[-1].Location = selection #applies to vertex
     
@@ -59,14 +59,14 @@ for i, vertex in enumerate(body.Vertices): #iterates vertices
     except IndexError:
         pass
 ## Handling case of no vertex diplacements
-if not any(choose_vertices):
+if not any(choose_edges):
     fixed = []
-    while not any(choose_vertices): #while choose vertices has no True values
-        for i, vertex in enumerate(choose_vertices):
-            choose_vertices[i] = (random.random()<0.5)
-    for i, vertex in enumerate(body.Vertices):
-        if choose_vertices[i]:
-            selection.Entities = [vertex]
+    while not any(choose_edges): #while choose vertices has no True values
+        for i, edge in enumerate(choose_edges):
+            choose_edges[i] = (random.random()<0.5)
+    for i, edge in enumerate(body.Edges):
+        if choose_edges[i]:
+            selection.Entities = [edge]
             fixed.append(analysis.AddFixedSupport())
             fixed[-1].Location = selection
 
