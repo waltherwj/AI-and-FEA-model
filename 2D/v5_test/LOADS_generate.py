@@ -31,7 +31,10 @@ for i, edge in enumerate(body.Edges):
         forces.append(analysis.AddForce())
         forces[-1].Location = selection
         # create forces
-        forces[-1].Magnitude.Output.DiscreteValues = [Quantity(random.gauss(0,1).ToString() + '[N]')]
+        force_magnitudes = [random.gauss(0,1), random.gauss(0,1), random.gauss(0,1)]
+        forces[-1].DefineBy = LoadDefineBy.Components
+        forces[-1].XComponent.Output.DiscreteValues = [Quantity(force_magnitudes[0].ToString() + '[N]')]
+        forces[-1].YComponent.Output.DiscreteValues = [Quantity(force_magnitudes[1].ToString() + '[N]')]
+        forces[-1].ZComponent.Output.DiscreteValues = [Quantity(force_magnitudes[2].ToString() + '[N]')]
     
-    
-    
+
