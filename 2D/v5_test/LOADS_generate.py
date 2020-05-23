@@ -34,7 +34,7 @@ displacements = []
 for i, vertex in enumerate(body.Vertices): #iterates vertices
     if choose_vertices[i]: #chooses correct vertices
         selection.Entities = [vertex]
-        displacements.append(Model.Analyses[0].AddDisplacement()) #creates displacement and store in list
+        displacements.append(analysis.AddDisplacement()) #creates displacement and store in list
         displacements[-1].Location = selection #applies to vertex
     
     ## set values for displacements 
@@ -57,11 +57,17 @@ for i, vertex in enumerate(body.Vertices): #iterates vertices
             displacements[-1].ZComponent.Output.DiscreteValues = [Quantity['0 [in]']]
     except IndexError:
         pass
-if not any(choose_vertices)
+## Handling case of no vertex diplacements
+if not any(choose_vertices):
+    fixed = []
     while not any(choose_vertices): #while choose vertices has no True values
         for i, vertex in enumerate(choose_vertices):
             choose_vertices[i] = (random.random()<0.5)
-            
+    for i, vertex in enumerate(body.Vertices):
+        if choose_vertices[i]:
+            selection.Entities = [vertex]
+            fixed.append(analysis.AddFixedSupport())
+            fixed[-1].Location = selection
         
         
 
