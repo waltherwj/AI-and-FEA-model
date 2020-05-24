@@ -14,6 +14,9 @@ for force in analysis.GetChildren(DataModelObjectCategory.Force, False):
     force.Delete()
 for body_force in analysis.GetChildren(DataModelObjectCategory.Acceleration, False):
     body_force.Delete()
+    
+## Assign Material
+part.Material = 'Structural Steel'
 
 ## Create vector to chose edges
 n_edges = len(body.Edges)
