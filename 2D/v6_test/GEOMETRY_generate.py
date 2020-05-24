@@ -13,13 +13,20 @@ for i in range(n_points):   # creates all points
     for j in range(n_dimensions):
         random.seed()
         if (j<=1) and i>0:
-            points_temp[j] = random.random()
-        elif (i>2):
+            if i==1:
+                points_temp[0] = random.gauss(1,0.2)
+                points_temp[1] = random.gauss(0,0.2)
+            if i==2:
+                points_temp[1] = random.gauss(1,0.2)
+                points_temp[0] = random.gauss(0,0.2)
+            else:
+                points_temp[j] = random.random()
+        elif i>2 :
             points_temp[j] = random.gauss(1,0.2)
+            print(points_temp)
             
     points.append(points_temp)
     
-
 
 #choose quadrant
 iter_quad = product([1, -1], repeat = 3)
