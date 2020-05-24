@@ -12,11 +12,12 @@ modelComponent1 = system1.GetComponent(Name="Model")
 modelComponent1.Refresh()
 model1 = system1.GetContainer(ComponentName="Model")
 model1.Edit()
-try:
-    DSscript = open("D:/Ansys Simulations/Project/2D/v6_test/MESH_generate.py", "r")
-    DSscriptcommand=DSscript.read()
-    model1.SendCommand(Command=DSscriptcommand,Language="Python")
-except:
+
+DSscript = open("D:/Ansys Simulations/Project/2D/v6_test/MESH_generate.py", "r")
+DSscriptcommand=DSscript.read()
+model1.SendCommand(Command=DSscriptcommand,Language="Python")
+if not IsProjectUpToDate():
+    print("not upt to date")
     DSscript = open("D:/Ansys Simulations/Project/2D/v6_test/MESH_error_handling.py", "r")
     DSscriptcommand=DSscript.read()
     model1.SendCommand(Command=DSscriptcommand,Language="Python")
