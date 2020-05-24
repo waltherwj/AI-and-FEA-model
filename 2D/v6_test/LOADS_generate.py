@@ -43,7 +43,7 @@ for i, edge in enumerate(body.Edges): # forces on edges
         forces.append(analysis.AddForce())
         forces[-1].Location = selection
         # create forces
-        force_magnitudes = [random.gauss(0,100000), random.gauss(0,100000), random.gauss(0,100000)]
+        force_magnitudes = [random.gauss(0,100), random.gauss(0,100), random.gauss(0,100)]
         forces[-1].DefineBy = LoadDefineBy.Components
         forces[-1].XComponent.Output.DiscreteValues = [Quantity(force_magnitudes[0].ToString() + '[N]')]
         forces[-1].YComponent.Output.DiscreteValues = [Quantity(force_magnitudes[1].ToString() + '[N]')]
@@ -64,7 +64,7 @@ for i, vertex in enumerate(body.Vertices):
         forces.append(analysis.AddForce())
         forces[-1].Location = selection
         # create forces
-        force_magnitudes = [random.gauss(0,100000), random.gauss(0,100000), random.gauss(0,100000)]
+        force_magnitudes = [random.gauss(0,100), random.gauss(0,100), random.gauss(0,100)]
         forces[-1].DefineBy = LoadDefineBy.Components
         forces[-1].XComponent.Output.DiscreteValues = [Quantity(force_magnitudes[0].ToString() + '[N]')]
         forces[-1].YComponent.Output.DiscreteValues = [Quantity(force_magnitudes[1].ToString() + '[N]')]
@@ -83,7 +83,7 @@ for i, vertex in enumerate(body.Vertices):
 
 selection.Entities = [body]
 forces.append(analysis.AddAcceleration())
-force_magnitudes = [random.gauss(0,300000), random.gauss(0,300000), random.gauss(0,300000)]
+force_magnitudes = [random.gauss(0,300), random.gauss(0,300), random.gauss(0,300)]
 forces[-1].DefineBy = LoadDefineBy.Components
 forces[-1].XComponent.Output.DiscreteValues = [Quantity(force_magnitudes[0].ToString() + '[in s^-2]')]
 forces[-1].YComponent.Output.DiscreteValues = [Quantity(force_magnitudes[1].ToString() + '[in s^-2]')]
