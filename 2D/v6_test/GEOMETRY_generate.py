@@ -47,11 +47,6 @@ except:
     pass
 # EndBlock
 
-# create points for named selection
-for point in points:
-    print(point)
-    SketchPoint.Create(Point.Create(*point))
-
 for iter, x in enumerate(combinations(points, 3)): #iterates through all combinations of 3
     #print(iter)
     #curves = List[ITrimmedCurve]()
@@ -67,7 +62,7 @@ for iter, x in enumerate(combinations(points, 3)): #iterates through all combina
             else:
                 #print("else")
                 SketchPoint.Create(Point.Create(MM(x[i][0]),MM(x[i][1]),MM(x[i][2])))    
-    
+   
     #Create Perpendicular Vector
     direc = []
     for ii in range(1,3):
@@ -90,7 +85,7 @@ for iter, x in enumerate(combinations(points, 3)): #iterates through all combina
         plane = Plane.PlaneXY
     else:
         plane = Plane.Create(frame)
-        
+    
     designResult = PlanarBody.Create(plane, curves) #creates the curve
     designBody = designResult.CreatedBody
 
@@ -101,162 +96,4 @@ if n_points >= 4:
     targets = Selection.Create(*selec) #merges them
     result = Combine.Merge(targets)
     
-# EndBlock
-
-# Rename 'temp 1' to 'Body'
-    selection = Selection.Create(GetRootPart().Bodies[0])
-    result = RenameObject.Execute(selection,"Body")
-# EndBlock
-
-ViewHelper.ZoomToEntity()
-
-# Solidify Sketch
-mode = InteractionMode.Solid
-result = ViewHelper.SetViewMode(mode, None)
-# EndBlock
-
-### NAMED SELECTIONS
-
-# Create Named Selection Group
-primarySelection = Selection.Create(GetRootPart().Bodies[0])
-secondarySelection = Selection()
-result = NamedSelection.Create(primarySelection, secondarySelection)
-# EndBlock
-
-# Rename Named Selection
-result = NamedSelection.Rename("Group1", "element")
-# EndBlock
-
-# Create Named Selection Group
-primarySelection = Selection.Create(GetRootPart().Curves[0])
-secondarySelection = Selection()
-result = NamedSelection.Create(primarySelection, secondarySelection)
-# EndBlock
-
-# Rename Named Selection
-result = NamedSelection.Rename("Group1", "origin_node")
-# EndBlock
-if n_points > 3:
-    # Create Named Selection Group
-    primarySelection = Selection.Create(GetRootPart().Curves[3])
-    secondarySelection = Selection()
-    result = NamedSelection.Create(primarySelection, secondarySelection)
-    # EndBlock
-
-    # Rename Named Selection
-    result = NamedSelection.Rename("Group1", "top_node")
-    # EndBlock
-
-# Create Named Selection Group
-primarySelection = Selection.Create(GetRootPart().Curves[1])
-secondarySelection = Selection()
-result = NamedSelection.Create(primarySelection, secondarySelection)
-# EndBlock
-
-# Rename Named Selection
-result = NamedSelection.Rename("Group1", "plane_node_1")
-# EndBlock
-
-# Create Named Selection Group
-primarySelection = Selection.Create(GetRootPart().Curves[2])
-secondarySelection = Selection()
-result = NamedSelection.Create(primarySelection, secondarySelection)
-# EndBlock
-
-# Rename Named Selection
-result = NamedSelection.Rename("Group1", "plane_node_2")
-# EndBlock
-
-
-# NAME EDGES
-if n_points > 3:
-    # Create Named Selection Group
-    primarySelection = Selection.Create(GetRootPart().Bodies[0].Edges[3])
-    secondarySelection = Selection()
-    result = NamedSelection.Create(primarySelection, secondarySelection)
-    # EndBlock
-
-    # Rename Named Selection
-    result = NamedSelection.Rename("Group1", "edge_closest")
-    # EndBlock
-
-
-# Create Named Selection Group
-primarySelection = Selection.Create(GetRootPart().Bodies[0].Edges[0])
-secondarySelection = Selection()
-result = NamedSelection.Create(primarySelection, secondarySelection)
-# EndBlock
-
-# Rename Named Selection
-result = NamedSelection.Rename("Group1", "edge_plane_1")
-# EndBlock
-
-# Create Named Selection Group
-primarySelection = Selection.Create(GetRootPart().Bodies[0].Edges[2])
-secondarySelection = Selection()
-result = NamedSelection.Create(primarySelection, secondarySelection)
-# EndBlock
-
-# Rename Named Selection
-result = NamedSelection.Rename("Group1", "edge_plane_2")
-# EndBlock
-
-
-# Create Named Selection Group
-primarySelection = EdgeSelection.Create(GetRootPart().Bodies[0].Edges[1])
-secondarySelection = Selection()
-result = NamedSelection.Create(primarySelection, secondarySelection)
-# EndBlock
-
-# Rename Named Selection
-result = NamedSelection.Rename("Group1", "edge_plane_far")
-# EndBlock
-
-
-
-if n_points > 3:
-    # Create Named Selection Group
-    primarySelection = Selection.Create(GetRootPart().Bodies[0].Edges[5])
-    secondarySelection = Selection()
-    result = NamedSelection.Create(primarySelection, secondarySelection)
-    # EndBlock
-
-    # Rename Named Selection
-    result = NamedSelection.Rename("Group1", "edge_far_1")
-    # EndBlock
-
-    # Create Named Selection Group
-    primarySelection = Selection.Create(GetRootPart().Bodies[0].Edges[1])
-    secondarySelection = Selection()
-    result = NamedSelection.Create(primarySelection, secondarySelection)
-    # EndBlock
-
-    # Rename Named Selection
-    result = NamedSelection.Rename("Group1", "edge_far_2")
-    # EndBlock
-
-
-
-## Create/Edit Mesh
-#options = SpaceClaim.Api.V19.Scripting.Commands.CommandOptions.CreateMeshOptions()
-#options.SolidElementShape = ElementShapeType.Hexahedral
-#options.SurfaceElementShape = ElementShapeType.QuadDominant
-#options.BlockingType = BlockingDecompositionType.Aggressive
-#options.ElementSize = MM(50)
-#options.DefeatureSize = MM(1)
-#options.ConnectTolerance = 0.02
-#options.GrowthRate = 5
-#options.SizeFunctionType = SizeFunctionType.Fixed
-#options.CurvatureMinimumSize = 0.00360405540659
-#options.CurvatureNormalAngle = 0.523598776
-#options.ProximityMinimumSize = 0.002
-#options.NumberOfCellsAcrossGap = 100
-#options.ProximitySizeFunctionSources = ProximitySizeFunctionSourcesType.Edges
-#options.MidsideNodes = MidsideNodesType.BasedOnPhysics
-#bodySelection = BodySelection.Create(GetRootPart().Bodies[0])
-#sweepFaceSelection = Selection()
-#result = CreateMesh.Execute(bodySelection, sweepFaceSelection, options)
-## EndBlock
-
-
 
