@@ -4,6 +4,13 @@
 for named_selection in Model.NamedSelections.Children:
     named_selection.Delete()
 
+## Gets bounding box
+body = Model.Geometry.Children[0]
+X = body.LengthX
+Y = body.LengthY
+Z = body.LengthZ
+
+##Creates named selections
 Model.AddNamedSelection()  #Adds a named selection
 number_of_ns = len( Model.NamedSelections.Children)
 ns = Model.NamedSelections.Children[number_of_ns-1] #creates a temporary variable to store it
