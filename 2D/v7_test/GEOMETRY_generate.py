@@ -28,16 +28,16 @@ for i in range(n_points):   # creates all points
     points.append(points_temp)
     
 
-##choose quadrant
-#iter_quad = product([1, -1], repeat = 3)
-#quadrant  = []
-#for quad in iter_quad:
-#    quadrant.append(quad)
-#choice = random.choice(range(0,8))
-##choice=0
-#for i, point in enumerate(points):
-#    for j, coord in enumerate(point):
-#        points[i][j] = coord*quadrant[choice][j]
+#choose quadrant
+iter_quad = product([1, -1], repeat = 3)
+quadrant  = []
+for quad in iter_quad:
+    quadrant.append(quad)
+choice = random.choice(range(0,8))
+#choice=0
+for i, point in enumerate(points):
+    for j, coord in enumerate(point):
+        points[i][j] = coord*quadrant[choice][j]
 
 
 
