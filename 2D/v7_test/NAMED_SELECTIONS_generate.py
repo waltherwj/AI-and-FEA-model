@@ -1,14 +1,25 @@
 ## Script to generate named selections for forces and displacements
 
-nodes2 = Model.NamedSelections.Children[4]
-nodes2.ScopingMethod = GeometryDefineByType.Worksheet
+##Delete Previous NS
+for named_selection in Model.NamedSelections.Children:
+    named_selection.Delete()
+
+Model.AddNamedSelection()  #Adds a named selection
+number_of_ns = len( Model.NamedSelections.Children)
+ns = Model.NamedSelections.Children[number_of_ns-1] #creates a temporary variable to store it
+ns.ScopingMethod = GeometryDefineByType.Worksheet #changes the scoping method to be worksheet
+## creates a criterion object and stores it
 criterion = Ansys.ACT.Automation.Mechanical.NamedSelectionCriterion
 #Criterion Options: active: bool, actionType: SelectionActionType, 
 #entityType: SelectionType, criterionType: SelectionCriterionType, 
 #operatorType: SelectionOperatorType, value: object, 
 #lowerBound: Quantity, upperBound: Quantity, 
 #coordinateSystem: CoordinateSystem
-criterion(entityType = SelectionType.MeshNode)
-nodes2.GenerationCriteria[1].EntityType = SelectionType.MeshNode
-nodes2.GenerationCriteria.Add(criterion(actionType = SelectionActionType.Add)) ##creates new selection criterion
+
+ns.GenerationCriteria.Add(criterion()) ##creates new empty selection criterion
+#criterion(actionType = SelectionActionType.Add)
+ns.GenerationCriteria[0].EntityType = SelectionType.MeshNode 
+
+for i,item in enumerate(SelectionActionType):
+    print(item)
 
