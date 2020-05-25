@@ -8,6 +8,7 @@ criterion = Ansys.ACT.Automation.Mechanical.NamedSelectionCriterion
 #operatorType: SelectionOperatorType, value: object, 
 #lowerBound: Quantity, upperBound: Quantity, 
 #coordinateSystem: CoordinateSystem
-criterion()
+criterion(entityType = SelectionType.MeshNode)
+nodes2.GenerationCriteria[1].EntityType = SelectionType.MeshElement
 nodes2.GenerationCriteria.Add(criterion(actionType = SelectionActionType.Add)) ##creates new selection criterion
-nodes2.GenerationCriteria.
+
