@@ -127,6 +127,6 @@ for i in range(number_of_selections):
     for j, selection in enumerate(Model.NamedSelections.Children):
         selec = Model.NamedSelections.Children[number_coordinates-number_created+j-1]
         while selec.TotalSelection == 0:
-            selec.GenerationCriteria[ii].Value = selection.GenerationCriteria[ii].Value*size_increase
+            selec.GenerationCriteria[0].Value = selection.GenerationCriteria[0].Value*size_increase
             ns.Generate()
             
