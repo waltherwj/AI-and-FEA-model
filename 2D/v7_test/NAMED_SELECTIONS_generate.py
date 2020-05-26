@@ -1,15 +1,38 @@
 import math
+import random
 ## Script to generate named selections for forces and displacements
 
 ##Delete Previous NS
 for named_selection in Model.NamedSelections.Children:
     named_selection.Delete()
-
+for i, coord_system in enumerate(Model.CoordinateSystems.Children):
+    if i > 0: #to avoid global coord system
+        coord_system.Delete()
+        
 ## Gets bounding box
 part = Model.Geometry.Children[0]
 body = part.Children[0]
 geobody = body.GetGeoBody()
 x1,y1,z1,x2,y2,z2 = geobody.GetBoundingBox() # [x1 y1 z1 x2 y2 z2] coordinates of the bounding box, lower to higher
+
+##Create coordinate systems with brownian motion
+
+number_created = 10
+for i in range(number_created):
+    number_coord = len(Model.CoordinateSystems.Children)
+    Model.CoordinateSystems.AddCoordinateSystem()
+    cs = Model.CoordinateSystems.Children[number_coord] #last coordinate system
+    if i==0:
+        cs.OriginX = Quantity(random.uniform(x1,x2).ToString() + '[m]')
+        cs.OriginY = Quantity(random.uniform(y1,y2).ToString() + '[m]')
+        cs.OriginZ = Quantity(random.uniform(z1,z2).ToString() + '[m]')
+    else:
+        number_iter = 1
+        for i in range(number_iter):
+            cs.OriginX += Quantity(random.uniform(x1,x2).ToString() + '[m]')/3
+            cs.OriginY += Quantity(random.uniform(y1,y2).ToString() + '[m]')/3
+            cs.OriginZ += Quantity(random.uniform(z1,z2).ToString() + '[m]')/3
+
 
 ## creates a criterion object and stores it
 criterion = Ansys.ACT.Automation.Mechanical.NamedSelectionCriterion
