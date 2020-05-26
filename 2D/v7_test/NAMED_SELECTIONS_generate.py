@@ -14,7 +14,7 @@ part = Model.Geometry.Children[0]
 body = part.Children[0]
 geobody = body.GetGeoBody()
 x1,y1,z1,x2,y2,z2 = geobody.GetBoundingBox() # [x1 y1 z1 x2 y2 z2] coordinates of the bounding box, lower to higher
-x1,y1,z1,x2,y2,z2 = x1*39.3701,y1*39.3701,z1*39.3701,x2*39.3701,y2*39.3701,z2 *39.3701
+#x1,y1,z1,x2,y2,z2 = x1*39.3701,y1*39.3701,z1*39.3701,x2*39.3701,y2*39.3701,z2 *39.3701
 ##Create coordinate systems with brownian motion
 ## Create direction of "guided" brownian motion
 
@@ -28,16 +28,27 @@ for i in range(number_created):
     Model.CoordinateSystems.AddCoordinateSystem()
     cs = Model.CoordinateSystems.Children[number_coord] #last coordinate system
     if i==0:
-        cs.OriginX = Quantity(random.uniform(x1,x2).ToString() + '[in]')
-        cs.OriginY = Quantity(random.uniform(y1,y2).ToString() + '[in]')
-        cs.OriginZ = Quantity(random.uniform(z1,z2).ToString() + '[in]')
+        cs.OriginX = Quantity(random.uniform(x1,x2).ToString() + '[m]')
+        cs.OriginY = Quantity(random.uniform(y1,y2).ToString() + '[m]')
+        cs.OriginZ = Quantity(random.uniform(z1,z2).ToString() + '[m]')
         X = cs.OriginX
         Y = cs.OriginY
         Z = cs.OriginZ
+        #make sure the bias approaches the element initially
+        dist_centr_initial = math.sqrt((X.Value-geobody.Centroid[0])**2 + 
+                                       (Y.Value-geobody.Centroid[1])**2 + 
+                                       (Z.Value-geobody.Centroid[2])**2)
+        dist_centr_final = math.sqrt((X.Value+p_direction[0].Value-geobody.Centroid[0])**2 + 
+                                     (Y.Value+p_direction[1].Value-geobody.Centroid[1])**2 + 
+                                     (Z.Value+p_direction[2].Value-geobody.Centroid[2])**2)
+        if dist_centr_initial > dist_centr_final:
+            for i, direction in enumerate(p_direction):
+                p_direction[i] = direction*(-1)
+                
     else:
-        X += (Quantity(random.uniform(x1,x2).ToString() + '[in]') + p_direction[0])/number_created
-        Y += (Quantity(random.uniform(y1,y2).ToString() + '[in]') + p_direction[1])/number_created
-        Z += (Quantity(random.uniform(z1,z2).ToString() + '[in]') + p_direction[2])/number_created
+        X += (Quantity(random.uniform(x1,x2).ToString() + '[m]') + p_direction[0])/number_created
+        Y += (Quantity(random.uniform(y1,y2).ToString() + '[m]') + p_direction[1])/number_created
+        Z += (Quantity(random.uniform(z1,z2).ToString() + '[m]') + p_direction[2])/number_created
         cs.OriginX = X
         cs.OriginY = Y
         cs.OriginZ = Z
