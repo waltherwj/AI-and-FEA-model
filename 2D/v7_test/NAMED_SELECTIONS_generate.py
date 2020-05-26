@@ -15,12 +15,9 @@ body = part.Children[0]
 geobody = body.GetGeoBody()
 x1,y1,z1,x2,y2,z2 = geobody.GetBoundingBox() # [x1 y1 z1 x2 y2 z2] coordinates of the bounding box, lower to higher
 #x1,y1,z1,x2,y2,z2 = x1*39.3701,y1*39.3701,z1*39.3701,x2*39.3701,y2*39.3701,z2 *39.3701
-##Create coordinate systems with brownian motion
-## Create direction of "guided" brownian motion
 
-p_direction = [Quantity(random.uniform(x1,x2).ToString() + '[in]') - Quantity(random.uniform(x1,x2).ToString() + '[in]'),
-               Quantity(random.uniform(y1,y2).ToString() + '[in]') - Quantity(random.uniform(y1,y2).ToString() + '[in]'),
-               Quantity(random.uniform(z1,z2).ToString() + '[in]') - Quantity(random.uniform(z1,z2).ToString() + '[in]')]
+##Create coordinate systems with brownian motion
+
 
 number_created = 10
 for i in range(number_created):
@@ -34,18 +31,23 @@ for i in range(number_created):
         X = cs.OriginX
         Y = cs.OriginY
         Z = cs.OriginZ
-        #make sure the bias approaches the element initially
+        p_direction = [X - Quantity(geobody.Centroid[0].ToString() + '[m]'),
+                       Y - Quantity(geobody.Centroid[1].ToString() + '[m]'),
+                       Z - Quantity(geobody.Centroid[2].ToString() + '[m]')]
+
+    else:
+                #make sure the bias approaches the element initially
         dist_centr_initial = math.sqrt((X.Value-geobody.Centroid[0])**2 + 
                                        (Y.Value-geobody.Centroid[1])**2 + 
                                        (Z.Value-geobody.Centroid[2])**2)
-        dist_centr_final = math.sqrt((X.Value+p_direction[0].Value-geobody.Centroid[0])**2 + 
-                                     (Y.Value+p_direction[1].Value-geobody.Centroid[1])**2 + 
-                                     (Z.Value+p_direction[2].Value-geobody.Centroid[2])**2)
-        if dist_centr_initial > dist_centr_final:
+        dist_centr_final = math.sqrt((X.Value+p_direction[0].Value/10-geobody.Centroid[0])**2 + 
+                                     (Y.Value+p_direction[1].Value/10-geobody.Centroid[1])**2 + 
+                                     (Z.Value+p_direction[2].Value/10-geobody.Centroid[2])**2)
+        if dist_centr_initial < dist_centr_final:
             for i, direction in enumerate(p_direction):
                 p_direction[i] = direction*(-1)
-                
-    else:
+                print('entered')
+            
         X += (Quantity(random.uniform(x1,x2).ToString() + '[m]') + p_direction[0])/number_created
         Y += (Quantity(random.uniform(y1,y2).ToString() + '[m]') + p_direction[1])/number_created
         Z += (Quantity(random.uniform(z1,z2).ToString() + '[m]') + p_direction[2])/number_created
