@@ -32,7 +32,7 @@ centroid.OriginZ = Quantity(geobody.Centroid[2].ToString() + '[m]')
 
 ##Create coordinate systems with biased brownian motion
 
-number_created = 10
+number_created = 5
 bias_control = 5
 for i in range(number_created):
     number_coord = len(Model.CoordinateSystems.Children)
@@ -49,27 +49,31 @@ for i in range(number_created):
         p_x = -(X - Quantity(geobody.Centroid[0].ToString() + '[m]'))
         p_y = -(Y - Quantity(geobody.Centroid[1].ToString() + '[m]'))
         p_z = -(Z - Quantity(geobody.Centroid[2].ToString() + '[m]'))
-        dir_rand = 1.1
+        dir_rand = 1.7
         p_direction = [p_x + dir_rand*Quantity(random.uniform(0,p_x.Value).ToString() + '[m]'),
                        p_y + dir_rand*Quantity(random.uniform(0,p_y.Value).ToString() + '[m]'),
                        p_z]
+        ##scale it to be a unit vector
+        p_abs = math.sqrt(p_direction[0].Value**2 + p_direction[1].Value**2 + p_direction[2].Value**2)
+        p_direction = [p_direction[0]/p_abs, p_direction[1]/p_abs,p_direction[2]/p_abs,]
                         #make sure the bias approaches the element initially
         dist_centr_initial = math.sqrt((X.Value-geobody.Centroid[0])**2 + 
                                        (Y.Value-geobody.Centroid[1])**2 + 
                                        (Z.Value-geobody.Centroid[2])**2)
-        dist_centr_final = math.sqrt((X.Value+p_direction[0].Value-geobody.Centroid[0])**2 + 
-                                     (Y.Value+p_direction[1].Value-geobody.Centroid[1])**2 + 
-                                     (Z.Value+p_direction[2].Value-geobody.Centroid[2])**2)
+        dist_centr_final = math.sqrt((X.Value+p_direction[0].Value/number_created-geobody.Centroid[0])**2 + 
+                                     (Y.Value+p_direction[1].Value/number_created-geobody.Centroid[1])**2 + 
+                                     (Z.Value+p_direction[2].Value/number_created-geobody.Centroid[2])**2)
         if dist_centr_initial < dist_centr_final:
             for i, direction in enumerate(p_direction):
                 p_direction[i] = p_direction[i]*(-1)
                 print('entered')
 
     else:
-        rand_control = 3
-        X += (Quantity(random.uniform(0,p_direction[0].Value).ToString() + '[m]')*rand_control + p_direction[0]/bias_control)/number_created
-        Y += (Quantity(random.uniform(0,p_direction[1].Value).ToString() + '[m]')*rand_control + p_direction[1]/bias_control)/number_created
-        Z += (Quantity(random.uniform(0,p_direction[2].Value).ToString() + '[m]')*rand_control + p_direction[2]/bias_control)/number_created
+        rand_control = 5
+        distance_control = 15
+        X += (Quantity(random.uniform(0,p_direction[0].Value).ToString() + '[m]')*rand_control + p_direction[0]/bias_control)/distance_control
+        Y += (Quantity(random.uniform(0,p_direction[1].Value).ToString() + '[m]')*rand_control + p_direction[1]/bias_control)/distance_control
+        Z += (Quantity(random.uniform(0,p_direction[2].Value).ToString() + '[m]')*rand_control + p_direction[2]/bias_control)/distance_control
         cs.OriginX = X
         cs.OriginY = Y
         cs.OriginZ = Z
