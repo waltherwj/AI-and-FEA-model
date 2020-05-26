@@ -23,7 +23,6 @@ criterion = Ansys.ACT.Automation.Mechanical.NamedSelectionCriterion
 ##Choose number of displacements
 
 ##Creates named selections
-
 number_of_selections = 3
 for i in range(number_of_selections):
     Model.AddNamedSelection()  #Adds a named selection
@@ -31,9 +30,19 @@ for i in range(number_of_selections):
     ns = Model.NamedSelections.Children[number_of_ns-1] #creates a temporary variable to store it
     ns.ScopingMethod = GeometryDefineByType.Worksheet #changes the scoping method to be worksheet
     number_of_criteria = 3
+   
     for i in range(number_of_criteria):
         ns.GenerationCriteria.Add(criterion()) ##creates new empty selection criterion
-        ns.GenerationCriteria[0].EntityType = SelectionType.MeshNode 
+        ns.GenerationCriteria[i].EntityType = SelectionType.MeshNode
+        ns.GenerationCriteria[i].CoordinateSystem = Model.CoordinateSystems.Children[0]
+        if i == 0:
+            ns.GenerationCriteria[i].Action =  SelectionActionType.Add
+            ns.GenerationCriteria[i].Criterion =  SelectionCriterionType.LocationX
+            ns.GenerationCriteria[i].Operator =  SelectionOperatorType.RangeInclude
+        else:
+            ns.GenerationCriteria[i].Action =  SelectionActionType.Filter
+    
+
 
     ns.Generate()
 
