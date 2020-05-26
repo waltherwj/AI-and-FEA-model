@@ -2,7 +2,7 @@ import math
 import random
 ## Script to generate named selections for forces and displacements
 
-##Delete Previous NS
+##Delete Previous named selection and coordinate systems
 for named_selection in Model.NamedSelections.Children:
     named_selection.Delete()
 for i, coord_system in enumerate(Model.CoordinateSystems.Children):
@@ -24,12 +24,13 @@ vertY = vertex.Y
 vertZ = vertex.Z
 
 ##Create coord system at centroid for testing
+"""
 Model.CoordinateSystems.AddCoordinateSystem()
 centroid = Model.CoordinateSystems.Children[1]
 centroid.OriginX = Quantity(geobody.Centroid[0].ToString() + '[m]')
 centroid.OriginY = Quantity(geobody.Centroid[1].ToString() + '[m]')
 centroid.OriginZ = Quantity(geobody.Centroid[2].ToString() + '[m]')
-
+"""
 ##Create coordinate systems with biased brownian motion
 
 number_created = 5
@@ -39,13 +40,15 @@ for i in range(number_created):
     Model.CoordinateSystems.AddCoordinateSystem()
     cs = Model.CoordinateSystems.Children[number_coord] #last coordinate system
     if i==0:
-        
+        ## creates initial point close to a vertex but dislocated randomly within an elliptical radius based on the bounding box
         cs.OriginX = Quantity(random.uniform(x1,x2).ToString() + '[m]')/bias_control + Quantity(vertX.ToString() + '[m]')
         cs.OriginY = Quantity(random.uniform(y1,y2).ToString() + '[m]')/bias_control + Quantity(vertY.ToString() + '[m]')
         cs.OriginZ = Quantity(random.uniform(z1,z2).ToString() + '[m]')/bias_control + Quantity(vertZ.ToString() + '[m]')
         X = cs.OriginX
         Y = cs.OriginY
         Z = cs.OriginZ
+        
+        ## create a random bias toward the centroid for the random movement 
         p_x = -(X - Quantity(geobody.Centroid[0].ToString() + '[m]'))
         p_y = -(Y - Quantity(geobody.Centroid[1].ToString() + '[m]'))
         p_z = -(Z - Quantity(geobody.Centroid[2].ToString() + '[m]'))
@@ -56,7 +59,8 @@ for i in range(number_created):
         ##scale it to be a unit vector
         p_abs = math.sqrt(p_direction[0].Value**2 + p_direction[1].Value**2 + p_direction[2].Value**2)
         p_direction = [p_direction[0]/p_abs, p_direction[1]/p_abs,p_direction[2]/p_abs,]
-                        #make sure the bias approaches the element initially
+        
+        #make sure the bias approaches the element initially
         dist_centr_initial = math.sqrt((X.Value-geobody.Centroid[0])**2 + 
                                        (Y.Value-geobody.Centroid[1])**2 + 
                                        (Z.Value-geobody.Centroid[2])**2)
@@ -66,7 +70,7 @@ for i in range(number_created):
         if dist_centr_initial < dist_centr_final:
             for i, direction in enumerate(p_direction):
                 p_direction[i] = p_direction[i]*(-1)
-                print('entered')
+                #print('entered')
 
     else:
         rand_control = 5
@@ -91,26 +95,30 @@ criterion = Ansys.ACT.Automation.Mechanical.NamedSelectionCriterion
 ##Choose number of displacements
 
 ##Creates named selections
-number_of_selections = 3
+number_of_selections = number_created #makes the number of selections for this step the same as the number of coordinate systems created
+#number_of_selections = 1
 for i in range(number_of_selections):
     Model.AddNamedSelection()  #Adds a named selection
     number_of_ns = len( Model.NamedSelections.Children)
     ns = Model.NamedSelections.Children[number_of_ns-1] #creates a temporary variable to store it
     ns.ScopingMethod = GeometryDefineByType.Worksheet #changes the scoping method to be worksheet
-    number_of_criteria = 3
-   
-    for i in range(number_of_criteria):
+    number_of_criteria = 1
+    number_coordinates = len(Model.CoordinateSystems.Children)
+    for ii in range(number_of_criteria):
         ns.GenerationCriteria.Add(criterion()) ##creates new empty selection criterion
-        ns.GenerationCriteria[i].EntityType = SelectionType.MeshNode
-        ns.GenerationCriteria[i].CoordinateSystem = Model.CoordinateSystems.Children[0]
-        if i == 0:
-            ns.GenerationCriteria[i].Action =  SelectionActionType.Add
-            ns.GenerationCriteria[i].Criterion =  SelectionCriterionType.LocationX
-            ns.GenerationCriteria[i].Operator =  SelectionOperatorType.RangeInclude
+        ns.GenerationCriteria[ii].EntityType = SelectionType.MeshNode
+        
+        ns.GenerationCriteria[ii].CoordinateSystem = Model.CoordinateSystems.Children[number_coordinates-number_created+i]
+        if ii == 0:
+            ns.GenerationCriteria[ii].Action =  SelectionActionType.Add
+            ns.GenerationCriteria[ii].Criterion =  SelectionCriterionType.Distance
+            ns.GenerationCriteria[ii].Operator =  SelectionOperatorType.LessThanOrEqual
+            ns.GenerationCriteria[ii].Value = Quantity('0.1 [m]')
         else:
-            ns.GenerationCriteria[i].Action =  SelectionActionType.Filter
+            ns.GenerationCriteria[ii].Action =  SelectionActionType.Filter
     
 
 
     ns.Generate()
-
+    for selection in Model.NamedSelections.Children:
+        pass
