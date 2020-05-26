@@ -33,7 +33,7 @@ centroid.OriginZ = Quantity(geobody.Centroid[2].ToString() + '[m]')
 """
 ##Create coordinate systems with biased brownian motion
 
-number_created = 5
+number_created = 7
 bias_control = 5
 for i in range(number_created):
     number_coord = len(Model.CoordinateSystems.Children)
@@ -74,7 +74,7 @@ for i in range(number_created):
 
     else:
         rand_control = 5
-        distance_control = 15
+        distance_control = 25
         X += (Quantity(random.uniform(0,p_direction[0].Value).ToString() + '[m]')*rand_control + p_direction[0]/bias_control)/distance_control
         Y += (Quantity(random.uniform(0,p_direction[1].Value).ToString() + '[m]')*rand_control + p_direction[1]/bias_control)/distance_control
         Z += (Quantity(random.uniform(0,p_direction[2].Value).ToString() + '[m]')*rand_control + p_direction[2]/bias_control)/distance_control
@@ -113,12 +113,17 @@ for i in range(number_of_selections):
             ns.GenerationCriteria[ii].Action =  SelectionActionType.Add
             ns.GenerationCriteria[ii].Criterion =  SelectionCriterionType.Distance
             ns.GenerationCriteria[ii].Operator =  SelectionOperatorType.LessThanOrEqual
-            ns.GenerationCriteria[ii].Value = Quantity('0.1 [m]')
+            ns.GenerationCriteria[ii].Value = Quantity('0.07 [m]')
         else:
             ns.GenerationCriteria[ii].Action =  SelectionActionType.Filter
     
 
 
     ns.Generate()
-    for selection in Model.NamedSelections.Children:
-        pass
+    size_increase = 1.1
+    for j, selection in enumerate(Model.NamedSelections.Children):
+        selec = Model.NamedSelections.Children[number_coordinates-number_created+j-1]
+        while selec.TotalSelection == 0:
+            selec.GenerationCriteria[ii].Value = selection.GenerationCriteria[ii].Value*size_increase
+            ns.Generate()
+            
