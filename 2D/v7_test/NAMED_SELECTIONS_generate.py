@@ -32,7 +32,7 @@ centroid.OriginZ = Quantity(geobody.Centroid[2].ToString() + '[m]')
 
 ##Create coordinate systems with biased brownian motion
 
-number_created = 3
+number_created = 10
 bias_control = 5
 for i in range(number_created):
     number_coord = len(Model.CoordinateSystems.Children)
@@ -46,12 +46,14 @@ for i in range(number_created):
         X = cs.OriginX
         Y = cs.OriginY
         Z = cs.OriginZ
-        p_direction = [-(X - Quantity(geobody.Centroid[0].ToString() + '[m]')),
-                       -(Y - Quantity(geobody.Centroid[1].ToString() + '[m]')),
-                       -(Z - Quantity(geobody.Centroid[2].ToString() + '[m]'))]
-
-    else:
-                #make sure the bias approaches the element initially
+        p_x = -(X - Quantity(geobody.Centroid[0].ToString() + '[m]'))
+        p_y = -(Y - Quantity(geobody.Centroid[1].ToString() + '[m]'))
+        p_z = -(Z - Quantity(geobody.Centroid[2].ToString() + '[m]'))
+        dir_rand = 1.1
+        p_direction = [p_x + dir_rand*Quantity(random.uniform(0,p_x.Value).ToString() + '[m]'),
+                       p_y + dir_rand*Quantity(random.uniform(0,p_y.Value).ToString() + '[m]'),
+                       p_z]
+                        #make sure the bias approaches the element initially
         dist_centr_initial = math.sqrt((X.Value-geobody.Centroid[0])**2 + 
                                        (Y.Value-geobody.Centroid[1])**2 + 
                                        (Z.Value-geobody.Centroid[2])**2)
@@ -63,9 +65,11 @@ for i in range(number_created):
                 p_direction[i] = p_direction[i]*(-1)
                 print('entered')
 
-        X += (Quantity(random.uniform(0,p_direction[0].Value).ToString() + '[m]') + p_direction[0]/bias_control)/number_created
-        Y += (Quantity(random.uniform(0,p_direction[1]).ToString() + '[m]') + p_direction[1]/bias_control)/number_created
-        Z += (Quantity(random.uniform(0,p_direction[2]).ToString() + '[m]') + p_direction[2]/bias_control)/number_created
+    else:
+        rand_control = 3
+        X += (Quantity(random.uniform(0,p_direction[0].Value).ToString() + '[m]')*rand_control + p_direction[0]/bias_control)/number_created
+        Y += (Quantity(random.uniform(0,p_direction[1].Value).ToString() + '[m]')*rand_control + p_direction[1]/bias_control)/number_created
+        Z += (Quantity(random.uniform(0,p_direction[2].Value).ToString() + '[m]')*rand_control + p_direction[2]/bias_control)/number_created
         cs.OriginX = X
         cs.OriginY = Y
         cs.OriginZ = Z
