@@ -96,13 +96,14 @@ criterion = Ansys.ACT.Automation.Mechanical.NamedSelectionCriterion
 
 ##Creates named selections
 number_of_selections = number_created #makes the number of selections for this step the same as the number of coordinate systems created
-#number_of_selections = 1
+
 for i in range(number_of_selections):
+    num_previous_selections = len(Model.NamedSelections.Children)
     Model.AddNamedSelection()  #Adds a named selection
     number_of_ns = len( Model.NamedSelections.Children)
     ns = Model.NamedSelections.Children[number_of_ns-1] #creates a temporary variable to store it
     ns.ScopingMethod = GeometryDefineByType.Worksheet #changes the scoping method to be worksheet
-    number_of_criteria = 1
+    number_of_criteria = num_previous_selections+1
     number_coordinates = len(Model.CoordinateSystems.Children)
     for ii in range(number_of_criteria):
         ns.GenerationCriteria.Add(criterion()) ##creates new empty selection criterion
@@ -116,7 +117,9 @@ for i in range(number_of_selections):
             ns.GenerationCriteria[ii].Value = Quantity('0.07 [m]')
         else:
             ns.GenerationCriteria[ii].Action =  SelectionActionType.Filter
-    
+            ns.GenerationCriteria[ii].Criterion =  SelectionCriterionType.NamedSelection
+            ns.GenerationCriteria[ii].Operator =  SelectionOperatorType.NotEqual
+            ns.GenerationCriteria[ii].Value = Model.NamedSelections.Children[ii-1]
 
 
     ns.Generate()
