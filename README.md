@@ -45,9 +45,13 @@ This project has as objectives to
 
 Triangular shapes  have an advantage in relation to quadrilaterals in that it is easier to adapt them to any boundary shape. On the other hand, quadrilaterals  tend to exhibit better approximation characteristics than triangles. **By creating triangular elements with the deep learning model comprised of mostly quadrilateral internal elements**, the objective is that the model is able to acquire the better approximation characteristics of quadrilaterals while using triangular elements.
 
+#### *Nodal Selection*
+
+Since the model has many nodes instead of just a handful, applying forces and displacements to edges and vertices is not equivalent to applying them to an usual FEA model as the simplified behaviour of that model is not applicable anymore, and now stress concentrations and the like arise. To overcome this, a random set of contiguous nodes has to be selected to emulate forces and displacements in the super element. The nodal selection is performed with a brownian motion of a coordinate system inside of the element, and all nodes within a certain radius are selected, and to ensure that the selections actually select nodes, the coordinate systems are biased to go toward the centroid of the element, and the direction vector that introduces the bias also has a random distribution attached to it. This entire process is controlled by several hyperparameters, and they have been adjusted until they seemed to generate good quality selections most of the time, while at the same time limiting how complex the behaviour could be since the process of creating selections is relatively time-consuming. If a selection selects no node (usually because it is outside of the super element), then the radius is inflated until the selection is able to reach some unselected node. 
+
 #### *Forces*
 
-**Forces and moments can be applied to any body (field load), edge (distributed load), or node (point load) of a finite element model**. The idea is to try an approach where all of the types are present at first. This might make the model too complex for the computational resources I have access to, so if need be body forces will be disregarded for a while to make proof of concept quicker.
+**Forces and moments can be applied to any node of a finite element model**. The model is going to be trained with between 0 and 2 "force curves". These "curves" follow a contiguous nodal selection and vary step-wise through space by following a continuous distribution that is actualized in each of the nodal selections of the curve. 
 
 #### *Nodal Displacement*
 
@@ -67,7 +71,7 @@ The goal is thus that, given a set of boundary conditions and forces along the e
 
 <img src="https://render.githubusercontent.com/render/math?math=M: (F_e,  \Delta_{BC})  \mapsto u_e">
 
-Therefore the element has to be generated with **arbitrary nodal displacements to train the model.** However during the training process it became obvious that nodal displacements only on the vertices don't work well for the simulation since the "nodes" on the vertices in this case are much more malleable and are stress concetrators than the rest of the element, thus, the simulation doesn't show any interesting behaviour no matter the forces except  for a very large distortion at the vertices if the model is only held by them. To avoid that, the displacements are going to be placed on the edges of the element as a whole instead of only the vertex, in essence forcing a displacement on all the nodes of  that edge. With this in mind, an arbitrary function that generates nodal displacements with a certain continuous distribution might be valuable to generate more general data on the edges. Another option might be to not use the edges at all and instead use arbitrary elements inside of the super element.
+Therefore the element has to be generated with **arbitrary nodal displacements to train the model.** However during the training process it became obvious that nodal displacements only on the vertices don't work well for the simulation since the "nodes" on the vertices in this case are much more malleable and are stress concetrators than the rest of the element, thus, the simulation doesn't show any interesting behaviour no matter the forces except  for a very large distortion at the vertices if the model is only held by them. A similar approach of using step-wise continuous representations as in the force of functions is going to be used for the displacements.
 
 This mapping function will, in essence, encapsulate both the stiffness matrix and the shape function if the model is trained in a simulation set, or, in theory, the real world behaviour of the material if trained on actual experiments.
 
