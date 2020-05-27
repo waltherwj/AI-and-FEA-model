@@ -47,7 +47,7 @@ for curve in range(number_of_curves):
         Model.CoordinateSystems.AddCoordinateSystem()
         cs = Model.CoordinateSystems.Children[number_coord] #last coordinate system
         if i==0:
-            print(X, Y, Z)
+            
             ## creates initial point close to a vertex but dislocated randomly within an elliptical radius based on the bounding box
             cs.OriginX = Quantity(random.uniform(x1,x2).ToString() + '[m]')/bias_control + Quantity(vertX.ToString() + '[m]')
             cs.OriginY = Quantity(random.uniform(y1,y2).ToString() + '[m]')/bias_control + Quantity(vertY.ToString() + '[m]')
@@ -55,7 +55,7 @@ for curve in range(number_of_curves):
             X = cs.OriginX
             Y = cs.OriginY
             Z = cs.OriginZ
-            
+            print(X, Y, Z)
             ## create a random bias toward the centroid for the random movement 
             p_x = -(X - Quantity(geobody.Centroid[0].ToString() + '[m]'))
             p_y = -(Y - Quantity(geobody.Centroid[1].ToString() + '[m]'))
@@ -135,12 +135,12 @@ for curve in range(number_of_curves):
     
         ns.Generate()
     
-'''    
-    size_increase = 1.1
-    for j, selection in enumerate(Model.NamedSelections.Children):
-        selec = Model.NamedSelections.Children[number_coordinates-number_created+j-1]
-        while selec.TotalSelection == 0:
-            selec.GenerationCriteria[0].Value = selection.GenerationCriteria[0].Value*size_increase
-            ns.Generate()
-            '''
+
+size_increase = 1.1
+for j, selection in enumerate(Model.NamedSelections.Children):
+    selec = Model.NamedSelections.Children[j]
+    while selec.TotalSelection == 0:
+        selec.GenerationCriteria[0].Value = selec.GenerationCriteria[0].Value*size_increase
+        selec.Generate()
+ 
             
