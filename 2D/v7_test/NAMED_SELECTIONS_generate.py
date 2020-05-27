@@ -27,8 +27,9 @@ centroid.OriginY = Quantity(geobody.Centroid[1].ToString() + '[m]')
 centroid.OriginZ = Quantity(geobody.Centroid[2].ToString() + '[m]')
 """
 
-
-number_of_curves = 3
+number_forces = random.choice(range(3))
+number_displacements = random.choice(range(1,3))
+number_of_curves = number_forces + number_displacements
 for curve in range(number_of_curves):
     ## Choose one of the vertices as a starting point
     vertex_choice = random.choice(range(len(geobody.Vertices)))
@@ -39,7 +40,7 @@ for curve in range(number_of_curves):
 
 ##Create coordinate systems with biased brownian motion
 
-    number_created = 7
+    number_created = 5
     bias_control = 5
     
     for i in range(number_created):
@@ -55,7 +56,7 @@ for curve in range(number_of_curves):
             X = cs.OriginX
             Y = cs.OriginY
             Z = cs.OriginZ
-            print(X, Y, Z)
+           # print(X, Y, Z)
             ## create a random bias toward the centroid for the random movement 
             p_x = -(X - Quantity(geobody.Centroid[0].ToString() + '[m]'))
             p_y = -(Y - Quantity(geobody.Centroid[1].ToString() + '[m]'))
@@ -82,7 +83,7 @@ for curve in range(number_of_curves):
     
         else:
             rand_control = 5
-            distance_control = 25
+            distance_control = 17
             X += (Quantity(random.uniform(0,p_direction[0].Value).ToString() + '[m]')*rand_control + p_direction[0]/bias_control)/distance_control
             Y += (Quantity(random.uniform(0,p_direction[1].Value).ToString() + '[m]')*rand_control + p_direction[1]/bias_control)/distance_control
             Z += (Quantity(random.uniform(0,p_direction[2].Value).ToString() + '[m]')*rand_control + p_direction[2]/bias_control)/distance_control
@@ -125,7 +126,7 @@ for curve in range(number_of_curves):
                 ns.GenerationCriteria[ii].Action =  SelectionActionType.Add
                 ns.GenerationCriteria[ii].Criterion =  SelectionCriterionType.Distance
                 ns.GenerationCriteria[ii].Operator =  SelectionOperatorType.LessThanOrEqual
-                ns.GenerationCriteria[ii].Value = Quantity('0.07 [m]')
+                ns.GenerationCriteria[ii].Value = Quantity('0.12 [m]')
             else:
                 ns.GenerationCriteria[ii].Action =  SelectionActionType.Filter
                 ns.GenerationCriteria[ii].Criterion =  SelectionCriterionType.NamedSelection
@@ -136,11 +137,10 @@ for curve in range(number_of_curves):
         ns.Generate()
     
 
-size_increase = 1.1
+size_increase = 1.3
 for j, selection in enumerate(Model.NamedSelections.Children):
     selec = Model.NamedSelections.Children[j]
     while selec.TotalSelection == 0:
         selec.GenerationCriteria[0].Value = selec.GenerationCriteria[0].Value*size_increase
         selec.Generate()
- 
-            
+
