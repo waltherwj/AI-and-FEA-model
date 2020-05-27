@@ -3,12 +3,14 @@ import random
 ## Script to generate named selections for forces and displacements
 
 ##Delete Previous named selection and coordinate systems
-for named_selection in Model.NamedSelections.Children:
-    named_selection.Delete()
-for i, coord_system in enumerate(Model.CoordinateSystems.Children):
-    if i > 0: #to avoid global coord system
-        coord_system.Delete()
-        
+try:
+    for named_selection in Model.NamedSelections.Children:
+        named_selection.Delete()
+    for i, coord_system in enumerate(Model.CoordinateSystems.Children):
+        if i > 0: #to avoid global coord system
+            coord_system.Delete()
+except:
+    pass
 ## Gets bounding box
 part = Model.Geometry.Children[0]
 body = part.Children[0]
@@ -98,7 +100,10 @@ criterion = Ansys.ACT.Automation.Mechanical.NamedSelectionCriterion
 number_of_selections = number_created #makes the number of selections for this step the same as the number of coordinate systems created
 
 for i in range(number_of_selections):
-    num_previous_selections = len(Model.NamedSelections.Children)
+    try:
+        num_previous_selections = len(Model.NamedSelections.Children)
+    except:
+        pass
     Model.AddNamedSelection()  #Adds a named selection
     number_of_ns = len( Model.NamedSelections.Children)
     ns = Model.NamedSelections.Children[number_of_ns-1] #creates a temporary variable to store it
