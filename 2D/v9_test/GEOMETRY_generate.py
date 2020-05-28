@@ -103,4 +103,9 @@ if n_points >= 4:
     targets = Selection.Create(*selec) #merges them
     result = Combine.Merge(targets)
     
+ViewHelper.ZoomToEntity()
 
+# Solidify Sketch
+mode = InteractionMode.Solid
+result = ViewHelper.SetViewMode(mode, None)
+# EndBlock
