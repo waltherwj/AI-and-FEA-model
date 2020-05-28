@@ -19,6 +19,7 @@ settings.StoreResultsAt =  TimePointsOptions.LastTimePoints
 
 ## Create vector with all selections divided by curve
 named_selections = []
+number_created = 5 ## can't find a way to trasmit this between scripts
 number_rows = number_created
 number_columns = number_forces + number_displacements
 for i in range(number_columns):

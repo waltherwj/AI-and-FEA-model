@@ -16,6 +16,13 @@ for force in analysis.GetChildren(DataModelObjectCategory.NodalForce, False):
 part.Material = 'Structural Steel'
 
 forces = []
+
+##  set parameters
+number_created = 5 ## can't find a way to trasmit this between scripts
+number_selections = len(Model.NamedSelections.Children)//number_created
+number_displacements = random.choice(range(1,number_selections+1))
+number_forces = number_selections - number_displacements
+
 for i in range(number_displacements, number_displacements + number_forces): #iterates displacement nodal selections
     for j in range(number_created):
         selection = named_selections[i][j]

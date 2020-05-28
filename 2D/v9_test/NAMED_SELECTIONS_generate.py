@@ -144,3 +144,5 @@ for j, selection in enumerate(Model.NamedSelections.Children):
         selec.GenerationCriteria[0].Value = selec.GenerationCriteria[0].Value*size_increase
         selec.Generate()
 
+def get_parameters():
+    return number_forces, number_displacements, number_created
