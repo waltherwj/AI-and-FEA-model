@@ -26,3 +26,13 @@ model1.SendCommand(Command=DSscriptcommand,Language="Python")
 DSscript = open("D:/Ansys Simulations/Project/2D/v9_test/NAMED_SELECTIONS_generate.py", "r")
 DSscriptcommand=DSscript.read()
 model1.SendCommand(Command=DSscriptcommand,Language="Python")
+
+## Create Displacements
+DSscript = open("D:/Ansys Simulations/Project/2D/v9_test/DISPLACEMENTS_generate.py", "r")
+DSscriptcommand=DSscript.read()
+model1.SendCommand(Command=DSscriptcommand,Language="Python")
+
+## Create Loads
+DSscript = open("D:/Ansys Simulations/Project/2D/v9_test/LOADS_generate.py", "r")
+DSscriptcommand=DSscript.read()
+model1.SendCommand(Command=DSscriptcommand,Language="Python")
