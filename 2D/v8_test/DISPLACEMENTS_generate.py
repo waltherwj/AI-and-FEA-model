@@ -3,6 +3,12 @@ import itertools
 import time
 
 #selection = ExtAPI.SelectionManager.CreateSelectionInfo(SelectionTypeEnum.GeometryEntities)  # Create an empty selection.
+    ## Delete conditions from previous analysis
+analysis = Model.Analyses[0]
+for disp in analysis.GetChildren(DataModelObjectCategory.Displacement, False):
+    disp.Delete()
+for fixed in analysis.GetChildren(DataModelObjectCategory.FixedSupport, False):
+    fixed.Delete()
 
     ## General Analysis Settings
 settings = Model.Analyses[0].AnalysisSettings
@@ -37,8 +43,8 @@ for i in range(number_displacements): #iterates displacement nodal selections
     
     ## set values for displacements 
     components = []
-    for j in range(3): #create list of strings for displacements
-        components.append(Quantity(random.gauss(0,0.01).ToString() + '[in]'))
+    for j in range(3): #create list of Quantities for displacements
+        components.append(Quantity(random.gauss(0,0.001).ToString() + '[m]'))
     ## displacements for both 3d and 2d cases
     try:
         displacements[-1].XComponent.Output.DiscreteValues = [components[0]]
