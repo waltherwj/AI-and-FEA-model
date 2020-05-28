@@ -1,14 +1,10 @@
 import random
 import itertools
 import time
-    ## Load-in the body
-    
-part = Model.Geometry.Children[0] #Get first "geometry"
-body = part.Children[0].GetGeoBody() #Get geometrical entities of first body
+
 selection = ExtAPI.SelectionManager.CreateSelectionInfo(SelectionTypeEnum.GeometryEntities)  # Create an empty selection.
 
     ## General Analysis Settings
-    
 settings = Model.Analyses[0].AnalysisSettings
 settings.LargeDeflection = False
 settings.WeakSprings = WeakSpringsType.ProgramControlled
@@ -24,16 +20,6 @@ for i in range(number_columns):
         selec_temp.append(Model.NamedSelections.Children[i*number_rows+j])
     named_selections.append(selec_temp)
 
-    ## Create vector to choose edges
-
-n_edges = len(body.Edges)
-displaced_edges = random.choice(range(0, n_edges+1)) #number of vertices w/ a boundary displacement condition
-choose_edges = []
-edge_chosen = [True] * displaced_edges
-edge_not_chosen = [False] * (n_edges-displaced_edges)
-choose_edges = edge_chosen + edge_not_chosen
-random.shuffle(choose_edges) #shuffles the list to not always choose the first edges
-
     ## Delete conditions from previous analysis
 analysis = Model.Analyses[0]
 for disp in analysis.GetChildren(DataModelObjectCategory.Displacement, False):
@@ -43,11 +29,9 @@ for fixed in analysis.GetChildren(DataModelObjectCategory.FixedSupport, False):
 
     ## Set displacement locations & values
 displacements = []
-for i, edge in enumerate(body.Edges): #iterates vertices
-    if choose_edges[i]: #chooses correct vertices
-        selection.Entities = [edge]
-        displacements.append(analysis.AddDisplacement()) #creates displacement and store in list
-        displacements[-1].Location = selection #applies to vertex
+for i in range(): #iterates vertices
+#        displacements.append(analysis.AddDisplacement()) #creates displacement and store in list
+#        displacements[-1].Location = selection #applies to vertex
     
     ## set values for displacements 
     components = []
@@ -69,16 +53,6 @@ for i, edge in enumerate(body.Edges): #iterates vertices
             displacements[-1].ZComponent.Output.DiscreteValues = [Quantity['0 [in]']]
     except IndexError:
         pass
-## Handling case of no vertex diplacements
-if not any(choose_edges):
-    fixed = []
-    while not any(choose_edges): #while choose vertices has no True values
-        for i, edge in enumerate(choose_edges):
-            choose_edges[i] = (random.random()<0.5)
-    for i, edge in enumerate(body.Edges):
-        if choose_edges[i]:
-            selection.Entities = [edge]
-            fixed.append(analysis.AddFixedSupport())
-            fixed[-1].Location = selection
+
 
 
