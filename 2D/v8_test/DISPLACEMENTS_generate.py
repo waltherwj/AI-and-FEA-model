@@ -2,6 +2,9 @@ import random
 import itertools
 import time
 
+part = Model.Geometry.Children[0] #Get first "geometry"
+body = part.Children[0] #Get  first body
+geobody = body.GetGeoBody()
 #selection = ExtAPI.SelectionManager.CreateSelectionInfo(SelectionTypeEnum.GeometryEntities)  # Create an empty selection.
     ## Delete conditions from previous analysis
 analysis = Model.Analyses[0]
@@ -24,13 +27,6 @@ for i in range(number_columns):
         selec_temp.append(Model.NamedSelections.Children[i*number_rows+j])
     named_selections.append(selec_temp)
 
-    ## Delete conditions from previous analysis
-analysis = Model.Analyses[0]
-for disp in analysis.GetChildren(DataModelObjectCategory.Displacement, False):
-    disp.Delete()
-for fixed in analysis.GetChildren(DataModelObjectCategory.FixedSupport, False):
-    fixed.Delete()
-
     ## Set displacement locations & values
 displacements = []
 for i in range(number_displacements): #iterates displacement nodal selections
@@ -49,7 +45,7 @@ for i in range(number_displacements): #iterates displacement nodal selections
         displacements[-1].YComponent.Output.DiscreteValues = [components[1]]
         
         Is_3D = False
-        for vertex in body.Vertices: #check if problem is 2d or 3d
+        for vertex in geobody.Vertices: #check if problem is 2d or 3d
             if vertex.Z != 0:
                 Is_3D = True
                 break
