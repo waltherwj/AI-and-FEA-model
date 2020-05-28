@@ -35,26 +35,26 @@ for i in range(number_displacements): #iterates displacement nodal selections
         displacements.append(analysis.AddNodalDisplacement()) #creates displacement and store in list
         displacements[-1].Location = selection #applies to named selection
     
-    ## set values for displacements 
-    components = []
-    for j in range(3): #create list of Quantities for displacements
-        components.append(Quantity(random.gauss(0,0.001).ToString() + '[m]'))
-    ## displacements for both 3d and 2d cases
-    try:
-        displacements[-1].XComponent.Output.DiscreteValues = [components[0]]
-        displacements[-1].YComponent.Output.DiscreteValues = [components[1]]
-        
-        Is_3D = False
-        for vertex in geobody.Vertices: #check if problem is 2d or 3d
-            if vertex.Z != 0:
-                Is_3D = True
-                break
-        if Is_3D: #displacement for 3d case
-            displacements[-1].ZComponent.Output.DiscreteValues = [components[2]]
-        else:
-            displacements[-1].ZComponent.Output.DiscreteValues = [Quantity['0 [in]']]
-    except IndexError:
-        pass
+        ## set values for displacements 
+        components = []
+        for j in range(3): #create list of Quantities for displacements
+            components.append(Quantity(random.gauss(0,0.001).ToString() + '[m]'))
+        ## displacements for both 3d and 2d cases
+        try:
+            displacements[-1].XComponent.Output.DiscreteValues = [components[0]]
+            displacements[-1].YComponent.Output.DiscreteValues = [components[1]]
+            
+            Is_3D = False
+            for vertex in geobody.Vertices: #check if problem is 2d or 3d
+                if vertex.Z != 0:
+                    Is_3D = True
+                    break
+            if Is_3D: #displacement for 3d case
+                displacements[-1].ZComponent.Output.DiscreteValues = [components[2]]
+            else:
+                displacements[-1].ZComponent.Output.DiscreteValues = [Quantity['0 [in]']]
+        except IndexError:
+            pass
 
 
 
