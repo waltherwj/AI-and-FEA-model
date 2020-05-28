@@ -2,7 +2,7 @@ import random
 import itertools
 import time
 
-selection = ExtAPI.SelectionManager.CreateSelectionInfo(SelectionTypeEnum.GeometryEntities)  # Create an empty selection.
+#selection = ExtAPI.SelectionManager.CreateSelectionInfo(SelectionTypeEnum.GeometryEntities)  # Create an empty selection.
 
     ## General Analysis Settings
 settings = Model.Analyses[0].AnalysisSettings
@@ -29,9 +29,11 @@ for fixed in analysis.GetChildren(DataModelObjectCategory.FixedSupport, False):
 
     ## Set displacement locations & values
 displacements = []
-for i in range(): #iterates vertices
-#        displacements.append(analysis.AddDisplacement()) #creates displacement and store in list
-#        displacements[-1].Location = selection #applies to vertex
+for i in range(number_displacements): #iterates displacement nodal selections
+    for  j in range(number_created):
+        selection = named_selections[i][j]
+        displacements.append(analysis.AddNodalDisplacement()) #creates displacement and store in list
+        displacements[-1].Location = selection #applies to named selection
     
     ## set values for displacements 
     components = []
