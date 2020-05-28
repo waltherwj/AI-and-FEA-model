@@ -16,16 +16,16 @@ for force in analysis.GetChildren(DataModelObjectCategory.NodalForce, False):
 part.Material = 'Structural Steel'
 
 forces = []
-for i in range(number_forces): #iterates displacement nodal selections
-    for  j in range(number_created):
-        selection = named_selections[i+number_displacements-1][j]
+for i in range(number_displacements, number_displacements + number_forces): #iterates displacement nodal selections
+    for j in range(number_created):
+        selection = named_selections[i][j]
         forces.append(analysis.AddNodalForce()) #creates displacement and store in list
         forces[-1].Location = selection #applies to named selection
     
         ## set values for displacements 
         components = []
-        for j in range(3): #create list of Quantities for displacements
-            components.append(Quantity(random.gauss(0,100).ToString() + '[m]'))
+        for ii in range(3): #create list of Quantities for displacements
+            components.append(Quantity(random.gauss(0,100).ToString() + '[N]'))
         ## displacements for both 3d and 2d cases
         try:
             forces[-1].XComponent.Output.DiscreteValues = [components[0]]
