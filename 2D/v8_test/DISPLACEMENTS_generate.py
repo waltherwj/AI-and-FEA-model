@@ -5,10 +5,8 @@ import time
 #selection = ExtAPI.SelectionManager.CreateSelectionInfo(SelectionTypeEnum.GeometryEntities)  # Create an empty selection.
     ## Delete conditions from previous analysis
 analysis = Model.Analyses[0]
-for disp in analysis.GetChildren(DataModelObjectCategory.Displacement, False):
+for disp in analysis.GetChildren(DataModelObjectCategory.NodalDisplacement, False):
     disp.Delete()
-for fixed in analysis.GetChildren(DataModelObjectCategory.FixedSupport, False):
-    fixed.Delete()
 
     ## General Analysis Settings
 settings = Model.Analyses[0].AnalysisSettings
