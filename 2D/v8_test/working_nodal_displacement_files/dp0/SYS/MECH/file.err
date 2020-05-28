@@ -1,5 +1,8 @@
-/COM,ANSYS RELEASE 2020 R1           BUILD 20.1      UP20191203       20:34:06
+/COM,ANSYS RELEASE 2020 R1           BUILD 20.1      UP20191203       21:35:00
 
- *** WARNING ***                         CP =       0.672   TIME= 20:34:08
- Element shape checking is currently inactive.  Issue SHPP,ON or         
- SHPP,WARN to reactivate, if desired.                                    
+ *** ERROR ***                           CP =       0.500   TIME= 21:35:01
+ The license is currently in use by another application in this          
+ Workbench session such as Mechanical or another Mechanical APDL         
+ application.  You must wait until the other application has finished    
+ its task (for example meshing) or manually PAUSE the other Mechanical   
+ APDL application.                                                       

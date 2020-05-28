@@ -1,0 +1,621 @@
+
+ ANSYS AIM Student                                 
+
+
+ *------------------------------------------------------------------*
+ |                                                                  |
+ |   W E L C O M E   T O   T H E   A N S Y S (R)  P R O G R A M     |
+ |                                                                  |
+ *------------------------------------------------------------------*
+
+
+
+
+ ***************************************************************
+ *            ANSYS 2020 R1          LEGAL NOTICES             *
+ ***************************************************************
+ *                                                             *
+ * Copyright 1971-2020 ANSYS, Inc.  All rights reserved.       *
+ * Unauthorized use, distribution or duplication is            *
+ * prohibited.                                                 *
+ *                                                             *
+ * Ansys is a registered trademark of ANSYS, Inc. or its       *
+ * subsidiaries in the United States or other countries.       *
+ * See the ANSYS, Inc. online documentation or the ANSYS, Inc. *
+ * documentation CD or online help for the complete Legal      *
+ * Notice.                                                     *
+ *                                                             *
+ ***************************************************************
+ *                                                             *
+ * THIS ANSYS SOFTWARE PRODUCT AND PROGRAM DOCUMENTATION       *
+ * INCLUDE TRADE SECRETS AND CONFIDENTIAL AND PROPRIETARY      *
+ * PRODUCTS OF ANSYS, INC., ITS SUBSIDIARIES, OR LICENSORS.    *
+ * The software products and documentation are furnished by    *
+ * ANSYS, Inc. or its subsidiaries under a software license    *
+ * agreement that contains provisions concerning               *
+ * non-disclosure, copying, length and nature of use,          *
+ * compliance with exporting laws, warranties, disclaimers,    *
+ * limitations of liability, and remedies, and other           *
+ * provisions.  The software products and documentation may be *
+ * used, disclosed, transferred, or copied only in accordance  *
+ * with the terms and conditions of that software license      *
+ * agreement.                                                  *
+ *                                                             *
+ * ANSYS, Inc. is a UL registered                              *
+ * ISO 9001:2015 company.                                      *
+ *                                                             *
+ ***************************************************************
+ *                                                             *
+ * This product is subject to U.S. laws governing export and   *
+ * re-export.                                                  *
+ *                                                             *
+ * For U.S. Government users, except as specifically granted   *
+ * by the ANSYS, Inc. software license agreement, the use,     *
+ * duplication, or disclosure by the United States Government  *
+ * is subject to restrictions stated in the ANSYS, Inc.        *
+ * software license agreement and FAR 12.212 (for non-DOD      *
+ * licenses).                                                  *
+ *                                                             *
+ ***************************************************************
+
+ 2020 R1 
+     
+ Point Releases and Patches installed:   
+     
+ Academic Student 2020 R1
+ Aqwa 2020 R1
+ FENSAP-ICE 2020 R1  
+
+
+          *****  ANSYS COMMAND LINE ARGUMENTS  *****
+  BATCH MODE REQUESTED (-b)    = NOLIST
+  INPUT FILE COPY MODE (-c)    = COPY
+  SHARED MEMORY PARALLEL REQUESTED
+    SINGLE PROCESS WITH SINGLE THREAD REQUESTED
+    TOTAL OF     1 CORES REQUESTED
+  DESIGNXPLORER REQUESTED
+  INPUT FILE NAME              = C:\Users\Owner\AppData\Local\Temp\WB_DESKTOP-SDVPC46_Walther Wennholz_6748_2\_ProjectScratch\ScrDAB8\dummy.dat
+  OUTPUT FILE NAME             = C:\Users\Owner\AppData\Local\Temp\WB_DESKTOP-SDVPC46_Walther Wennholz_6748_2\_ProjectScratch\ScrDAB8\solve.out
+  START-UP FILE MODE           = NOREAD
+  STOP FILE MODE               = NOREAD
+
+ RELEASE= 2020 R1              BUILD= 20.1      UP20191203   VERSION=WINDOWS x64 
+ CURRENT JOBNAME=file  20:34:07  MAY 27, 2020 CP=      0.500
+
+
+ PARAMETER _DS_PROGRESS =     999.0000000    
+
+ /INPUT FILE= ds.dat  LINE=       0
+
+
+
+ DO NOT WRITE ELEMENT RESULTS INTO DATABASE
+
+ *GET  _WALLSTRT  FROM  ACTI  ITEM=TIME WALL  VALUE=  20.5686111    
+
+ TITLE= 
+ unsaved_project--Static Structural                                            
+
+
+ SET PARAMETER DIMENSIONS ON  _WB_PROJECTSCRATCH_DIR
+  TYPE=STRI  DIMENSIONS=      248        1        1
+
+ PARAMETER _WB_PROJECTSCRATCH_DIR(1) = C:\Users\Owner\AppData\Local\Temp\WB_DESKTOP-SDVPC46_Walther Wennholz_6748_2\_ProjectScratch\ScrDAB8\
+
+ SET PARAMETER DIMENSIONS ON  _WB_SOLVERFILES_DIR
+  TYPE=STRI  DIMENSIONS=      248        1        1
+
+ PARAMETER _WB_SOLVERFILES_DIR(1) = C:\Users\Owner\AppData\Local\Temp\WB_DESKTOP-SDVPC46_Walther Wennholz_6748_2\unsaved_project_files\dp0\SYS\MECH\
+
+ SET PARAMETER DIMENSIONS ON  _WB_USERFILES_DIR
+  TYPE=STRI  DIMENSIONS=      248        1        1
+
+ PARAMETER _WB_USERFILES_DIR(1) = C:\Users\Owner\AppData\Local\Temp\WB_DESKTOP-SDVPC46_Walther Wennholz_6748_2\unsaved_project_files\user_files\
+ --- Data in consistent MKS units. See Solving Units in the help system for more
+
+ MKS UNITS SPECIFIED FOR INTERNAL    
+  LENGTH        (l)  = METER (M)
+  MASS          (M)  = KILOGRAM (KG)
+  TIME          (t)  = SECOND (SEC)
+  TEMPERATURE   (T)  = CELSIUS (C)
+  TOFFSET            = 273.0
+  CHARGE        (Q)  = COULOMB
+  FORCE         (f)  = NEWTON (N) (KG-M/SEC2)
+  HEAT               = JOULE (N-M)
+
+  PRESSURE           = PASCAL (NEWTON/M**2)
+  ENERGY        (W)  = JOULE (N-M)
+  POWER         (P)  = WATT (N-M/SEC)
+  CURRENT       (i)  = AMPERE (COULOMBS/SEC)
+  CAPACITANCE   (C)  = FARAD
+  INDUCTANCE    (L)  = HENRY
+  MAGNETIC FLUX      = WEBER
+  RESISTANCE    (R)  = OHM
+  ELECTRIC POTENTIAL = VOLT
+
+ INPUT  UNITS ARE ALSO SET TO MKS 
+
+ *** ANSYS - ENGINEERING ANALYSIS SYSTEM  RELEASE 2020 R1          20.1     ***
+ ANSYS AIM Student                                 
+ 01055371  VERSION=WINDOWS x64   20:34:07  MAY 27, 2020 CP=      0.578
+
+ unsaved_project--Static Structural                                            
+
+
+
+          ***** ANSYS ANALYSIS DEFINITION (PREP7) *****
+ *********** Nodes for the whole assembly ***********
+ *********** Elements for Body 1 "SYS\Surface" ***********
+ *********** Send User Defined Coordinate System(s) ***********
+ *********** Set Reference Temperature ***********
+ *********** Send Materials ***********
+ *********** Create Direct FE , Displacements ****
+
+
+ ***** ROUTINE COMPLETED *****  CP =         0.641
+
+
+ --- Number of total nodes = 12072
+ --- Number of contact elements = 0
+ --- Number of spring elements = 0
+ --- Number of bearing elements = 0
+ --- Number of solid elements = 3286
+ --- Number of condensed parts = 0
+ --- Number of total elements = 3286
+
+ *GET  _WALLBSOL  FROM  ACTI  ITEM=TIME WALL  VALUE=  20.5688889    
+ ****************************************************************************
+ *************************    SOLUTION       ********************************
+ ****************************************************************************
+
+ *****  ANSYS SOLUTION ROUTINE  *****
+
+
+ PERFORM A STATIC ANALYSIS
+  THIS WILL BE A NEW ANALYSIS
+
+ PARAMETER _THICKRATIO =     1.000000000    
+
+ USE PRECONDITIONED CONJUGATE GRADIENT SOLVER
+  CONVERGENCE TOLERANCE = 1.00000E-08
+  MAXIMUM ITERATION     = NumNode*DofPerNode*  1.0000    
+
+ CONTACT INFORMATION PRINTOUT LEVEL       1
+
+ NLDIAG: Nonlinear diagnostics CONT option is set to ON. 
+         Writing frequency : each ITERATION.
+
+ DO NOT SAVE ANY RESTART FILES AT ALL
+ ****************************************************
+ ******************* SOLVE FOR LS 1 OF 1 ****************
+ **** Set Direct FE , Displacements ****
+
+ SPECIFIED CONSTRAINT UX   FOR PICKED NODES 
+ REAL= 1.193435981E-03   IMAG=  0.00000000    
+
+ SPECIFIED CONSTRAINT UY   FOR PICKED NODES 
+ REAL=-1.563822527E-03   IMAG=  0.00000000    
+
+ SPECIFIED CONSTRAINT UZ   FOR PICKED NODES 
+ REAL= 1.165264179E-04   IMAG=  0.00000000    
+
+ SPECIFIED CONSTRAINT UX   FOR PICKED NODES 
+ REAL= 8.126626695E-04   IMAG=  0.00000000    
+
+ SPECIFIED CONSTRAINT UY   FOR PICKED NODES 
+ REAL=-8.056830378E-04   IMAG=  0.00000000    
+
+ SPECIFIED CONSTRAINT UZ   FOR PICKED NODES 
+ REAL=-3.196401863E-04   IMAG=  0.00000000    
+
+ SPECIFIED CONSTRAINT UX   FOR PICKED NODES 
+ REAL=-1.017043805E-04   IMAG=  0.00000000    
+
+ SPECIFIED CONSTRAINT UY   FOR PICKED NODES 
+ REAL=-5.792757377E-04   IMAG=  0.00000000    
+
+ SPECIFIED CONSTRAINT UZ   FOR PICKED NODES 
+ REAL= 9.711265933E-04   IMAG=  0.00000000    
+
+ SPECIFIED CONSTRAINT UX   FOR PICKED NODES 
+ REAL= 1.123141636E-03   IMAG=  0.00000000    
+
+ SPECIFIED CONSTRAINT UY   FOR PICKED NODES 
+ REAL= 2.770979771E-04   IMAG=  0.00000000    
+
+ SPECIFIED CONSTRAINT UZ   FOR PICKED NODES 
+ REAL= 2.184248931E-04   IMAG=  0.00000000    
+
+ SPECIFIED CONSTRAINT UX   FOR PICKED NODES 
+ REAL=-3.043199968E-04   IMAG=  0.00000000    
+
+ SPECIFIED CONSTRAINT UY   FOR PICKED NODES 
+ REAL= 1.468315672E-05   IMAG=  0.00000000    
+
+ SPECIFIED CONSTRAINT UZ   FOR PICKED NODES 
+ REAL=-1.039864862E-03   IMAG=  0.00000000    
+
+ SPECIFIED CONSTRAINT UX   FOR PICKED NODES 
+ REAL=-1.086493451E-03   IMAG=  0.00000000    
+
+ SPECIFIED CONSTRAINT UY   FOR PICKED NODES 
+ REAL= 4.837202905E-04   IMAG=  0.00000000    
+
+ SPECIFIED CONSTRAINT UZ   FOR PICKED NODES 
+ REAL= 8.001615416E-04   IMAG=  0.00000000    
+
+ SPECIFIED CONSTRAINT UX   FOR PICKED NODES 
+ REAL=-9.837128929E-04   IMAG=  0.00000000    
+
+ SPECIFIED CONSTRAINT UY   FOR PICKED NODES 
+ REAL= 1.390170399E-04   IMAG=  0.00000000    
+
+ SPECIFIED CONSTRAINT UZ   FOR PICKED NODES 
+ REAL= 1.158654345E-03   IMAG=  0.00000000    
+
+ SPECIFIED CONSTRAINT UX   FOR PICKED NODES 
+ REAL=-2.559573721E-03   IMAG=  0.00000000    
+
+ SPECIFIED CONSTRAINT UY   FOR PICKED NODES 
+ REAL= 1.129239783E-04   IMAG=  0.00000000    
+
+ SPECIFIED CONSTRAINT UZ   FOR PICKED NODES 
+ REAL= 3.907232205E-04   IMAG=  0.00000000    
+
+ SPECIFIED CONSTRAINT UX   FOR PICKED NODES 
+ REAL= 4.334648022E-04   IMAG=  0.00000000    
+
+ SPECIFIED CONSTRAINT UY   FOR PICKED NODES 
+ REAL= 1.754561085E-03   IMAG=  0.00000000    
+
+ SPECIFIED CONSTRAINT UZ   FOR PICKED NODES 
+ REAL=-1.240396569E-03   IMAG=  0.00000000    
+
+ SPECIFIED CONSTRAINT UX   FOR PICKED NODES 
+ REAL= 1.723834907E-03   IMAG=  0.00000000    
+
+ SPECIFIED CONSTRAINT UY   FOR PICKED NODES 
+ REAL= 4.990240051E-04   IMAG=  0.00000000    
+
+ SPECIFIED CONSTRAINT UZ   FOR PICKED NODES 
+ REAL= 5.258893138E-04   IMAG=  0.00000000    
+
+ PRINTOUT RESUMED BY /GOP
+
+ USE       1 SUBSTEPS INITIALLY THIS LOAD STEP FOR ALL  DEGREES OF FREEDOM
+ FOR AUTOMATIC TIME STEPPING:
+   USE      1 SUBSTEPS AS A MAXIMUM
+   USE      1 SUBSTEPS AS A MINIMUM
+
+ TIME=  1.0000    
+
+ ERASE THE CURRENT DATABASE OUTPUT CONTROL TABLE.
+
+
+ WRITE ALL  ITEMS TO THE DATABASE WITH A FREQUENCY OF NONE
+   FOR ALL APPLICABLE ENTITIES
+
+ WRITE NSOL ITEMS TO THE DATABASE WITH A FREQUENCY OF LAST
+   FOR ALL APPLICABLE ENTITIES
+
+ WRITE RSOL ITEMS TO THE DATABASE WITH A FREQUENCY OF LAST
+   FOR ALL APPLICABLE ENTITIES
+
+ WRITE EANG ITEMS TO THE DATABASE WITH A FREQUENCY OF LAST
+   FOR ALL APPLICABLE ENTITIES
+
+ WRITE ETMP ITEMS TO THE DATABASE WITH A FREQUENCY OF LAST
+   FOR ALL APPLICABLE ENTITIES
+
+ WRITE VENG ITEMS TO THE DATABASE WITH A FREQUENCY OF LAST
+   FOR ALL APPLICABLE ENTITIES
+
+ WRITE STRS ITEMS TO THE DATABASE WITH A FREQUENCY OF LAST
+   FOR ALL APPLICABLE ENTITIES
+
+ WRITE EPEL ITEMS TO THE DATABASE WITH A FREQUENCY OF LAST
+   FOR ALL APPLICABLE ENTITIES
+
+ WRITE EPPL ITEMS TO THE DATABASE WITH A FREQUENCY OF LAST
+   FOR ALL APPLICABLE ENTITIES
+
+ WRITE CONT ITEMS TO THE DATABASE WITH A FREQUENCY OF LAST
+   FOR ALL APPLICABLE ENTITIES
+
+ *GET  ANSINTER_  FROM  ACTI  ITEM=INT        VALUE=  0.00000000    
+
+ *IF  ANSINTER_                         ( =   0.00000     )  NE  
+      0                                 ( =   0.00000     )  THEN    
+
+ *ENDIF
+
+ *****  ANSYS SOLVE    COMMAND  *****
+
+ *** WARNING ***                         CP =       0.672   TIME= 20:34:08
+ Element shape checking is currently inactive.  Issue SHPP,ON or         
+ SHPP,WARN to reactivate, if desired.                                    
+
+ *** NOTE ***                            CP =       0.688   TIME= 20:34:08
+ The model data was checked and warning messages were found.             
+  Please review output or errors file (                                  
+ C:\Users\Owner\AppData\Local\Temp\WB_DESKTOP-SDVPC46_Walther            
+ Wennholz_6748_2\_ProjectScratch\ScrDAB8\file.err ) for these warning    
+ messages.                                                               
+
+ *** SELECTION OF ELEMENT TECHNOLOGIES FOR APPLICABLE ELEMENTS ***
+      --- GIVE SUGGESTIONS AND RESET THE KEY OPTIONS ---
+
+ ELEMENT TYPE    1 IS SOLID187. IT IS NOT ASSOCIATED WITH FULLY INCOMPRESSIBLE
+ HYPERELASTIC MATERIALS. NO SUGGESTION IS AVAILABLE AND NO RESETTING IS NEEDED.
+
+ ELEMENT TYPE    2 IS SOLID186. KEYOPT(2)=0 IS SUGGESTED AND HAS BEEN RESET.
+  KEYOPT(1-12)=    0    0    0    0    0    0    0    0    0    0    0    0
+
+
+
+ *** ANSYS - ENGINEERING ANALYSIS SYSTEM  RELEASE 2020 R1          20.1     ***
+ ANSYS AIM Student                                 
+ 01055371  VERSION=WINDOWS x64   20:34:08  MAY 27, 2020 CP=      0.688
+
+ unsaved_project--Static Structural                                            
+
+
+
+                       S O L U T I O N   O P T I O N S
+
+   PROBLEM DIMENSIONALITY. . . . . . . . . . . . .3-D                  
+   DEGREES OF FREEDOM. . . . . . UX   UY   UZ  
+   ANALYSIS TYPE . . . . . . . . . . . . . . . . .STATIC (STEADY-STATE)
+   OFFSET TEMPERATURE FROM ABSOLUTE ZERO . . . . .  273.15    
+   EQUATION SOLVER OPTION. . . . . . . . . . . . .PCG                
+      TOLERANCE. . . . . . . . . . . . . . . . . . 1.00000E-08
+   GLOBALLY ASSEMBLED MATRIX . . . . . . . . . . .SYMMETRIC  
+
+ *** NOTE ***                            CP =       0.703   TIME= 20:34:08
+ The conditions for direct assembly have been met.  No .emat or .erot    
+ files will be produced.                                                 
+
+                      L O A D   S T E P   O P T I O N S
+
+   LOAD STEP NUMBER. . . . . . . . . . . . . . . .     1
+   TIME AT END OF THE LOAD STEP. . . . . . . . . .  1.0000    
+   NUMBER OF SUBSTEPS. . . . . . . . . . . . . . .     1
+   STEP CHANGE BOUNDARY CONDITIONS . . . . . . . .    NO
+   PRINT OUTPUT CONTROLS . . . . . . . . . . . . .NO PRINTOUT
+   DATABASE OUTPUT CONTROLS
+      ITEM     FREQUENCY   COMPONENT
+       ALL       NONE               
+      NSOL       LAST               
+      RSOL       LAST               
+      EANG       LAST               
+      ETMP       LAST               
+      VENG       LAST               
+      STRS       LAST               
+      EPEL       LAST               
+      EPPL       LAST               
+      CONT       LAST               
+
+
+ SOLUTION MONITORING INFO IS WRITTEN TO FILE= file.mntr                                                                                                                                                                                                                                                           
+
+
+ *** NOTE ***                            CP =       0.797   TIME= 20:34:08
+ The PCG solver has automatically set the level of difficulty for this   
+ model to 2.                                                             
+
+
+                         ***********  PRECISE MASS SUMMARY  ***********
+
+   TOTAL RIGID BODY MASS MATRIX ABOUT ORIGIN
+               Translational mass               |   Coupled translational/rotational mass
+         856.64        0.0000        0.0000     |     0.0000       -161.56        484.68    
+         0.0000        856.64        0.0000     |     161.56        0.0000        286.50    
+         0.0000        0.0000        856.64     |    -484.68       -286.50        0.0000    
+     ------------------------------------------ | ------------------------------------------
+                                                |         Rotational mass (inertia)
+                                                |     357.42        160.34        56.568    
+                                                |     160.34        160.89       -100.99    
+                                                |     56.568       -100.99        420.82    
+
+   TOTAL MASS =  856.64    
+     The mass principal axes coincide with the global Cartesian axes
+
+   CENTER OF MASS (X,Y,Z)=   0.33444      -0.56579      -0.18860    
+
+   TOTAL INERTIA ABOUT CENTER OF MASS
+         52.721       -1.7604        2.5356    
+        -1.7604        34.608       -9.5820    
+         2.5356       -9.5820        50.773    
+
+   PRINCIPAL INERTIAS =    50.694        30.142        57.266    
+   ORIENTATION VECTORS OF THE INERTIA PRINCIPAL AXES IN GLOBAL CARTESIAN
+     ( 0.830, 0.215,-0.514) ( 0.024, 0.908, 0.419) ( 0.557,-0.360, 0.749) 
+
+
+  *** MASS SUMMARY BY ELEMENT TYPE ***
+
+  TYPE      MASS
+     1   24.4157    
+     2   832.228    
+
+ Range of element maximum matrix coefficients in global coordinates
+ Maximum = 1.838361291E+11 at element 3165.                              
+ Minimum = 1.38597451E+09 at element 63.                                 
+
+   *** ELEMENT MATRIX FORMULATION TIMES
+     TYPE    NUMBER   ENAME      TOTAL CP  AVE CP
+
+        1       476  SOLID187      0.016   0.000033
+        2      2810  SOLID186      0.516   0.000183
+ Time at end of element matrix formulation CP = 1.59375.                 
+ curEqn=   3676  totEqn=   3676 Job CP sec=      1.688
+      Factor Done= 100% Factor Wall sec=      0.604 rate=     234.3 Mflops
+ Iteration=     5 Ratio=  0.248121     Limit=  1.000000E-08 Wall=     0.0
+ Iteration=    35 Ratio=  5.921870E-04 Limit=  1.000000E-08 Wall=     0.2
+ Iteration=    75 Ratio=  2.001455E-06 Limit=  1.000000E-08 Wall=     0.5
+
+ PRECONDITIONED SOLVER CP TIME      =     0.844
+ PRECONDITIONED SOLVER ELAPSED TIME =     1.637
+
+   *** ELEMENT RESULT CALCULATION TIMES
+     TYPE    NUMBER   ENAME      TOTAL CP  AVE CP
+
+        1       476  SOLID187      0.031   0.000066
+        2      2810  SOLID186      0.219   0.000078
+
+   *** NODAL LOAD CALCULATION TIMES
+     TYPE    NUMBER   ENAME      TOTAL CP  AVE CP
+
+        1       476  SOLID187      0.016   0.000033
+        2      2810  SOLID186      0.078   0.000028
+ *** LOAD STEP     1   SUBSTEP     1  COMPLETED.    CUM ITER =      1
+ *** TIME =   1.00000         TIME INC =   1.00000      NEW TRIANG MATRIX
+
+
+ *** ANSYS BINARY FILE STATISTICS
+  BUFFER SIZE USED= 16384
+        3.938 MB WRITTEN ON RESULTS FILE: file.rst
+ *************** Write FE CONNECTORS *********
+
+ WRITE OUT CONSTRAINT EQUATIONS TO FILE= file.ce                                                                                                                                                                                                                                                             
+ ****************************************************
+ *************** FINISHED SOLVE FOR LS 1 *************
+
+ *GET  _WALLASOL  FROM  ACTI  ITEM=TIME WALL  VALUE=  20.5697222    
+
+ PRINTOUT RESUMED BY /GOP
+
+ *GET  _PCGITER  FROM  ACTI  ITEM=SOLU CGIT  VALUE=  114.000000    
+
+ FINISH SOLUTION PROCESSING
+
+
+ ***** ROUTINE COMPLETED *****  CP =         2.969
+
+
+
+ *** ANSYS - ENGINEERING ANALYSIS SYSTEM  RELEASE 2020 R1          20.1     ***
+ ANSYS AIM Student                                 
+ 01055371  VERSION=WINDOWS x64   20:34:11  MAY 27, 2020 CP=      3.031
+
+ unsaved_project--Static Structural                                            
+
+
+
+          ***** ANSYS RESULTS INTERPRETATION (POST1) *****
+
+ *** NOTE ***                            CP =       3.031   TIME= 20:34:11
+ Reading results into the database (SET command) will update the current 
+ displacement and force boundary conditions in the database with the     
+ values from the results file for that load set.  Note that any          
+ subsequent solutions will use these values unless action is taken to    
+ either SAVE the current values or not overwrite them (/EXIT,NOSAVE).    
+
+ Set Encoding of XML File to:ISO-8859-1
+
+ Set Output of XML File to:
+     PARM,     ,     ,     ,     ,     ,     ,     ,     ,     ,     ,     ,
+         ,     ,     ,     ,     ,     ,     ,
+
+ DATABASE WRITTEN ON FILE  parm.xml                                                                                                                                                                                                                                                            
+
+ EXIT THE ANSYS POST1 DATABASE PROCESSOR
+
+
+ ***** ROUTINE COMPLETED *****  CP =         3.031
+
+
+
+ PRINTOUT RESUMED BY /GOP
+
+ *GET  _WALLDONE  FROM  ACTI  ITEM=TIME WALL  VALUE=  20.5697222    
+
+ PARAMETER _PREPTIME =     1.000000000    
+
+ PARAMETER _SOLVTIME =     3.000000000    
+
+ PARAMETER _POSTTIME =     0.000000000    
+
+ PARAMETER _TOTALTIM =     4.000000000    
+
+ *GET  _DLBRATIO  FROM  ACTI  ITEM=SOLU DLBR  VALUE=  0.00000000    
+
+ *GET  _COMBTIME  FROM  ACTI  ITEM=SOLU COMB  VALUE=  0.00000000    
+ --- Number of total nodes = 12072
+ --- Number of total elements = 3286
+ --- Element load balance ratio = 0
+ --- Time to combine distributed files = 0
+
+ EXIT ANSYS WITHOUT SAVING DATABASE
+
+
+ NUMBER OF WARNING MESSAGES ENCOUNTERED=          1
+ NUMBER OF ERROR   MESSAGES ENCOUNTERED=          0
+
++--------------------- A N S Y S   S T A T I S T I C S ------------------------+
+
+Release: 2020 R1            Build: 20.1       Update: UP20191203   Platform: WINDOWS x64 
+Date Run: 05/27/2020   Time: 20:34     Process ID: 19208
+Operating System: Windows 10  (Build: 17763)
+
+Processor Model: Intel(R) Core(TM) i7-7700HQ CPU @ 2.80GHz
+
+Compiler: Intel(R) FORTRAN Compiler Version 19.0.0  (Build: 20190206)
+          Intel(R) C/C++ Compiler Version 19.0.0  (Build: 20190206)
+          Intel(R) Math Kernel Library Version 2019.0.3 Product Build 20190125
+
+Number of machines requested            :    1
+Total number of cores available         :    8
+Number of physical cores available      :    4
+Number of processes requested           :    1
+Number of threads per process requested :    1
+Total number of cores requested         :    1 (Shared Memory Parallel)                    
+
+GPU Acceleration: Not Requested
+
+Job Name: file
+Input File: dummy.dat
+Working Directory: C:\Users\Owner\AppData\Local\Temp\WB_DESKTOP-SDVPC46_Walther Wennholz_6748_2\_ProjectScratch\ScrDAB8
+
+Total CPU time for main thread                    :        3.3 seconds
+Total CPU time summed for all threads             :        3.1 seconds
+
+Elapsed time spent obtaining a license            :        0.6 seconds
+Elapsed time spent pre-processing model (/PREP7)  :        0.1 seconds
+Elapsed time spent solution - preprocessing       :        0.1 seconds
+Elapsed time spent computing solution             :        3.0 seconds
+Elapsed time spent solution - postprocessing      :        0.0 seconds
+Elapsed time spent post-processing model (/POST1) :        0.0 seconds
+ 
+Equation solver used                              :            PCG (symmetric)
+Equation solver computational rate                :        5.2 Gflops
+
+Maximum total memory used                         :       62.0 MB
+Maximum total memory allocated                    :     2112.0 MB
+Total physical memory available                   :         16 GB
+
+Total amount of I/O written to disk               :        0.0 GB
+Total amount of I/O read from disk                :        0.0 GB
+
++------------------ E N D   A N S Y S   S T A T I S T I C S -------------------+
+
+
+ *---------------------------------------------------------------------------*
+ |                                                                           |
+ |                            ANSYS RUN COMPLETED                            |
+ |                                                                           |
+ |---------------------------------------------------------------------------|
+ |                                                                           |
+ | Ansys 2020 R1               Build 20.1         UP20191203     WINDOWS x64 |
+ |                                                                           |
+ |---------------------------------------------------------------------------|
+ |                                                                           |
+ | Database Requested(-db)  1024 MB    Scratch Memory Requested      1024 MB |
+ | Maximum Database Used       8 MB    Maximum Scratch Memory Used     54 MB |
+ |                                                                           |
+ |---------------------------------------------------------------------------|
+ |                                                                           |
+ |        CP Time      (sec) =          3.094       Time  =  20:34:11        |
+ |        Elapsed Time (sec) =          6.000       Date  =  05/27/2020      |
+ |                                                                           |
+ *---------------------------------------------------------------------------*

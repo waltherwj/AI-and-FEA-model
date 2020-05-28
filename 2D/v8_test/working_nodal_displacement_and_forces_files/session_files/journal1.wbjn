@@ -1,0 +1,12 @@
+# encoding: utf-8
+# 2020 R1
+SetScriptVersion(Version="20.1.164")
+template1 = GetTemplate(
+    TemplateName="Static Structural",
+    Solver="ANSYS")
+system1 = template1.CreateSystem()
+geometry1 = system1.GetContainer(ComponentName="Geometry")
+geometry1.Edit(IsSpaceClaimGeometry=True)
+RunScript(FilePath="D:/Ansys Simulations/Project/2D/v8_test/SETUP_geometry_mesh.py")
+geometry1.Exit()
+Save(Overwrite=True)
