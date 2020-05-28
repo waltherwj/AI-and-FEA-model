@@ -20,9 +20,17 @@ forces = []
 ##  set parameters
 number_created = 5 ## can't find a way to trasmit this between scripts
 number_selections = len(Model.NamedSelections.Children)//number_created
-number_displacements = analysis.GetChildren(DataModelObjectCategory.NodalDisplacement, False)//number_created
+number_displacements = len(analysis.GetChildren(DataModelObjectCategory.NodalDisplacement, False))//number_created
 number_forces = number_selections - number_displacements
 
+named_selections = []
+number_rows = number_created
+number_columns = number_forces + number_displacements
+for i in range(number_columns):
+    selec_temp = []
+    for j in range(number_rows):
+        selec_temp.append(Model.NamedSelections.Children[i*number_rows+j])
+    named_selections.append(selec_temp)
 
 for i in range(number_displacements, number_displacements + number_forces): #iterates displacement nodal selections
     for j in range(number_created):
