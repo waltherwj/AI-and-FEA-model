@@ -77,6 +77,10 @@ Using this approach, the following type of element is generated. The image shows
 
 ![image of the element under nodal displacements only](2D/v8_test/nodal_displacement_solution.png "test element under nodal displacements")
 
+And after adding forces to another test element, this is a sample result:
+
+![image of the element under nodal displacements and forces](2D/v8_test/total_deformation_nodal_force.gif "test element under nodal displacements and forces")
+
 The mapping function will, in essence, encapsulate both the stiffness matrix and the shape function if the model is trained in a simulation set, or, in theory, the real world behaviour of the material if trained on actual experiments.
 
 
