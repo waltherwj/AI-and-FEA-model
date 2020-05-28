@@ -10,12 +10,23 @@ geobody = body.GetGeoBody()
 ## Delete previously assigned forces
 analysis = Model.Analyses[0]
 solution = analysis.Solution
-deformation = []
+
 number_directional_deformations = len(solution.GetChildren(DataModelObjectCategory.DirectionalDeformation, False))
 while number_directional_deformations != 3:
+    number_directional_deformations =len(solution.GetChildren(DataModelObjectCategory.DirectionalDeformation, False))
     if number_directional_deformations < 3:
-        number_directional_deformations =len(solution.GetChildren(DataModelObjectCategory.DirectionalDeformation, False))
-        deformation.append(solution.AddDirectionalDeformation())
+        solution.AddDirectionalDeformation()
     if number_directional_deformations > 3:
-        number_directional_deformations =len(solution.GetChildren(DataModelObjectCategory.DirectionalDeformation, False))
-        solution.Children[1].Delete()
+        solution.Children[number_directional_deformations].Delete()
+## Set Directions
+deformationX = solution.Children[1]
+deformationY = solution.Children[2]
+deformationZ = solution.Children[3]
+
+deformationX.NormalOrientation = NormalOrientationType.XAxis
+deformationY.NormalOrientation = NormalOrientationType.YAxis
+deformationZ.NormalOrientation = NormalOrientationType.ZAxis
+
+##
+## Solves the model
+Model.Solve()
