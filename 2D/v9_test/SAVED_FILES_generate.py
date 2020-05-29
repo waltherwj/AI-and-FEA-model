@@ -29,9 +29,15 @@ deformationZ.NormalOrientation = NormalOrientationType.ZAxis
 """
 number_udr = len(solution.GetChildren(DataModelObjectCategory.UserDefinedResult, False))
 if number_udr < 1:
-    solution..AddUserDefinedResult()
-    udr = solution.Children[number_udr]
-    udr.Expression = 'UVECTORS'
+    solution.AddUserDefinedResult()
+number_udr = len(solution.GetChildren(DataModelObjectCategory.UserDefinedResult, False))
+udr = solution.Children[number_udr]
+udr.Expression = 'UVECTORS'
 ##
+"""
+nodal.XComponent.Output.DiscreteValues[0].Value
+
+"""
+
 ## Solves the model
 Model.Solve()
