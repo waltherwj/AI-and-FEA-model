@@ -1,0 +1,36 @@
+********************
+ANTRAN LOG FILE
+
+Date: 2020-14-28 18:14:22 PM
+cdb input file: D:\Ansys Simulations\Project\2D\v9_test\full_generation_with_script_files\dp0\SYS\MECH\antran_input.cdb
+NASTRAN output file: D:\Ansys Simulations\Project\2D\v9_test\attempt_BC.dat
+
+********************
+
+Read Element and Keyopts Complete (0.06s)
+Read Reals (unblocked) Complete (0.01s)
+Read Materials Complete (0.00s)
+Read CSs Complete (0.00s)
+Read nodal components Complete (0.01s)
+Read Nodes (unblocked) Complete (0.15s)
+Read Elements Complete (0.23s)
+Read Sections Complete (0.01s)
+Read CPs Complete (0.00s)
+Read Surface Based Constraints (SBCs) Complete (0.02s)
+Read Sections Complete (0.00s)
+Read Joints (CDB) Complete (0.00s)
+Read Sections Complete (0.00s)
+Read NSM complete (0.04s)
+Read tables complete
+Read BC: DOFs complete (0.22s)
+Read BC: Force complete (0.05s)
+Read BC: Acel complete (0.02s)
+Read BF (TEMP) complete (0.00s)
+Read BFE (TEMP, Shell) complete (0.00s)
+Read SFE complete (0.00s)
+Read MPCs complete (0.00s)
+Process offsets (0.05s)Write Nas Mats Complete
+Read Sections Complete (0.00s)
+Write Nas Nodes Complete: 0.39s
+Pyramid elements were ignored during translation
+Error writing elements

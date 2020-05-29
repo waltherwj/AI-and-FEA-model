@@ -1,0 +1,3 @@
+
+ *** NOTE ***                            CP =       0.828   TIME= 19:15:00
+ No constraint equations to list.                                        
