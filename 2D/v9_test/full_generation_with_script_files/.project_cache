@@ -3,8 +3,10 @@ dp0/global/MECH/SYS.mechdb
 dp0/SYS/DM/SYS.scdoc
 dp0/SYS/ENGD/EngineeringData.xml
 dp0/SYS/ENGD/material.engd
+dp0/SYS/MECH/antran_input.cdb
 dp0/SYS/MECH/CAERep.xml
 dp0/SYS/MECH/CAERepOutput.xml
+dp0/SYS/MECH/ce.txt
 dp0/SYS/MECH/ds.dat
 dp0/SYS/MECH/file.err
 dp0/SYS/MECH/file.mntr
