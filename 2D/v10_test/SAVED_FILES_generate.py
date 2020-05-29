@@ -1,3 +1,5 @@
+import os
+
 ## Creates solutions and exports them
 
 ## Load-in the body
@@ -10,23 +12,7 @@ geobody = body.GetGeoBody()
 ## Delete previously assigned forces
 analysis = Model.Analyses[0]
 solution = analysis.Solution
-"""
-number_directional_deformations = len(solution.GetChildren(DataModelObjectCategory.DirectionalDeformation, False))
-while number_directional_deformations != 3:
-    number_directional_deformations =len(solution.GetChildren(DataModelObjectCategory.DirectionalDeformation, False))
-    if number_directional_deformations < 3:
-        solution.AddDirectionalDeformation()
-    if number_directional_deformations > 3:
-        solution.Children[number_directional_deformations].Delete()
-## Set Directions
-deformationX = solution.Children[1]
-deformationY = solution.Children[2]
-deformationZ = solution.Children[3]
 
-deformationX.NormalOrientation = NormalOrientationType.XAxis
-deformationY.NormalOrientation = NormalOrientationType.YAxis
-deformationZ.NormalOrientation = NormalOrientationType.ZAxis
-"""
 number_udr = len(solution.GetChildren(DataModelObjectCategory.UserDefinedResult, False))
 if number_udr < 1:
     solution.AddUserDefinedResult()
@@ -41,3 +27,19 @@ nodal.XComponent.Output.DiscreteValues[0].Value
 
 ## Solves the model
 Model.Solve()
+
+## Create folders to store solutions
+sample_number=1
+directory = "test_data_dir_" + sample_number.ToString()
+parent_dir = "D:\\Ansys Simulations\\Project\\2D\\v10_test"
+path = os.path.join(parent_dir, directory)
+try:
+    os.mkdir(path)
+except:
+    pass
+
+##Create files in this directory to store displacements and forces
+filename = "test_"+ sample_number.ToString() +".txt"
+file_path = os.path.join(path, filename)
+f= open(file_path ,"w+")
+
