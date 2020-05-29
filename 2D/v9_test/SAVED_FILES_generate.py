@@ -10,7 +10,7 @@ geobody = body.GetGeoBody()
 ## Delete previously assigned forces
 analysis = Model.Analyses[0]
 solution = analysis.Solution
-
+"""
 number_directional_deformations = len(solution.GetChildren(DataModelObjectCategory.DirectionalDeformation, False))
 while number_directional_deformations != 3:
     number_directional_deformations =len(solution.GetChildren(DataModelObjectCategory.DirectionalDeformation, False))
@@ -26,7 +26,12 @@ deformationZ = solution.Children[3]
 deformationX.NormalOrientation = NormalOrientationType.XAxis
 deformationY.NormalOrientation = NormalOrientationType.YAxis
 deformationZ.NormalOrientation = NormalOrientationType.ZAxis
-
+"""
+number_udr = len(solution.GetChildren(DataModelObjectCategory.UserDefinedResult, False))
+if number_udr < 1:
+    solution..AddUserDefinedResult()
+    udr = solution.Children[number_udr]
+    udr.Expression = 'UVECTORS'
 ##
 ## Solves the model
 Model.Solve()
