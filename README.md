@@ -28,14 +28,22 @@ This project has as objectives to
   * Create script for generating mesh in Mechanical
   * Create script for generating model inside of Workbench
   * Created script for applying forces to element
+  * Automated Geometry and Mesh Generation Step
 ## Current Work
 #### _Implementing a 2d model for proof of concept_
 
 ##### Tasks
 
-* Automate Geometry and Mesh Generation Step
-  * Create script for saving the geometry and mesh
-  * Create script for saving the results
+* Create Folder to save Boundary Conditions and Results files
+* Create script for saving the geometry and mesh
+  * The geometry/mesh comes from any results file, as it has nodal number and coordinate location
+* Create script for saving the results and boundary conditions
+  * The results can be exported directly
+  * The boundary conditions have to be exported one by one:
+    * Export Named Selections files
+    * Write file with nodal displacements and nodal forces for each named selection
+    * Use these files to create a final file with nodes and nodal coordinates, and coorresponding nodal displacements and forces
+* Scale it all to generate data continuously
 
 
 
