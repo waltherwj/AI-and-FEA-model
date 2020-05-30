@@ -4,8 +4,8 @@ import math
 from itertools import combinations, product, izip
 from System import Random
 #SpaceClaim.Api.V19.Api
-n_points = 4
-n_dimensions = 3
+n_points = 3
+n_dimensions = 2
 points = []
 curves = List[ITrimmedCurve]()
 for i in range(n_points):   # creates all points

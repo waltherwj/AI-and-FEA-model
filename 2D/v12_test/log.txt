@@ -11,3 +11,14 @@ SAMPLE               ACTION               PATH
 10                   CREATE               D:\Ansys Simulations\Project\2D\v12_test\data_dir_10
 10                   OVERWRITE            D:\Ansys Simulations\Project\2D\v12_test\data_dir_10
 10                   OVERWRITE            D:\Ansys Simulations\Project\2D\v12_test\data_dir_10
+11                   CREATE               D:\Ansys Simulations\Project\2D\v12_test\data_dir_11
+12                   CREATE               D:\Ansys Simulations\Project\2D\v12_test\data_dir_12
+13                   CREATE               D:\Ansys Simulations\Project\2D\v12_test\data_dir_13
+14                   CREATE               D:\Ansys Simulations\Project\2D\v12_test\data_dir_14
+15                   CREATE               D:\Ansys Simulations\Project\2D\v12_test\data_dir_15
+16                   CREATE               D:\Ansys Simulations\Project\2D\v12_test\data_dir_16
+17                   CREATE               D:\Ansys Simulations\Project\2D\v12_test\data_dir_17
+18                   CREATE               D:\Ansys Simulations\Project\2D\v12_test\data_dir_18
+19                   CREATE               D:\Ansys Simulations\Project\2D\v12_test\data_dir_19
+20                   CREATE               D:\Ansys Simulations\Project\2D\v12_test\data_dir_20
+21                   CREATE               D:\Ansys Simulations\Project\2D\v12_test\data_dir_21
