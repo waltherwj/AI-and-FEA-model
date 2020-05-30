@@ -18,7 +18,7 @@ part.Material = 'Structural Steel'
 forces = []
 
 ##  set parameters
-number_created = 5 ## can't find a way to trasmit this between scripts
+number_created = 3 ## can't find a way to trasmit this between scripts
 number_selections = len(Model.NamedSelections.Children)//number_created
 number_displacements = len(analysis.GetChildren(DataModelObjectCategory.NodalDisplacement, False))//number_created
 number_forces = number_selections - number_displacements

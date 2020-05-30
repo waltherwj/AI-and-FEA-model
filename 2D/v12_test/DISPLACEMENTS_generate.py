@@ -19,7 +19,7 @@ settings.StoreResultsAt =  TimePointsOptions.LastTimePoints
 
 ## Create vector with all selections divided by curve
 named_selections = []
-number_created = 5 ## can't find a way to trasmit this between scripts
+number_created = 3 ## can't find a way to trasmit this between scripts
 number_selections = len(Model.NamedSelections.Children)//number_created
 number_displacements = random.choice(range(1,number_selections+1))
 number_forces = number_selections - number_displacements
