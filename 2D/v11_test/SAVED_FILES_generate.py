@@ -28,15 +28,21 @@ Model.Solve()
 
 ## Create folders to store solutions
 sample_number=1
-directory = "test_data_dir_" + sample_number.ToString()
-parent_dir = "D:\\Ansys Simulations\\Project\\2D\\v10_test"
+folder_name = "test_data_dir_"
+## Update Sample Number
+for root, dirs, files in os.walk(path+"\\.."):
+    for sample_dir in dirs:
+        if folder_name in sample_dir:
+            sample_number += 1
+
+directory = folder_name + sample_number.ToString()
+parent_dir = "D:\\Ansys Simulations\\Project\\2D\\v11_test"
 path = os.path.join(parent_dir, directory)
 
 ## Create log file
 log_file = "log.txt"
 log_file_path = os.path.join(path + '\\..', log_file)
 f_log= open(log_file_path ,"w+")
-
 row = ['SAMPLE',"ACTION","PATH"]
 f_log.write("{: <20} {: <20} {: <20}\n".format(*row))
 f_log.close()
@@ -94,3 +100,4 @@ for  i, ns in enumerate(Model.NamedSelections.Children):
     filename = "named_selection_test_"+ (i+1).ToString() +".txt"
     file_path = os.path.join(path, filename)
     ns.ExportToTextFile(file_path)
+    
