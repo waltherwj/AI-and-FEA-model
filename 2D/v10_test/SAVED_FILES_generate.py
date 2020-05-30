@@ -84,3 +84,8 @@ for bc in boundary_conditions:
 f_disp.close() 
 f_force.close()
 
+## Export Solution to another file
+filename = "solutions_test_"+ sample_number.ToString() +".txt"
+file_path = os.path.join(path, filename)
+udr.ExportToTextFile(file_path)
+
