@@ -40,7 +40,7 @@ for curve in range(number_of_curves):
 
 ##Create coordinate systems with biased brownian motion
 
-    number_created = 5
+    number_created = 3
     bias_control = 2
     
     for i in range(number_created):
