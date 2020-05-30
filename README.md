@@ -49,9 +49,6 @@ This project has as objectives to
     * Boundary Conditions - one file for nodal forces and one for displacements
     * Named Selections - One file for each named selection
 
-    
-
-    * 
 ## Current Work
 #### _Implementing a 2d model for proof of concept_
 
