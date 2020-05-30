@@ -89,3 +89,8 @@ filename = "solutions_test_"+ sample_number.ToString() +".txt"
 file_path = os.path.join(path, filename)
 udr.ExportToTextFile(file_path)
 
+## Export Named Selections
+for  i, ns in enumerate(Model.NamedSelections.Children):
+    filename = "named_selection_test_"+ i.ToString() +".txt"
+    file_path = os.path.join(path, filename)
+    ns.ExportToTextFile(file_path)
