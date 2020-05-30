@@ -1,0 +1,6 @@
+Selection	NodalDisplacement
+Selection 2	NodalDisplacement
+Selection 3	NodalDisplacement
+Selection 4	NodalDisplacement
+Selection 5	NodalDisplacement
+Selection 6	NodalForce

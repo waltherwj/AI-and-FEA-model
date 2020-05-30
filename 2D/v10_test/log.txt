@@ -1,2 +1,2 @@
 SAMPLE               ACTION               PATH                
-5                    OVERWRITE            D:\Ansys Simulations\Project\2D\v10_test\test_data_dir_5
+1                    OVERWRITE            D:\Ansys Simulations\Project\2D\v10_test\test_data_dir_1

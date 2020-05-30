@@ -8,8 +8,6 @@ body = part.Children[0] #Get  first body
 geobody = body.GetGeoBody()
 #selection = ExtAPI.SelectionManager.CreateSelectionInfo(SelectionTypeEnum.GeometryEntities)  # Create an empty selection.
 
-
-## Delete previously assigned forces
 analysis = Model.Analyses[0]
 solution = analysis.Solution
 
@@ -29,7 +27,7 @@ nodal.XComponent.Output.DiscreteValues[0].Value
 Model.Solve()
 
 ## Create folders to store solutions
-sample_number=5
+sample_number=1
 directory = "test_data_dir_" + sample_number.ToString()
 parent_dir = "D:\\Ansys Simulations\\Project\\2D\\v10_test"
 path = os.path.join(parent_dir, directory)
@@ -38,9 +36,9 @@ path = os.path.join(parent_dir, directory)
 log_file = "log.txt"
 log_file_path = os.path.join(path + '\\..', log_file)
 f_log= open(log_file_path ,"w+")
+
 row = ['SAMPLE',"ACTION","PATH"]
 f_log.write("{: <20} {: <20} {: <20}\n".format(*row))
-#f_log.write("||\t FOLDER \t||\t ACTION \t||\t PATH    \t||\n")
 f_log.close()
 f_log= open(log_file_path ,"a+")
 
@@ -50,19 +48,27 @@ try:
     f_log.write("{: <20} {: <20} {: <20}".format(*row))
     f_log.close()
 except:
-    row = [sample_number.ToString()," CREATE ", path]
+    row = [sample_number.ToString(),"OVERWRITE", path]
     f_log.write("{: <20} {: <20} {: <20}".format(*row))
     f_log.close()
 
 ##Create files in this directory to store displacements and forces
-filename = "test_"+ sample_number.ToString() +".txt"
+filename = "bc_test_"+ sample_number.ToString() +".txt"
 file_path = os.path.join(path, filename)
 f= open(file_path ,"w+")
 
+##Create List With relevant Boundary Conditions
+boundary_conditions = []
+for item in analysis.GetChildren(DataModelObjectCategory.NodalDisplacement, False):
+    boundary_conditions.append(item)
+for item in analysis.GetChildren(DataModelObjectCategory.NodalForce, False):
+    boundary_conditions.append(item)
+
 ##Write in file
-for i in range(10):
-     f.write("This is line %d\r\n" % (i+2))
-     
+for bc in boundary_conditions:
+    line = bc.Location.Name +"\t"+bc.DataModelObjectCategory.ToString()
+     f.write( line + "\n")
+
 ## Close file
 f.close() 
 
