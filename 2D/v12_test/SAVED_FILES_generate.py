@@ -26,7 +26,7 @@ Model.Solve()
 sample_number=1
 folder_name = "data_dir_"
 directory = folder_name + sample_number.ToString()
-parent_dir = "D:\\Ansys Simulations\\Project\\2D\\v12_test"
+parent_dir = "D:\\Ansys Simulations\\Project\\2D\\data\\v12_test"
 path = os.path.join(parent_dir, directory)
 
 ## Update Sample Number
@@ -36,7 +36,6 @@ for root, dirs, files in os.walk(path+"\\.."):
             sample_number += 1
 
 directory = folder_name + sample_number.ToString()
-parent_dir = "D:\\Ansys Simulations\\Project\\2D\\v12_test"
 path = os.path.join(parent_dir, directory)
 
 ## Create log file
