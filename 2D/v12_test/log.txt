@@ -1,0 +1,2 @@
+SAMPLE               ACTION               PATH                
+1                    CREATE               D:\Ansys Simulations\Project\2D\v12_test\data_dir_1
