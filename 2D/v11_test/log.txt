@@ -1,2 +1,7 @@
 SAMPLE               ACTION               PATH                
-2                    CREATE               D:\Ansys Simulations\Project\2D\v11_test\test_data_dir_2
+
+5                    CREATE               D:\Ansys Simulations\Project\2D\v11_test\test_data_dir_5
+6                    CREATE               D:\Ansys Simulations\Project\2D\v11_test\test_data_dir_6
+7                    CREATE               D:\Ansys Simulations\Project\2D\v11_test\data_dir_7
+1                    CREATE               D:\Ansys Simulations\Project\2D\v11_test\data_dir_1
+3                    CREATE               D:\Ansys Simulations\Project\2D\v11_test\data_dir_3

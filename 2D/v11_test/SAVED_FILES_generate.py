@@ -28,11 +28,11 @@ Model.Solve()
 
 ## Create folders to store solutions
 sample_number=1
-folder_name = "test_data_dir_"
+folder_name = "data_dir_"
 ## Update Sample Number
 for root, dirs, files in os.walk(path+"\\.."):
     for sample_dir in dirs:
-        if folder_name in sample_dir:
+        if (folder_name in sample_dir) and (len(folder_name)+1 == len(sample_dir)):
             sample_number += 1
 
 directory = folder_name + sample_number.ToString()
@@ -42,20 +42,27 @@ path = os.path.join(parent_dir, directory)
 ## Create log file
 log_file = "log.txt"
 log_file_path = os.path.join(path + '\\..', log_file)
-f_log= open(log_file_path ,"w+")
-row = ['SAMPLE',"ACTION","PATH"]
-f_log.write("{: <20} {: <20} {: <20}\n".format(*row))
-f_log.close()
+log_file_created = False
+for root, dirs, files in os.walk(path+"\\.."):
+    for file in files:
+        if log_file in file:
+            log_file_created = True
+if not(log_file_created):
+    f_log= open(log_file_path ,"w+")
+    row = ['SAMPLE',"ACTION","PATH"]
+    f_log.write("{: <20} {: <20} {: <20}\n".format(*row))
+    f_log.close()
+    
 f_log= open(log_file_path ,"a+")
 
 try:
     os.mkdir(path)
     row = [sample_number.ToString(),"CREATE", path]
-    f_log.write("{: <20} {: <20} {: <20}".format(*row))
+    f_log.write("{: <20} {: <20} {: <20}\n".format(*row))
     f_log.close()
 except:
     row = [sample_number.ToString(),"OVERWRITE", path]
-    f_log.write("{: <20} {: <20} {: <20}".format(*row))
+    f_log.write("{: <20} {: <20} {: <20}\n".format(*row))
     f_log.close()
 
 ##Create files in this directory to store displacements and forces
