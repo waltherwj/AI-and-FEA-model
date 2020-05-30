@@ -5,6 +5,8 @@ for i in range(1):
     SetScriptVersion(Version="20.1.164")
     system1 = GetSystem(Name="SYS")
     geometry1 = system1.GetContainer(ComponentName="Geometry")
+    geometryProperties1 = geometry1.GetGeometryProperties()
+    geometryProperties1.GeometryImportAnalysisType = "AnalysisType_2D"
     DSscript = open("D:/Ansys Simulations/Project/2D/v12_test/GEOMETRY_generate.py", "r")
     DSscriptcommand=DSscript.read()
     geometry1.SendCommand(Command=DSscriptcommand,Language="Python")
