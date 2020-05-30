@@ -42,7 +42,7 @@ This project has as objectives to
   * The boundary conditions have to be exported one by one:
     * Export Named Selections files
     * Write file with nodal displacements and nodal forces for each named selection
-    * Use these files to create a final file with nodes and nodal coordinates, and coorresponding nodal displacements and forces
+    * Use these files to create a final file with nodes and nodal coordinates, and corresponding nodal displacements and forces
 * Scale it all to generate data continuously
 
 
@@ -55,11 +55,15 @@ Triangular shapes  have an advantage in relation to quadrilaterals in that it is
 
 #### *Nodal Selection*
 
-Since the model has many nodes instead of just a handful, applying forces and displacements to edges and vertices is not equivalent to applying them to an usual FEA model as the simplified behaviour of that model is not applicable anymore, and now stress concentrations and the like arise. To overcome this, a random set of contiguous nodes has to be selected to emulate forces and displacements in the super element. The nodal selection is performed with a brownian motion of a coordinate system inside of the element, and all nodes within a certain radius are selected, and to ensure that the selections actually select nodes, the coordinate systems are biased to go toward the centroid of the element, and the direction vector that introduces the bias also has a random distribution attached to it. This entire process is controlled by several hyperparameters, and they have been adjusted until they seemed to generate good quality selections most of the time, while at the same time limiting how complex the behaviour could be since the process of creating selections is relatively time-consuming. If a selection selects no node (usually because it is outside of the super element), then the radius is inflated until the selection is able to reach some unselected node. 
+Since the model has many nodes instead of just a handful, applying forces and displacements to edges and vertices is not equivalent to applying them to an usual FEA model as the simplified behaviour of that model is not applicable anymore, and now stress concentrations and the like arise. To overcome this, a random set of nodes has to be selected to emulate forces and displacements in the super element. The nodal selection is performed with a brownian motion of a coordinate system inside of the element, and all nodes within a certain radius are selected, and to ensure that the selections actually select nodes, the coordinate systems are biased to go toward the centroid of the element, and the direction vector that introduces the bias also has a random distribution attached to it. This creates "blobs" of selections which are contiguous most of the time, however sometimes the offset is enough to overcome the radius of selection and the next selectio is not contiguous with the previous. This entire process is controlled by several hyperparameters, and they have been adjusted until they seemed to generate good quality selections most of the time, while at the same time limiting how complex the behaviour could be since the process of creating selections is relatively time-consuming. If a selection selects no node (usually because it is outside of the super element), then the radius is inflated until the selection is able to reach at least one unselected node. 
+
+This selection process is exemplified in the gif below, where two "curves" of blobs are formed.
+
+![gif of nodal selection](2D/v10_test/selections_example.gif "gif demonstrates nodal selection happening from two opposite corners and then rotates the element")
 
 #### *Forces*
 
-**Forces and moments can be applied to any node of a finite element model**. The model is going to be trained with between 0 and 2 "force curves". These "curves" follow a contiguous nodal selection and vary step-wise through space by following a continuous distribution that is actualized in each of the nodal selections of the curve. 
+**Forces and moments can be applied to any node of a finite element model**. The model is going to be trained with between 0 and 2 "force curves". These "curves" follow a -somewhat- contiguous nodal selection, and each "blob" of force has random forces assigned to it according to a gaussian distribution. 
 
 #### *Nodal Displacement*
 
@@ -79,7 +83,7 @@ The goal is thus that, given a set of boundary conditions and forces along the e
 
 <img src="https://render.githubusercontent.com/render/math?math=M: (F_e,  \Delta_{BC})  \mapsto u_e">
 
-Therefore the element has to be generated with **arbitrary nodal displacements to train the model.** However during the training process it became obvious that nodal displacements only on the vertices don't work well for the simulation since the "nodes" on the vertices in this case are much more malleable and are stress concentrators than the rest of the element, thus, the simulation doesn't show any interesting behaviour no matter the forces except  for a very large distortion at the vertices if the model is only held by them. A similar approach of using step-wise continuous representations as in the force of functions is going to be used for the displacements.
+Therefore the element has to be generated with **arbitrary nodal displacements to train the model.** However during the training process it became obvious that nodal displacements only on the vertices don't work well for the simulation since the "nodes" on the vertices in this case are much more malleable and are stress concentrators than the rest of the element, thus, the simulation doesn't show any interesting behaviour no matter the forces except  for a very large distortion at the vertices if the model is only held by them. A similar approach of using random displacements via a gaussian distribution on somewhat contiguous blobs of selection is used for the displacements.
 
 Using this approach, the following type of element is generated. The image shows the directional displacement field of the solution during one of the testing iterations:
 
