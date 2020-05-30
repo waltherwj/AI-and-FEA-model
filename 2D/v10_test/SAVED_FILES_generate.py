@@ -29,17 +29,29 @@ nodal.XComponent.Output.DiscreteValues[0].Value
 Model.Solve()
 
 ## Create folders to store solutions
-sample_number=2
+sample_number=5
 directory = "test_data_dir_" + sample_number.ToString()
 parent_dir = "D:\\Ansys Simulations\\Project\\2D\\v10_test"
 path = os.path.join(parent_dir, directory)
+
+## Create log file
+log_file = "log.txt"
+log_file_path = os.path.join(path + '\\..', log_file)
+f_log= open(log_file_path ,"w+")
+row = ['SAMPLE',"ACTION","PATH"]
+f_log.write("{: <20} {: <20} {: <20}\n".format(*row))
+#f_log.write("||\t FOLDER \t||\t ACTION \t||\t PATH    \t||\n")
+f_log.close()
+f_log= open(log_file_path ,"a+")
+
 try:
     os.mkdir(path)
+    row = [sample_number.ToString(),"CREATE", path]
+    f_log.write("{: <20} {: <20} {: <20}".format(*row))
+    f_log.close()
 except:
-    log_file = "log.txt"
-    log_file_path = os.path.join(path + '\\..', log_file)
-    f_log= open(log_file_path ,"w+")
-    f_log.write("Folder for sample # " + sample_number.ToString() + " already exists -- OVERWRITING")
+    row = [sample_number.ToString()," CREATE ", path]
+    f_log.write("{: <20} {: <20} {: <20}".format(*row))
     f_log.close()
 
 ##Create files in this directory to store displacements and forces
