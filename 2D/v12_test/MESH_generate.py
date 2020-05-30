@@ -23,7 +23,7 @@ mesh_method.ElementOrder = ElementOrder.Quadratic
 
 # General Mesh Settings
 mesh = Model.Mesh
-mesh.Resolution = 4
+mesh.Resolution = 1
 
 # Corner node refinement
 vertex_size = []
@@ -34,7 +34,7 @@ for i, corner in enumerate(body.Vertices):
     vertex_size.append(Model.Mesh.AddSizing())
     vertex_size[i].Location = selection
     vertex_size[i].SphereRadius = Quantity('300 [mm]')
-    vertex_size[i].ElementSize = Quantity('1 [in]')
+    vertex_size[i].ElementSize = Quantity('50 [mm]')
 
 #Generate Mesh
 Model.Mesh.GenerateMesh()
