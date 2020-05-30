@@ -24,28 +24,44 @@ This project has as objectives to
 ## Past Progress
 #### _Implementing a 2d model for proof of concept_
   * Created script for generating correct geometry inside of SpaceClaim
+
   * Created script for calling geometry script from Workbench
+
   * Create script for generating mesh in Mechanical
+
   * Create script for generating model inside of Workbench
+
   * Created script for applying forces to element
+
   * Automated Geometry and Mesh Generation Step
+
+  * Created Folder to save Boundary Conditions and Results files
+
+  * Created script for saving the geometry and mesh
+
+    * The geometry/mesh comes from any results file, as it has nodal number and coordinate location
+
+* Created script for saving the results and boundary conditions
+
+  * The results, boundary conditions and named selections are all exported to .txt files:
+
+    * Results - single file
+    * Boundary Conditions - one file for nodal forces and one for displacements
+    * Named Selections - One file for each named selection
+
+    
+
+    * 
 ## Current Work
 #### _Implementing a 2d model for proof of concept_
 
 ##### Tasks
 
-* Create Folder to save Boundary Conditions and Results files
-* Create script for saving the geometry and mesh
-  * The geometry/mesh comes from any results file, as it has nodal number and coordinate location
-* Create script for saving the results and boundary conditions
-  * The results can be exported directly
-  * The boundary conditions have to be exported one by one:
-    * Export Named Selections files
-    * Write file with nodal displacements and nodal forces for each named selection
-    * Use these files to create a final file with nodes and nodal coordinates, and corresponding nodal displacements and forces
 * Scale it all to generate data continuously
+* Pre-process files to be only 2 files, one with inputs and one with outputs
 
-
+  * Write file with nodal displacements and nodal forces for each named selection
+  * Use these files to create a final file with nodes and nodal coordinates, and corresponding nodal displacements and forces
 
 ## Element Shape, Force & Nodal Displacement Generation Justification
 
