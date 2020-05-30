@@ -32,7 +32,7 @@ path = os.path.join(parent_dir, directory)
 ## Update Sample Number
 for root, dirs, files in os.walk(path+"\\.."):
     for sample_dir in dirs:
-        if (folder_name in sample_dir) and (len(folder_name)+1 == len(sample_dir)):
+        if (folder_name in sample_dir):
             sample_number += 1
 
 directory = folder_name + sample_number.ToString()
