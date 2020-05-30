@@ -29,6 +29,8 @@ directory = folder_name + sample_number.ToString()
 parent_dir = "D:\\Ansys Simulations\\Project\\2D\\data\\v12_test"
 try:
     os.mkdir(parent_dir)
+except:
+    pass
 path = os.path.join(parent_dir, directory)
 
 ## Update Sample Number
