@@ -38,6 +38,6 @@ DSscriptcommand=DSscript.read()
 model1.SendCommand(Command=DSscriptcommand,Language="Python")
 
 ##Save Files
-DSscript = open("D:/Ansys Simulations/Project/2D/v12_test/SAVED_FILES.py", "r")
+DSscript = open("D:/Ansys Simulations/Project/2D/v12_test/SAVED_FILES_generate.py", "r")
 DSscriptcommand=DSscript.read()
 model1.SendCommand(Command=DSscriptcommand,Language="Python")

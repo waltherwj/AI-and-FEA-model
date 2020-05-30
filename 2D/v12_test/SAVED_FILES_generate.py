@@ -18,10 +18,6 @@ number_udr = len(solution.GetChildren(DataModelObjectCategory.UserDefinedResult,
 udr = solution.Children[number_udr]
 udr.Expression = 'UVECTORS'
 ##
-"""
-nodal.XComponent.Output.DiscreteValues[0].Value
-
-"""
 
 ## Solves the model
 Model.Solve()
@@ -36,7 +32,7 @@ for root, dirs, files in os.walk(path+"\\.."):
             sample_number += 1
 
 directory = folder_name + sample_number.ToString()
-parent_dir = "D:\\Ansys Simulations\\Project\\2D\\v11_test"
+parent_dir = "D:\\Ansys Simulations\\Project\\2D\\v12_test"
 path = os.path.join(parent_dir, directory)
 
 ## Create log file
