@@ -53,9 +53,13 @@ except:
     f_log.close()
 
 ##Create files in this directory to store displacements and forces
-filename = "bc_test_"+ sample_number.ToString() +".txt"
+filename = "disp_test_"+ sample_number.ToString() +".txt"
 file_path = os.path.join(path, filename)
-f= open(file_path ,"w+")
+f_disp= open(file_path ,"w+")
+
+filename = "force_test_"+ sample_number.ToString() +".txt"
+file_path = os.path.join(path, filename)
+f_force= open(file_path ,"w+")
 
 ##Create List With relevant Boundary Conditions
 boundary_conditions = []
@@ -64,11 +68,19 @@ for item in analysis.GetChildren(DataModelObjectCategory.NodalDisplacement, Fals
 for item in analysis.GetChildren(DataModelObjectCategory.NodalForce, False):
     boundary_conditions.append(item)
 
-##Write in file
+##Write BCs in file
 for bc in boundary_conditions:
-    line = bc.Location.Name +"\t"+bc.DataModelObjectCategory.ToString()
-     f.write( line + "\n")
-
-## Close file
-f.close() 
+    x = bc.XComponent.Output.DiscreteValues[0].Value
+    y = bc.YComponent.Output.DiscreteValues[0].Value
+    z = bc.ZComponent.Output.DiscreteValues[0].Value
+    unit = bc.XComponent.Output.DiscreteValues[0].Unit
+    if bc.DataModelObjectCategory == DataModelObjectCategory.NodalDisplacement:
+        line = bc.Location.Name +"\t" + "["+unit+"]" +"\t" + x.ToString()+"\t" + y.ToString()+"\t" + z.ToString()
+        f_disp.write( line + "\n")
+    if bc.DataModelObjectCategory == DataModelObjectCategory.NodalForce:
+        line = bc.Location.Name +"\t" + "["+unit+"]" +"\t" + x.ToString()+"\t" + y.ToString()+"\t" + z.ToString()
+        f_force.write( line + "\n")
+## Close files
+f_disp.close() 
+f_force.close()
 
