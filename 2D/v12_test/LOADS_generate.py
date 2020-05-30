@@ -55,7 +55,7 @@ for i in range(number_displacements, number_displacements + number_forces): #ite
             if Is_3D: #displacement for 3d case
                 forces[-1].ZComponent.Output.DiscreteValues = [components[2]]
             else:
-                forces[-1].ZComponent.Output.DiscreteValues = [Quantity['0 [N]']]
+                forces[-1].ZComponent.Output.DiscreteValues = [Quantity('0 [N]')]
         except IndexError:
             pass
 
