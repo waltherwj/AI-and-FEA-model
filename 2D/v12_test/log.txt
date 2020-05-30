@@ -22,3 +22,4 @@ SAMPLE               ACTION               PATH
 19                   CREATE               D:\Ansys Simulations\Project\2D\v12_test\data_dir_19
 20                   CREATE               D:\Ansys Simulations\Project\2D\v12_test\data_dir_20
 21                   CREATE               D:\Ansys Simulations\Project\2D\v12_test\data_dir_21
+22                   CREATE               D:\Ansys Simulations\Project\2D\v12_test\data_dir_22

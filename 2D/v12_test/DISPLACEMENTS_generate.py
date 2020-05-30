@@ -57,7 +57,7 @@ for i in range(number_displacements): #iterates displacement nodal selections
             if Is_3D: #displacement for 3d case
                 displacements[-1].ZComponent.Output.DiscreteValues = [components[2]]
             else:
-                displacements[-1].ZComponent.Output.DiscreteValues = [Quantity['0 [in]']]
+                displacements[-1].ZComponent.Output.DiscreteValues = [Quantity('0 [in]')]
         except IndexError:
             pass
 
