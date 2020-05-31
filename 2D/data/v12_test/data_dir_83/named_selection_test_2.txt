@@ -1,0 +1,4 @@
+Node Number	X Location (m)	Y Location (m)	Z Location (m)	
+52	-0.34666	-0.84384	0.	
+289	-0.37762	-0.81077	0.	
+291	-0.31855	-0.87387	0.	

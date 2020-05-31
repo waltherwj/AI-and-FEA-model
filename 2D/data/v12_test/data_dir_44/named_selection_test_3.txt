@@ -1,0 +1,4 @@
+Node Number	X Location (m)	Y Location (m)	Z Location (m)	
+34	-0.40638	0.71466	0.	
+263	-0.4376	0.68589	0.	
+265	-0.37214	0.74622	0.	

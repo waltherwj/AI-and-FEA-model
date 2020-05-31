@@ -1,0 +1,4 @@
+Node Number	X Location (m)	Y Location (m)	Z Location (m)	
+35	-0.9478	-0.97058	0.	
+340	-0.93565	-0.95813	0.	
+341	-0.93081	-0.97357	0.	

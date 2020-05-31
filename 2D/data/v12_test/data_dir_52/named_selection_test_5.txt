@@ -1,0 +1,4 @@
+Node Number	X Location (m)	Y Location (m)	Z Location (m)	
+57	0.26208	1.1873	0.	
+160	0.15215	1.1647	0.	
+317	0.20491	1.1731	0.	

@@ -1,0 +1,4 @@
+Node Number	X Location (m)	Y Location (m)	Z Location (m)	
+52	0.55041	-0.10004	0.	
+275	0.52609	-9.5615e-002	0.	
+277	0.57473	-0.10446	0.	

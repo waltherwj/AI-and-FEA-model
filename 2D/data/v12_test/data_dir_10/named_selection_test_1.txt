@@ -1,0 +1,4 @@
+Node Number	X Location (m)	Y Location (m)	Z Location (m)	
+1	-1.0199e-002	-1.0455	0.	
+40	3.7943e-002	-1.0348	0.	
+202	1.3872e-002	-1.0401	0.	

@@ -1,6 +1,6 @@
 ﻿# encoding: utf-8
 # 2020 R1
-for i in range(1):
+for i in range(100):
     ## Create Geometry
     SetScriptVersion(Version="20.1.164")
     system1 = GetSystem(Name="SYS")

@@ -1,0 +1,4 @@
+Node Number	X Location (m)	Y Location (m)	Z Location (m)	
+12	-6.638e-002	0.28592	0.	
+179	-6.0846e-002	0.26208	0.	
+329	1.5553e-002	0.25919	0.	

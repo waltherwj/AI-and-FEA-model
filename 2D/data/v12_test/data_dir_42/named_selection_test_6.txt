@@ -1,0 +1,4 @@
+Node Number	X Location (m)	Y Location (m)	Z Location (m)	
+48	0.5847	0.7784	0.	
+282	0.60714	0.76261	0.	
+284	0.55831	0.79697	0.	

@@ -1,0 +1,2 @@
+Error
+User attempted to export Nodal Results with Nodal Locations. However, the Locations now require that the result file exist in the Solver Files Directory.

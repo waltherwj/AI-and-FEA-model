@@ -1,0 +1,5 @@
+Node Number	X Location (m)	Y Location (m)	Z Location (m)	
+20	1.0818	0.63926	0.	
+42	1.0352	0.65592	0.	
+211	1.0604	0.6266	0.	
+212	1.0585	0.64759	0.	

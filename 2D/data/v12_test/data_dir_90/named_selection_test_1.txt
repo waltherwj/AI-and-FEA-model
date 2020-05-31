@@ -1,0 +1,4 @@
+Node Number	X Location (m)	Y Location (m)	Z Location (m)	
+22	-0.75685	-0.67076	0.	
+41	-0.71082	-0.69176	0.	
+231	-0.73384	-0.68126	0.	
