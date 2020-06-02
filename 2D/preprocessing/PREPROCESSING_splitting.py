@@ -1,3 +1,4 @@
+## Imports necessary functions for the script
 import os
 from pathlib import Path
 import traceback
