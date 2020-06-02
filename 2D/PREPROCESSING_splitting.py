@@ -211,11 +211,13 @@ def delete_malformed_samples(all_samples_glob):
 def split_data(all_samples_path, data_folder_path):
     
     all_samples_glob = all_samples_path.glob('data_dir_*')
-    try:
-        delete_malformed_samples(all_samples_glob)
-    except:
-        print("no malformed samples - All folders were kept")
+    ##all samples_glob is exhausted in delete_malformed samples
+    delete_malformed_samples(all_samples_glob)
+  
+    all_samples_glob = all_samples_path.glob('data_dir_*')    
         
     for sample in all_samples_glob:
         print(sample)
         write_input_output(sample, data_folder_path)
+        
+print('splitting functions imported')
