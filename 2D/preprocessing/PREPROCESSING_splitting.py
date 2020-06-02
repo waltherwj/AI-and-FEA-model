@@ -15,18 +15,20 @@ def get_number(filename):
         
 def get_named_selections(sample_path):
     file_list = []
+    # return all paths that correspond to a named selection
     for file in sample_path.glob("named_selection_*.txt"):
         file_list.append(file)
     return file_list
     
-def create_filename(sample_path):        
+def create_filename(sample_path): 
+    #creates a filename based on the sample number
     sample_number = get_number(sample_path.name)
     input_filename = Path("input_" + sample_number + '.csv' )
     output_filename = Path("output_" + sample_number + '.csv' )
     return input_filename, output_filename    
     
 def bc_files_to_df(sample_folder):
-    
+    # creates three dataframes with the boundary conditions
     #load in solutions file
     solutions_file = sample_folder.glob("solutions_*.txt")
     for file in solutions_file:
@@ -57,12 +59,17 @@ def bc_files_to_df(sample_folder):
     return solutions_data, disp_bc_data, force_bc_data
     
 def selection_index(selection, data):
+    # runs through all named selections and returns the index
+    # that corresponds to the selection name
     for i, ns_in_file in enumerate(data.named_selection.to_list()):
         if selection == ns_in_file:
             return i
     raise Exception('error: String \'' + selection +'\' not found in the rows of the data')
     
 def update_selection(sample_folder, disp_data, force_data):
+    # generator  function that returns all the relevant data for each of the
+    # named selections in the folder
+    
     named_selections = get_named_selections(sample_folder)
     
     ## Iterate Through Selections
@@ -119,6 +126,8 @@ def update_selection(sample_folder, disp_data, force_data):
         yield ns_number, ns, is_disp, is_force, values
         
 def update_df_with_ns(df, ns_number, ns, is_disp, is_force, values):
+    ## updates the dataframe with a single named selection
+    
     ns_list = ns.node_number.to_list()
     
     for i, node in enumerate(df.node_number.to_list()):
@@ -134,7 +143,7 @@ def update_df_with_ns(df, ns_number, ns, is_disp, is_force, values):
     return df
 
 def create_input_df(sample_folder):
-    
+    ## creates a dataframe with the correct columns and neutral values
     ## start empty dataframe
     df = pd.DataFrame(columns = ['node_number', 'named_selection' , 'x_loc','y_loc','z_loc',
                              'x_disp','y_disp','z_disp',
@@ -162,6 +171,8 @@ def create_input_df(sample_folder):
     return df
 
 def write_input_output(sample_path, data_folder_path):
+    ## Writes the files corresponding to the sample to the output folder
+
     ## create the two  dataframes necessary for writing the files
     df_input = create_input_df(sample_path)
     df_output, _, _ = bc_files_to_df(sample_path)
@@ -177,6 +188,7 @@ def write_input_output(sample_path, data_folder_path):
     df_output.to_csv(output_file_path)
     
 def create_folders(data_directory_path):
+    # creates the folders to split the data into input and output, and returns their path
     try:
         input_folder = Path('input')
         output_folder = Path('output')
@@ -201,6 +213,8 @@ def create_folders(data_directory_path):
     return input_path, output_path
     
 def delete_malformed_samples(all_samples_glob):
+    #deletes folders that don't have the correct format
+    
     for sample_folder in all_samples_glob:
         solutions_file = sample_folder.glob("solutions_*.txt")
         for file in solutions_file:
@@ -216,6 +230,9 @@ def delete_malformed_samples(all_samples_glob):
                 os.rmdir(sample_folder)
                 
 def split_data(all_samples_path, data_folder_path):
+    # runs all the other functions and separates the data into input and output files
+    # for all samples inside of the samples directory by writing to the data_folder_path
+    # directory
     
     all_samples_glob = all_samples_path.glob('data_dir_*')
     ##all samples_glob is exhausted in delete_malformed samples
