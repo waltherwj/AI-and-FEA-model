@@ -24,23 +24,15 @@ This project has as objectives to
 ## Past Progress
 #### _Implementing a 2d model for proof of concept_
   * Created script for generating correct geometry inside of SpaceClaim
-
   * Created script for calling geometry script from Workbench
-
   * Create script for generating mesh in Mechanical
-
   * Create script for generating model inside of Workbench
-
   * Created script for applying forces to element
-
   * Automated Geometry and Mesh Generation Step
-
   * Created Folder to save Boundary Conditions and Results files
-
   * Created script for saving the geometry and mesh
 
     * The geometry/mesh comes from any results file, as it has nodal number and coordinate location
-
 * Created script for saving the results and boundary conditions
 
   * The results, boundary conditions and named selections are all exported to .txt files:
@@ -48,17 +40,18 @@ This project has as objectives to
     * Results - single file
     * Boundary Conditions - one file for nodal forces and one for displacements
     * Named Selections - One file for each named selection
+* Scaled it all to generate data continuously
+* Pre-processed files to be only 2 files, one with inputs and one with outputs
+
+  * Created pandas dataframes with nodal displacements and nodal forces for each named selection
+  * Used these dataframes to create final files with nodes and nodal coordinates, and corresponding nodal displacements and forces
 
 ## Current Work
 #### _Implementing a 2d model for proof of concept_
 
 ##### Tasks
 
-* Scale it all to generate data continuously
-* Pre-process files to be only 2 files, one with inputs and one with outputs
-
-  * Write file with nodal displacements and nodal forces for each named selection
-  * Use these files to create a final file with nodes and nodal coordinates, and corresponding nodal displacements and forces
+* Create a way to normalize and scale the data
 
 ## Element Shape, Force & Nodal Displacement Generation Justification
 
