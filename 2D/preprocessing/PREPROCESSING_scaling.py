@@ -42,7 +42,7 @@ def sample_iterator(samples_folder_path):
     
     for input_sample in input_sample_glob:
         sample_number = get_number(input_sample.name)
-        input_data, output_data = get_sample_dfs(data_folder_path, sample_number)
+        input_data, output_data = get_sample_dfs(samples_folder_path, sample_number)
         yield sample_number, input_data, output_data
         
 def get_max_disp_force(samples_folder_path):
@@ -94,3 +94,5 @@ def scale_dataframe(df_unscaled, max_force, max_disp):
         pass
     
     return df
+    
+print('scaling functions imported')
