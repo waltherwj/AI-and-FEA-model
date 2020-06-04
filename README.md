@@ -45,13 +45,14 @@ This project has as objectives to
 
   * Created pandas dataframes with nodal displacements and nodal forces for each named selection
   * Used these dataframes to create final files with nodes and nodal coordinates, and corresponding nodal displacements and forces
+* Created a way to scale the data
 
 ## Current Work
 #### _Implementing a 2d model for proof of concept_
 
 ##### Tasks
 
-* Create a way to normalize and scale the data
+* Format the data in a shape/file format that can be fed into a convolutional neural network,  preferably one that can also be used for 3d data
 
 ## Element Shape, Force & Nodal Displacement Generation Justification
 
