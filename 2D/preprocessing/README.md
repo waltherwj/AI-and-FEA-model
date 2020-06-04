@@ -70,3 +70,23 @@ Takes a generator `all_samples_glob` which is expected to generate `pathlib.Path
 
 Takes two `pathlib.Path` objects and splits all the data in all the `all_samples_path` directory into input and output files inside of the `data_folder_path` directory. This function uses all other functions in the script, and by running it the function of this script is fulfilled.
 
+## _scaling
+
+This modules purpose is to get the data that the `_splitting` module creates and scale it to a range that can be more successfully/stably used by a neural network: [-1,1]
+
+#### .get_sample_dfs(_Path samples_folder_path, Int sample_number_)
+
+Takes the path  of the directory with the two folders created by `.create_folders()` and the number of a sample, and outputs two `pandas.Dataframe` objects, `sample_input_df, sample_output_df` containing the inputs and outputs of that sample.
+
+#### .sample_iterator(_Path samples_folder_path_)
+
+Takes the path  of the directory with the two folders created by `.create_folders()` and outputs a generator object that yields `sample_number, input_data, output_data`, respectively, a string with the sample number of the current sample, and the two dataframes that are the output of the `.get_sample_dfs()` function.
+
+#### .get_max_disp_force(_Path samples_folder_path_)
+
+Takes the path  of the directory with the two folders created by `.create_folders()` and returns the maximum force and displacement of the entire dataset as two floats `max_force, max_disp`
+
+#### .scale_dataframe(_pandas.Dataframe df_unscaled, Float max_force, Float max_disp_)
+
+Takes a `pandas.Dataframe` and two floats `max_force`, `max_disp` and divides the correct columns of the dataframe by these two floats, scaling them. If the two values `max_force` and `max_disp` come from the `get_max_disp_force` function then it is guaranteed that the resulting columns are going to be in the range [-1,1], however it will work if other values are provided as well. 
+
