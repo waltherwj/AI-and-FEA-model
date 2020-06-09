@@ -194,21 +194,19 @@ def create_folders(data_directory_path):
         output_folder = Path('output')
         input_path = Path(data_directory_path, input_folder)
         output_path = Path(data_directory_path, output_folder)
-        print(input_path)
         input_path.mkdir(parents = True)
-        print(output_path)
+        print(f'folder {input_path} created')
     except Exception:
-        pass
-        print("folders likely already exist")
+        print(f"folder {input_path} likely already exist")
         #traceback.print_exc()
     
     try:
-        print(output_path)
+     
         output_path.mkdir(parents = True)
-        print(output_path)
+        print(f'folder {output_path} created')
     except:
+        print(f"folder {output_path} likely already exist")
         #traceback.print_exc()
-        pass
     
     return input_path, output_path
     
