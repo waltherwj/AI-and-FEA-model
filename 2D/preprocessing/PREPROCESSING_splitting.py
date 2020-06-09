@@ -195,7 +195,7 @@ def create_folders(data_directory_path):
         input_path = Path(data_directory_path, input_folder)
         output_path = Path(data_directory_path, output_folder)
         print(input_path)
-        input_path.mkdir()
+        input_path.mkdir(parents = True)
         print(output_path)
     except Exception:
         pass
@@ -204,7 +204,7 @@ def create_folders(data_directory_path):
     
     try:
         print(output_path)
-        output_path.mkdir()
+        output_path.mkdir(parents = True)
         print(output_path)
     except:
         #traceback.print_exc()
