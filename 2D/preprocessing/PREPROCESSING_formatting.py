@@ -400,7 +400,6 @@ def create_scaled_arrays_iterator(array_folder_path, max_values, glob_parameter 
     
     # get max values
     max_disp, max_force = max_values
-    print(max_disp, max_force)
     
     for sample_number, unscaled_input_array, unscaled_output_array in array_iterator:
             
