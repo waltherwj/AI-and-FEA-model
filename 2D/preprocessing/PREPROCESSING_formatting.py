@@ -1,5 +1,6 @@
 import numpy as np
 import PREPROCESSING_scaling as scale
+import PREPROCESSING_splitting as split
 from pathlib import Path
 import pandas as pd
 import os, sys
