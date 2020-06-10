@@ -1,0 +1,113 @@
+
+2020-06-10 16:52:46.007270
+SAMPLE               INPUT                OUTPUT               PATH                                                     TIME
+1                    CREATE               CREATE               D:\Ansys Simulations\Project\2D\data\proof_of_concept\unscaled\arrays                      0.05086565017700195s 
+10                   CREATE               CREATE               D:\Ansys Simulations\Project\2D\data\proof_of_concept\unscaled\arrays                     0.011967897415161133s 
+100                  CREATE               CREATE               D:\Ansys Simulations\Project\2D\data\proof_of_concept\unscaled\arrays                     0.010971307754516602s 
+101                  CREATE               CREATE               D:\Ansys Simulations\Project\2D\data\proof_of_concept\unscaled\arrays                      0.00897669792175293s 
+102                  CREATE               CREATE               D:\Ansys Simulations\Project\2D\data\proof_of_concept\unscaled\arrays                     0.009974002838134766s 
+103                  CREATE               CREATE               D:\Ansys Simulations\Project\2D\data\proof_of_concept\unscaled\arrays                     0.009974479675292969s 
+11                   CREATE               CREATE               D:\Ansys Simulations\Project\2D\data\proof_of_concept\unscaled\arrays                     0.009973287582397461s 
+12                   CREATE               CREATE               D:\Ansys Simulations\Project\2D\data\proof_of_concept\unscaled\arrays                     0.010970115661621094s 
+13                   CREATE               CREATE               D:\Ansys Simulations\Project\2D\data\proof_of_concept\unscaled\arrays                     0.010971784591674805s 
+14                   CREATE               CREATE               D:\Ansys Simulations\Project\2D\data\proof_of_concept\unscaled\arrays                     0.013962745666503906s 
+15                   CREATE               CREATE               D:\Ansys Simulations\Project\2D\data\proof_of_concept\unscaled\arrays                     0.009972810745239258s 
+16                   CREATE               CREATE               D:\Ansys Simulations\Project\2D\data\proof_of_concept\unscaled\arrays                     0.010972023010253906s 
+17                   CREATE               CREATE               D:\Ansys Simulations\Project\2D\data\proof_of_concept\unscaled\arrays                     0.009974002838134766s 
+18                   CREATE               CREATE               D:\Ansys Simulations\Project\2D\data\proof_of_concept\unscaled\arrays                     0.010971307754516602s 
+19                   CREATE               CREATE               D:\Ansys Simulations\Project\2D\data\proof_of_concept\unscaled\arrays                     0.009972333908081055s 
+2                    CREATE               CREATE               D:\Ansys Simulations\Project\2D\data\proof_of_concept\unscaled\arrays                      0.00997471809387207s 
+20                   CREATE               CREATE               D:\Ansys Simulations\Project\2D\data\proof_of_concept\unscaled\arrays                     0.009974479675292969s 
+21                   CREATE               CREATE               D:\Ansys Simulations\Project\2D\data\proof_of_concept\unscaled\arrays                      0.01097249984741211s 
+22                   CREATE               CREATE               D:\Ansys Simulations\Project\2D\data\proof_of_concept\unscaled\arrays                       0.0109710693359375s 
+23                   CREATE               CREATE               D:\Ansys Simulations\Project\2D\data\proof_of_concept\unscaled\arrays                      0.04587817192077637s 
+24                   CREATE               CREATE               D:\Ansys Simulations\Project\2D\data\proof_of_concept\unscaled\arrays                      0.03789949417114258s 
+25                   CREATE               CREATE               D:\Ansys Simulations\Project\2D\data\proof_of_concept\unscaled\arrays                     0.009973287582397461s 
+26                   CREATE               CREATE               D:\Ansys Simulations\Project\2D\data\proof_of_concept\unscaled\arrays                     0.009973526000976562s 
+27                   CREATE               CREATE               D:\Ansys Simulations\Project\2D\data\proof_of_concept\unscaled\arrays                       0.0109710693359375s 
+28                   CREATE               CREATE               D:\Ansys Simulations\Project\2D\data\proof_of_concept\unscaled\arrays                     0.009974002838134766s 
+29                   CREATE               CREATE               D:\Ansys Simulations\Project\2D\data\proof_of_concept\unscaled\arrays                      0.03291058540344238s 
+30                   CREATE               CREATE               D:\Ansys Simulations\Project\2D\data\proof_of_concept\unscaled\arrays                     0.007980108261108398s 
+31                   CREATE               CREATE               D:\Ansys Simulations\Project\2D\data\proof_of_concept\unscaled\arrays                     0.009973526000976562s 
+32                   CREATE               CREATE               D:\Ansys Simulations\Project\2D\data\proof_of_concept\unscaled\arrays                     0.009972810745239258s 
+33                   CREATE               CREATE               D:\Ansys Simulations\Project\2D\data\proof_of_concept\unscaled\arrays                     0.010972976684570312s 
+34                   CREATE               CREATE               D:\Ansys Simulations\Project\2D\data\proof_of_concept\unscaled\arrays                     0.010970592498779297s 
+35                   CREATE               CREATE               D:\Ansys Simulations\Project\2D\data\proof_of_concept\unscaled\arrays                     0.011966705322265625s 
+36                   CREATE               CREATE               D:\Ansys Simulations\Project\2D\data\proof_of_concept\unscaled\arrays                     0.021940946578979492s 
+37                   CREATE               CREATE               D:\Ansys Simulations\Project\2D\data\proof_of_concept\unscaled\arrays                     0.009972333908081055s 
+38                   CREATE               CREATE               D:\Ansys Simulations\Project\2D\data\proof_of_concept\unscaled\arrays                     0.009939432144165039s 
+39                   CREATE               CREATE               D:\Ansys Simulations\Project\2D\data\proof_of_concept\unscaled\arrays                     0.009973764419555664s 
+4                    CREATE               CREATE               D:\Ansys Simulations\Project\2D\data\proof_of_concept\unscaled\arrays                     0.008940458297729492s 
+40                   CREATE               CREATE               D:\Ansys Simulations\Project\2D\data\proof_of_concept\unscaled\arrays                     0.009975910186767578s 
+41                   CREATE               CREATE               D:\Ansys Simulations\Project\2D\data\proof_of_concept\unscaled\arrays                     0.010967731475830078s 
+42                   CREATE               CREATE               D:\Ansys Simulations\Project\2D\data\proof_of_concept\unscaled\arrays                      0.00894021987915039s 
+43                   CREATE               CREATE               D:\Ansys Simulations\Project\2D\data\proof_of_concept\unscaled\arrays                      0.00997161865234375s 
+44                   CREATE               CREATE               D:\Ansys Simulations\Project\2D\data\proof_of_concept\unscaled\arrays                      0.01094198226928711s 
+45                   CREATE               CREATE               D:\Ansys Simulations\Project\2D\data\proof_of_concept\unscaled\arrays                       0.0109710693359375s 
+46                   CREATE               CREATE               D:\Ansys Simulations\Project\2D\data\proof_of_concept\unscaled\arrays                     0.009973287582397461s 
+47                   CREATE               CREATE               D:\Ansys Simulations\Project\2D\data\proof_of_concept\unscaled\arrays                     0.009972810745239258s 
+48                   CREATE               CREATE               D:\Ansys Simulations\Project\2D\data\proof_of_concept\unscaled\arrays                     0.010969877243041992s 
+49                   CREATE               CREATE               D:\Ansys Simulations\Project\2D\data\proof_of_concept\unscaled\arrays                      0.00897669792175293s 
+5                    CREATE               CREATE               D:\Ansys Simulations\Project\2D\data\proof_of_concept\unscaled\arrays                     0.008975744247436523s 
+50                   CREATE               CREATE               D:\Ansys Simulations\Project\2D\data\proof_of_concept\unscaled\arrays                     0.009974002838134766s 
+51                   CREATE               CREATE               D:\Ansys Simulations\Project\2D\data\proof_of_concept\unscaled\arrays                      0.00897526741027832s 
+52                   CREATE               CREATE               D:\Ansys Simulations\Project\2D\data\proof_of_concept\unscaled\arrays                     0.008978843688964844s 
+53                   CREATE               CREATE               D:\Ansys Simulations\Project\2D\data\proof_of_concept\unscaled\arrays                     0.008975744247436523s 
+54                   CREATE               CREATE               D:\Ansys Simulations\Project\2D\data\proof_of_concept\unscaled\arrays                     0.010970592498779297s 
+55                   CREATE               CREATE               D:\Ansys Simulations\Project\2D\data\proof_of_concept\unscaled\arrays                     0.011968135833740234s 
+56                   CREATE               CREATE               D:\Ansys Simulations\Project\2D\data\proof_of_concept\unscaled\arrays                     0.009975910186767578s 
+57                   CREATE               CREATE               D:\Ansys Simulations\Project\2D\data\proof_of_concept\unscaled\arrays                     0.008975982666015625s 
+58                   CREATE               CREATE               D:\Ansys Simulations\Project\2D\data\proof_of_concept\unscaled\arrays                     0.010971307754516602s 
+59                   CREATE               CREATE               D:\Ansys Simulations\Project\2D\data\proof_of_concept\unscaled\arrays                     0.011967658996582031s 
+6                    CREATE               CREATE               D:\Ansys Simulations\Project\2D\data\proof_of_concept\unscaled\arrays                      0.01296544075012207s 
+60                   CREATE               CREATE               D:\Ansys Simulations\Project\2D\data\proof_of_concept\unscaled\arrays                     0.010970115661621094s 
+61                   CREATE               CREATE               D:\Ansys Simulations\Project\2D\data\proof_of_concept\unscaled\arrays                     0.009973764419555664s 
+62                   CREATE               CREATE               D:\Ansys Simulations\Project\2D\data\proof_of_concept\unscaled\arrays                     0.009975194931030273s 
+63                   CREATE               CREATE               D:\Ansys Simulations\Project\2D\data\proof_of_concept\unscaled\arrays                     0.010972261428833008s 
+64                   CREATE               CREATE               D:\Ansys Simulations\Project\2D\data\proof_of_concept\unscaled\arrays                     0.008974075317382812s 
+65                   CREATE               CREATE               D:\Ansys Simulations\Project\2D\data\proof_of_concept\unscaled\arrays                      0.00797724723815918s 
+66                   CREATE               CREATE               D:\Ansys Simulations\Project\2D\data\proof_of_concept\unscaled\arrays                       0.0109710693359375s 
+67                   CREATE               CREATE               D:\Ansys Simulations\Project\2D\data\proof_of_concept\unscaled\arrays                     0.009974479675292969s 
+68                   CREATE               CREATE               D:\Ansys Simulations\Project\2D\data\proof_of_concept\unscaled\arrays                     0.009972333908081055s 
+69                   CREATE               CREATE               D:\Ansys Simulations\Project\2D\data\proof_of_concept\unscaled\arrays                     0.010970830917358398s 
+7                    CREATE               CREATE               D:\Ansys Simulations\Project\2D\data\proof_of_concept\unscaled\arrays                     0.010970830917358398s 
+70                   CREATE               CREATE               D:\Ansys Simulations\Project\2D\data\proof_of_concept\unscaled\arrays                     0.008976459503173828s 
+71                   CREATE               CREATE               D:\Ansys Simulations\Project\2D\data\proof_of_concept\unscaled\arrays                     0.009974002838134766s 
+72                   CREATE               CREATE               D:\Ansys Simulations\Project\2D\data\proof_of_concept\unscaled\arrays                     0.009972572326660156s 
+73                   CREATE               CREATE               D:\Ansys Simulations\Project\2D\data\proof_of_concept\unscaled\arrays                     0.009973526000976562s 
+74                   CREATE               CREATE               D:\Ansys Simulations\Project\2D\data\proof_of_concept\unscaled\arrays                     0.008976459503173828s 
+75                   CREATE               CREATE               D:\Ansys Simulations\Project\2D\data\proof_of_concept\unscaled\arrays                     0.008976936340332031s 
+76                   CREATE               CREATE               D:\Ansys Simulations\Project\2D\data\proof_of_concept\unscaled\arrays                     0.008007287979125977s 
+77                   CREATE               CREATE               D:\Ansys Simulations\Project\2D\data\proof_of_concept\unscaled\arrays                     0.008947134017944336s 
+78                   CREATE               CREATE               D:\Ansys Simulations\Project\2D\data\proof_of_concept\unscaled\arrays                      0.00897669792175293s 
+79                   CREATE               CREATE               D:\Ansys Simulations\Project\2D\data\proof_of_concept\unscaled\arrays                      0.00897836685180664s 
+8                    CREATE               CREATE               D:\Ansys Simulations\Project\2D\data\proof_of_concept\unscaled\arrays                     0.008975744247436523s 
+80                   CREATE               CREATE               D:\Ansys Simulations\Project\2D\data\proof_of_concept\unscaled\arrays                     0.010970830917358398s 
+81                   CREATE               CREATE               D:\Ansys Simulations\Project\2D\data\proof_of_concept\unscaled\arrays                     0.008976459503173828s 
+82                   CREATE               CREATE               D:\Ansys Simulations\Project\2D\data\proof_of_concept\unscaled\arrays                      0.01196908950805664s 
+83                   CREATE               CREATE               D:\Ansys Simulations\Project\2D\data\proof_of_concept\unscaled\arrays                     0.010969877243041992s 
+84                   CREATE               CREATE               D:\Ansys Simulations\Project\2D\data\proof_of_concept\unscaled\arrays                     0.009973764419555664s 
+85                   CREATE               CREATE               D:\Ansys Simulations\Project\2D\data\proof_of_concept\unscaled\arrays                       0.0109710693359375s 
+86                   CREATE               CREATE               D:\Ansys Simulations\Project\2D\data\proof_of_concept\unscaled\arrays                     0.020944833755493164s 
+87                   CREATE               CREATE               D:\Ansys Simulations\Project\2D\data\proof_of_concept\unscaled\arrays                     0.008976221084594727s 
+88                   CREATE               CREATE               D:\Ansys Simulations\Project\2D\data\proof_of_concept\unscaled\arrays                     0.010971546173095703s 
+89                   CREATE               CREATE               D:\Ansys Simulations\Project\2D\data\proof_of_concept\unscaled\arrays                     0.009973526000976562s 
+9                    CREATE               CREATE               D:\Ansys Simulations\Project\2D\data\proof_of_concept\unscaled\arrays                       0.0249330997467041s 
+90                   CREATE               CREATE               D:\Ansys Simulations\Project\2D\data\proof_of_concept\unscaled\arrays                     0.007980108261108398s 
+91                   CREATE               CREATE               D:\Ansys Simulations\Project\2D\data\proof_of_concept\unscaled\arrays                     0.012964248657226562s 
+92                   CREATE               CREATE               D:\Ansys Simulations\Project\2D\data\proof_of_concept\unscaled\arrays                     0.009971857070922852s 
+93                   CREATE               CREATE               D:\Ansys Simulations\Project\2D\data\proof_of_concept\unscaled\arrays                     0.009973764419555664s 
+94                   CREATE               CREATE               D:\Ansys Simulations\Project\2D\data\proof_of_concept\unscaled\arrays                     0.008975505828857422s 
+95                   CREATE               CREATE               D:\Ansys Simulations\Project\2D\data\proof_of_concept\unscaled\arrays                       0.0109710693359375s 
+96                   CREATE               CREATE               D:\Ansys Simulations\Project\2D\data\proof_of_concept\unscaled\arrays                       0.0109710693359375s 
+97                   CREATE               CREATE               D:\Ansys Simulations\Project\2D\data\proof_of_concept\unscaled\arrays                     0.010971546173095703s 
+98                   CREATE               CREATE               D:\Ansys Simulations\Project\2D\data\proof_of_concept\unscaled\arrays                     0.010972023010253906s 
+99                   CREATE               CREATE               D:\Ansys Simulations\Project\2D\data\proof_of_concept\unscaled\arrays                      0.00997304916381836s 
+OVERALL TIME: 11.884175539016724s 
+ UPDATE MAX VALUES 
+SAMPLE               FORCE                DISPLACEMENT        
+1                    0                    0.00205304777781513  
+10                   611.170030652408     0.002929625          
+100                  611.170030652408     0.019208             
+101                  1457.225140947126    0.019208             
+83                   1515.2942358505202   0.019208             
