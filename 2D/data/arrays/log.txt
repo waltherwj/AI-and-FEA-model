@@ -101,4 +101,4 @@ SAMPLE               INPUT                OUTPUT               PATH             
 97                   CREATE               CREATE               D:\Ansys Simulations\Project\2D\data\arrays                     0.012966394424438477s 
 98                   CREATE               CREATE               D:\Ansys Simulations\Project\2D\data\arrays                     0.013963460922241211s 
 99                   CREATE               CREATE               D:\Ansys Simulations\Project\2D\data\arrays                      0.05086541175842285s 
-OVERALL TIME: 14.058838844299316s 
+OVERALL TIME: 14.058838844299316s            
