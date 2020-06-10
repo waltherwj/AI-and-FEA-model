@@ -43,10 +43,7 @@ def plot_2d(sample_array, contour = False, clear = True, edges = np.array([])):
     
 %matplotlib inline 
 import matplotlib.pyplot as plt
-#f = plt.figure()
 
-
-#plt.imshow(concat_input[:,:,0])
 def plot_grid_2d(concat_input, concat_output):
     
     f, axarr = plt.subplots(2,5, figsize = (15,6)) 
@@ -83,3 +80,5 @@ def plot_grid_2d(concat_input, concat_output):
 
     print(sample_number)
     plt.show()
+    
+print('displaying functions imported. magics imported: <%matplotlib inline>  <%gui qt>')
