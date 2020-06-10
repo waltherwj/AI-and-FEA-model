@@ -15,7 +15,53 @@ class HiddenPrints:
     def __exit__(self, exc_type, exc_val, exc_tb):
         sys.stdout.close()
         sys.stdout = self._original_stdout
+    
+def get_max_dimensions(samples_folder_path):
+    ## iterates through all data to get the max dimensions
+    samples = scale.sample_iterator(samples_folder_path)
+    
+    max_x = 0
+    max_y = 0
+    max_z = 0
+    
+    for sample in samples:
+        sample_number, input_data, output_data = sample
+        #print(samples)
         
+        ## run through all data
+        # first absolute, then max in the columns 
+        updated = False
+        
+        ## get ranges of data in sample
+        range_x = [input_data.loc[:,['x_loc']].max().item(), input_data.loc[:,['x_loc']].min().item()]
+        max_x_temp = abs(range_x[0] - range_x[1])
+        
+        range_y = [input_data.loc[:,['y_loc']].max().item(), input_data.loc[:,['y_loc']].min().item()]
+        max_y_temp = abs(range_y[0] - range_y[1])
+        
+        range_z = [input_data.loc[:,['z_loc']].max().item(), input_data.loc[:,['z_loc']].min().item()]
+        max_z = abs(range_z[0] - range_z[1])
+        
+        max_y_temp, max_z_temp = input_data.loc[:,['y_loc','z_loc']].abs().max()
+        
+        if max_x_temp > max_x:
+            max_x = max_x_temp
+            updated = True
+            
+        if max_y_temp > max_y:
+            max_y = max_y_temp
+            updated = True
+            
+        if max_z_temp > max_z:
+            max_z = max_z_temp
+            updated = True
+            
+        if updated:
+            print(f'UPDATED MAX \t sample #{sample_number} \t x: {max_x:.4f} \t y: {max_y:.4f} \t z: {max_z:.4f}')
+            
+    return max_x, max_y, max_z
+
+    
 def get_element_size(samples_folder_path, resolution = 32):
     ## runs through all samples to get the element size based on the resolution
     with HiddenPrints():
