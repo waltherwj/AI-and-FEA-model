@@ -9,6 +9,14 @@ import torch
 import datetime
 import time
 
+def create_array(dimensionality, features, resolution = 32):
+    ## returns an array of zeros for the correct type of model specified with the dimensionality and the features
+    positional_shape = [resolution]*dimensionality
+    shape = positional_shape + [features]
+    array = np.zeros(shape)
+    return array
+
+
 class HiddenPrints:
     def __enter__(self):
         self._original_stdout = sys.stdout
