@@ -402,7 +402,7 @@ def saved_array_iterator(array_folder_path, glob_parameter = '*.npy'):
     
     ## iterate over array files
     for input_array_path, output_array_path in array_iterators:
-        sample_number = get_number(input_array_path.name)
+        sample_number = split.get_number(input_array_path.name)
         
         input_array = np.load(input_array_path)
         output_array = np.load(output_array_path)
