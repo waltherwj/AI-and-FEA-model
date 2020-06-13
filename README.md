@@ -47,13 +47,13 @@ This project has as objectives to
   * Used these dataframes to create final files with nodes and nodal coordinates, and corresponding nodal displacements and forces
 * Created a way to scale the data
 * Formatted the data to `.npy`  arrays of shape `(BATCH_SIZE x FEATURES x HEIGHT x WIDTH)`
+* Created a general forward pass for the simplest model showing that the model is partially successful on a toy dataset. In essence, the **proof of concept is complete**
 
 ## Current Work
 #### _Implementing a 2d model for proof of concept_
 
 ##### Tasks
 
-* Create a general forward pass for the tensors
 * Explore different models with Weights and Biases
 
 ## Element Shape, Force & Nodal Displacement Generation Justification
