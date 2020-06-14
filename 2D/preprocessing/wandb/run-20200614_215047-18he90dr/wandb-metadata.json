@@ -1,0 +1,28 @@
+{
+    "root": "D:/Ansys Simulations/Project",
+    "program": "<python with no main file>",
+    "git": {
+        "remote": null,
+        "commit": "9582aa1fcb78545b8b5295c53caa2981584dacc9"
+    },
+    "email": "walther.johnson@ucalgary.ca",
+    "startedAt": "2020-06-14T21:50:47.636247",
+    "host": "DESKTOP-SDVPC46",
+    "username": "Walther Wennholz",
+    "executable": "D:\\Anaconda3_2nd\\envs\\AI_FEA\\python.exe",
+    "os": "Windows-10-10.0.19041-SP0",
+    "python": "3.7.7",
+    "gpu": "GeForce GTX 1050",
+    "gpu_count": 1,
+    "cpu_count": 8,
+    "args": [
+        "-f",
+        "C:\\Users\\Owner\\AppData\\Roaming\\jupyter\\runtime\\kernel-b4c4f48c-1464-4ce7-b256-d01fcb79e043.json"
+    ],
+    "state": "running",
+    "jobType": null,
+    "mode": "run",
+    "name": "dainty-sound-4",
+    "project": "Project",
+    "heartbeatAt": "2020-06-14T21:50:50.520554"
+}
