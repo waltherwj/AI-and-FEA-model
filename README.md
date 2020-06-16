@@ -55,6 +55,9 @@ This project has as objectives to
 ##### Tasks
 
 * Explore different models with Weights and Biases
+  * backtrack: after some exploration, it became apparent that the models were fitting the empty space around the data instead of the data itself:
+    * Refit the data to the tensor, making them occupy more space 
+    * Create a dataloader, so that the data can be augmented if wanted
 
 ## Element Shape, Force & Nodal Displacement Generation Justification
 
