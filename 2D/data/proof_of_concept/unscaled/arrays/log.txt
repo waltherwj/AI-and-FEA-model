@@ -111,3 +111,116 @@ SAMPLE               FORCE                DISPLACEMENT
 100                  611.170030652408     0.019208             
 101                  1457.225140947126    0.019208             
 83                   1515.2942358505202   0.019208             
+
+2020-06-16 10:04:25.546778
+SAMPLE               INPUT                OUTPUT               PATH                                                     TIME
+1                    OVRWRT               OVRWRT               D:\Ansys Simulations\Project\2D\data\proof_of_concept\unscaled\arrays                      0.05699968338012695s 
+10                   OVRWRT               OVRWRT               D:\Ansys Simulations\Project\2D\data\proof_of_concept\unscaled\arrays                     0.044008731842041016s 
+100                  OVRWRT               OVRWRT               D:\Ansys Simulations\Project\2D\data\proof_of_concept\unscaled\arrays                     0.007034778594970703s 
+101                  OVRWRT               OVRWRT               D:\Ansys Simulations\Project\2D\data\proof_of_concept\unscaled\arrays                     0.005999326705932617s 
+102                  OVRWRT               OVRWRT               D:\Ansys Simulations\Project\2D\data\proof_of_concept\unscaled\arrays                     0.014966011047363281s 
+103                  OVRWRT               OVRWRT               D:\Ansys Simulations\Project\2D\data\proof_of_concept\unscaled\arrays                     0.016034603118896484s 
+11                   OVRWRT               OVRWRT               D:\Ansys Simulations\Project\2D\data\proof_of_concept\unscaled\arrays                     0.007002115249633789s 
+12                   OVRWRT               OVRWRT               D:\Ansys Simulations\Project\2D\data\proof_of_concept\unscaled\arrays                     0.005002021789550781s 
+13                   OVRWRT               OVRWRT               D:\Ansys Simulations\Project\2D\data\proof_of_concept\unscaled\arrays                       0.0410001277923584s 
+14                   OVRWRT               OVRWRT               D:\Ansys Simulations\Project\2D\data\proof_of_concept\unscaled\arrays                      0.04800057411193848s 
+15                   OVRWRT               OVRWRT               D:\Ansys Simulations\Project\2D\data\proof_of_concept\unscaled\arrays                     0.006002187728881836s 
+16                   OVRWRT               OVRWRT               D:\Ansys Simulations\Project\2D\data\proof_of_concept\unscaled\arrays                     0.007999897003173828s 
+17                   OVRWRT               OVRWRT               D:\Ansys Simulations\Project\2D\data\proof_of_concept\unscaled\arrays                     0.006997108459472656s 
+18                   OVRWRT               OVRWRT               D:\Ansys Simulations\Project\2D\data\proof_of_concept\unscaled\arrays                     0.006001472473144531s 
+19                   OVRWRT               OVRWRT               D:\Ansys Simulations\Project\2D\data\proof_of_concept\unscaled\arrays                     0.006007194519042969s 
+2                    OVRWRT               OVRWRT               D:\Ansys Simulations\Project\2D\data\proof_of_concept\unscaled\arrays                     0.005997180938720703s 
+20                   OVRWRT               OVRWRT               D:\Ansys Simulations\Project\2D\data\proof_of_concept\unscaled\arrays                      0.00600123405456543s 
+21                   OVRWRT               OVRWRT               D:\Ansys Simulations\Project\2D\data\proof_of_concept\unscaled\arrays                     0.007002115249633789s 
+22                   OVRWRT               OVRWRT               D:\Ansys Simulations\Project\2D\data\proof_of_concept\unscaled\arrays                      0.04200267791748047s 
+23                   OVRWRT               OVRWRT               D:\Ansys Simulations\Project\2D\data\proof_of_concept\unscaled\arrays                     0.043964385986328125s 
+24                   OVRWRT               OVRWRT               D:\Ansys Simulations\Project\2D\data\proof_of_concept\unscaled\arrays                     0.007970571517944336s 
+25                   OVRWRT               OVRWRT               D:\Ansys Simulations\Project\2D\data\proof_of_concept\unscaled\arrays                     0.006966829299926758s 
+26                   OVRWRT               OVRWRT               D:\Ansys Simulations\Project\2D\data\proof_of_concept\unscaled\arrays                     0.005972623825073242s 
+27                   OVRWRT               OVRWRT               D:\Ansys Simulations\Project\2D\data\proof_of_concept\unscaled\arrays                     0.005967378616333008s 
+28                   OVRWRT               OVRWRT               D:\Ansys Simulations\Project\2D\data\proof_of_concept\unscaled\arrays                      0.05199766159057617s 
+29                   OVRWRT               OVRWRT               D:\Ansys Simulations\Project\2D\data\proof_of_concept\unscaled\arrays                     0.046002864837646484s 
+30                   OVRWRT               OVRWRT               D:\Ansys Simulations\Project\2D\data\proof_of_concept\unscaled\arrays                     0.039998769760131836s 
+31                   OVRWRT               OVRWRT               D:\Ansys Simulations\Project\2D\data\proof_of_concept\unscaled\arrays                     0.005964040756225586s 
+32                   OVRWRT               OVRWRT               D:\Ansys Simulations\Project\2D\data\proof_of_concept\unscaled\arrays                    0.0060045719146728516s 
+33                   OVRWRT               OVRWRT               D:\Ansys Simulations\Project\2D\data\proof_of_concept\unscaled\arrays                     0.006997585296630859s 
+34                   OVRWRT               OVRWRT               D:\Ansys Simulations\Project\2D\data\proof_of_concept\unscaled\arrays                     0.025996685028076172s 
+35                   OVRWRT               OVRWRT               D:\Ansys Simulations\Project\2D\data\proof_of_concept\unscaled\arrays                     0.006001472473144531s 
+36                   OVRWRT               OVRWRT               D:\Ansys Simulations\Project\2D\data\proof_of_concept\unscaled\arrays                      0.00796651840209961s 
+37                   OVRWRT               OVRWRT               D:\Ansys Simulations\Project\2D\data\proof_of_concept\unscaled\arrays                      0.03800344467163086s 
+38                   OVRWRT               OVRWRT               D:\Ansys Simulations\Project\2D\data\proof_of_concept\unscaled\arrays                     0.006003141403198242s 
+39                   OVRWRT               OVRWRT               D:\Ansys Simulations\Project\2D\data\proof_of_concept\unscaled\arrays                     0.006962299346923828s 
+4                    OVRWRT               OVRWRT               D:\Ansys Simulations\Project\2D\data\proof_of_concept\unscaled\arrays                     0.005963802337646484s 
+40                   OVRWRT               OVRWRT               D:\Ansys Simulations\Project\2D\data\proof_of_concept\unscaled\arrays                     0.006997585296630859s 
+41                   OVRWRT               OVRWRT               D:\Ansys Simulations\Project\2D\data\proof_of_concept\unscaled\arrays                     0.005995273590087891s 
+42                   OVRWRT               OVRWRT               D:\Ansys Simulations\Project\2D\data\proof_of_concept\unscaled\arrays                     0.007000923156738281s 
+43                   OVRWRT               OVRWRT               D:\Ansys Simulations\Project\2D\data\proof_of_concept\unscaled\arrays                     0.008003473281860352s 
+44                   OVRWRT               OVRWRT               D:\Ansys Simulations\Project\2D\data\proof_of_concept\unscaled\arrays                      0.00700068473815918s 
+45                   OVRWRT               OVRWRT               D:\Ansys Simulations\Project\2D\data\proof_of_concept\unscaled\arrays                     0.007004261016845703s 
+46                   OVRWRT               OVRWRT               D:\Ansys Simulations\Project\2D\data\proof_of_concept\unscaled\arrays                      0.03600001335144043s 
+47                   OVRWRT               OVRWRT               D:\Ansys Simulations\Project\2D\data\proof_of_concept\unscaled\arrays                     0.005003690719604492s 
+48                   OVRWRT               OVRWRT               D:\Ansys Simulations\Project\2D\data\proof_of_concept\unscaled\arrays                     0.007002115249633789s 
+49                   OVRWRT               OVRWRT               D:\Ansys Simulations\Project\2D\data\proof_of_concept\unscaled\arrays                     0.005001068115234375s 
+5                    OVRWRT               OVRWRT               D:\Ansys Simulations\Project\2D\data\proof_of_concept\unscaled\arrays                    0.0059702396392822266s 
+50                   OVRWRT               OVRWRT               D:\Ansys Simulations\Project\2D\data\proof_of_concept\unscaled\arrays                      0.00599980354309082s 
+51                   OVRWRT               OVRWRT               D:\Ansys Simulations\Project\2D\data\proof_of_concept\unscaled\arrays                      0.02099895477294922s 
+52                   OVRWRT               OVRWRT               D:\Ansys Simulations\Project\2D\data\proof_of_concept\unscaled\arrays                    0.0050008296966552734s 
+53                   OVRWRT               OVRWRT               D:\Ansys Simulations\Project\2D\data\proof_of_concept\unscaled\arrays                     0.007001161575317383s 
+54                   OVRWRT               OVRWRT               D:\Ansys Simulations\Project\2D\data\proof_of_concept\unscaled\arrays                      0.03300118446350098s 
+55                   OVRWRT               OVRWRT               D:\Ansys Simulations\Project\2D\data\proof_of_concept\unscaled\arrays                    0.0069959163665771484s 
+56                   OVRWRT               OVRWRT               D:\Ansys Simulations\Project\2D\data\proof_of_concept\unscaled\arrays                    0.0060024261474609375s 
+57                   OVRWRT               OVRWRT               D:\Ansys Simulations\Project\2D\data\proof_of_concept\unscaled\arrays                     0.008038043975830078s 
+58                   OVRWRT               OVRWRT               D:\Ansys Simulations\Project\2D\data\proof_of_concept\unscaled\arrays                     0.005998849868774414s 
+59                   OVRWRT               OVRWRT               D:\Ansys Simulations\Project\2D\data\proof_of_concept\unscaled\arrays                     0.006033182144165039s 
+6                    OVRWRT               OVRWRT               D:\Ansys Simulations\Project\2D\data\proof_of_concept\unscaled\arrays                     0.007001161575317383s 
+60                   OVRWRT               OVRWRT               D:\Ansys Simulations\Project\2D\data\proof_of_concept\unscaled\arrays                     0.006000995635986328s 
+61                   OVRWRT               OVRWRT               D:\Ansys Simulations\Project\2D\data\proof_of_concept\unscaled\arrays                    0.0050013065338134766s 
+62                   OVRWRT               OVRWRT               D:\Ansys Simulations\Project\2D\data\proof_of_concept\unscaled\arrays                     0.004999399185180664s 
+63                   OVRWRT               OVRWRT               D:\Ansys Simulations\Project\2D\data\proof_of_concept\unscaled\arrays                    0.0049991607666015625s 
+64                   OVRWRT               OVRWRT               D:\Ansys Simulations\Project\2D\data\proof_of_concept\unscaled\arrays                      0.00600123405456543s 
+65                   OVRWRT               OVRWRT               D:\Ansys Simulations\Project\2D\data\proof_of_concept\unscaled\arrays                     0.005997896194458008s 
+66                   OVRWRT               OVRWRT               D:\Ansys Simulations\Project\2D\data\proof_of_concept\unscaled\arrays                    0.0050008296966552734s 
+67                   OVRWRT               OVRWRT               D:\Ansys Simulations\Project\2D\data\proof_of_concept\unscaled\arrays                     0.006003618240356445s 
+68                   OVRWRT               OVRWRT               D:\Ansys Simulations\Project\2D\data\proof_of_concept\unscaled\arrays                      0.02899789810180664s 
+69                   OVRWRT               OVRWRT               D:\Ansys Simulations\Project\2D\data\proof_of_concept\unscaled\arrays                     0.006001472473144531s 
+7                    OVRWRT               OVRWRT               D:\Ansys Simulations\Project\2D\data\proof_of_concept\unscaled\arrays                     0.005003452301025391s 
+70                   OVRWRT               OVRWRT               D:\Ansys Simulations\Project\2D\data\proof_of_concept\unscaled\arrays                     0.006000041961669922s 
+71                   OVRWRT               OVRWRT               D:\Ansys Simulations\Project\2D\data\proof_of_concept\unscaled\arrays                     0.005000114440917969s 
+72                   OVRWRT               OVRWRT               D:\Ansys Simulations\Project\2D\data\proof_of_concept\unscaled\arrays                     0.008007526397705078s 
+73                   OVRWRT               OVRWRT               D:\Ansys Simulations\Project\2D\data\proof_of_concept\unscaled\arrays                     0.011004209518432617s 
+74                   OVRWRT               OVRWRT               D:\Ansys Simulations\Project\2D\data\proof_of_concept\unscaled\arrays                     0.006000995635986328s 
+75                   OVRWRT               OVRWRT               D:\Ansys Simulations\Project\2D\data\proof_of_concept\unscaled\arrays                     0.007000923156738281s 
+76                   OVRWRT               OVRWRT               D:\Ansys Simulations\Project\2D\data\proof_of_concept\unscaled\arrays                     0.006003379821777344s 
+77                   OVRWRT               OVRWRT               D:\Ansys Simulations\Project\2D\data\proof_of_concept\unscaled\arrays                     0.004999876022338867s 
+78                   OVRWRT               OVRWRT               D:\Ansys Simulations\Project\2D\data\proof_of_concept\unscaled\arrays                    0.0069997310638427734s 
+79                   OVRWRT               OVRWRT               D:\Ansys Simulations\Project\2D\data\proof_of_concept\unscaled\arrays                      0.07604002952575684s 
+8                    OVRWRT               OVRWRT               D:\Ansys Simulations\Project\2D\data\proof_of_concept\unscaled\arrays                     0.005001544952392578s 
+80                   OVRWRT               OVRWRT               D:\Ansys Simulations\Project\2D\data\proof_of_concept\unscaled\arrays                     0.007002830505371094s 
+81                   OVRWRT               OVRWRT               D:\Ansys Simulations\Project\2D\data\proof_of_concept\unscaled\arrays                       0.0240018367767334s 
+82                   OVRWRT               OVRWRT               D:\Ansys Simulations\Project\2D\data\proof_of_concept\unscaled\arrays                     0.019002676010131836s 
+83                   OVRWRT               OVRWRT               D:\Ansys Simulations\Project\2D\data\proof_of_concept\unscaled\arrays                     0.004998445510864258s 
+84                   OVRWRT               OVRWRT               D:\Ansys Simulations\Project\2D\data\proof_of_concept\unscaled\arrays                     0.006969928741455078s 
+85                   OVRWRT               OVRWRT               D:\Ansys Simulations\Project\2D\data\proof_of_concept\unscaled\arrays                     0.007000923156738281s 
+86                   OVRWRT               OVRWRT               D:\Ansys Simulations\Project\2D\data\proof_of_concept\unscaled\arrays                     0.010999441146850586s 
+87                   OVRWRT               OVRWRT               D:\Ansys Simulations\Project\2D\data\proof_of_concept\unscaled\arrays                     0.005998134613037109s 
+88                   OVRWRT               OVRWRT               D:\Ansys Simulations\Project\2D\data\proof_of_concept\unscaled\arrays                     0.007003068923950195s 
+89                   OVRWRT               OVRWRT               D:\Ansys Simulations\Project\2D\data\proof_of_concept\unscaled\arrays                    0.0049970149993896484s 
+9                    OVRWRT               OVRWRT               D:\Ansys Simulations\Project\2D\data\proof_of_concept\unscaled\arrays                     0.030038118362426758s 
+90                   OVRWRT               OVRWRT               D:\Ansys Simulations\Project\2D\data\proof_of_concept\unscaled\arrays                    0.0050373077392578125s 
+91                   OVRWRT               OVRWRT               D:\Ansys Simulations\Project\2D\data\proof_of_concept\unscaled\arrays                     0.017002344131469727s 
+92                   OVRWRT               OVRWRT               D:\Ansys Simulations\Project\2D\data\proof_of_concept\unscaled\arrays                     0.005997419357299805s 
+93                   OVRWRT               OVRWRT               D:\Ansys Simulations\Project\2D\data\proof_of_concept\unscaled\arrays                      0.00603938102722168s 
+94                   OVRWRT               OVRWRT               D:\Ansys Simulations\Project\2D\data\proof_of_concept\unscaled\arrays                     0.006997585296630859s 
+95                   OVRWRT               OVRWRT               D:\Ansys Simulations\Project\2D\data\proof_of_concept\unscaled\arrays                     0.006963491439819336s 
+96                   OVRWRT               OVRWRT               D:\Ansys Simulations\Project\2D\data\proof_of_concept\unscaled\arrays                     0.007004499435424805s 
+97                   OVRWRT               OVRWRT               D:\Ansys Simulations\Project\2D\data\proof_of_concept\unscaled\arrays                     0.005999326705932617s 
+98                   OVRWRT               OVRWRT               D:\Ansys Simulations\Project\2D\data\proof_of_concept\unscaled\arrays                       0.0070037841796875s 
+99                   OVRWRT               OVRWRT               D:\Ansys Simulations\Project\2D\data\proof_of_concept\unscaled\arrays                     0.007996797561645508s 
+OVERALL TIME: 11.556732416152954s 
+ UPDATE MAX VALUES 
+SAMPLE               FORCE                DISPLACEMENT        
+1                    0                    0.00205304777781513  
+10                   611.170030652408     0.002929625          
+100                  611.170030652408     0.019208             
+101                  1457.225140947126    0.019208             
+83                   1515.2942358505202   0.019208             

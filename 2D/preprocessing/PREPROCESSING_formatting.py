@@ -50,9 +50,8 @@ def get_max_dimensions(samples_folder_path):
         max_y_temp = abs(range_y[0] - range_y[1])
         
         range_z = [input_data.loc[:,['z_loc']].max().item(), input_data.loc[:,['z_loc']].min().item()]
-        max_z = abs(range_z[0] - range_z[1])
+        max_z_temp = abs(range_z[0] - range_z[1])
         
-        max_y_temp, max_z_temp = input_data.loc[:,['y_loc','z_loc']].abs().max()
         
         if max_x_temp > max_x:
             max_x = max_x_temp
