@@ -1,0 +1,28 @@
+{
+    "root": "D:/Ansys Simulations/Project",
+    "program": "<python with no main file>",
+    "git": {
+        "remote": null,
+        "commit": "ef2e0c900abd31697cdc5e0117c6618a4c8358e7"
+    },
+    "email": "walther.johnson@ucalgary.ca",
+    "startedAt": "2020-06-16T00:08:03.960973",
+    "host": "DESKTOP-SDVPC46",
+    "username": "Walther Wennholz",
+    "executable": "D:\\Anaconda3_2nd\\envs\\AI_FEA\\python.exe",
+    "os": "Windows-10-10.0.19041-SP0",
+    "python": "3.7.7",
+    "gpu": "GeForce GTX 1050",
+    "gpu_count": 1,
+    "cpu_count": 8,
+    "args": [
+        "-f",
+        "C:\\Users\\Owner\\AppData\\Roaming\\jupyter\\runtime\\kernel-bf229d7f-bb9c-4b77-a0ab-57d998cd7dc2.json"
+    ],
+    "state": "running",
+    "jobType": null,
+    "mode": "run",
+    "name": "rich-oath-70",
+    "project": "Project",
+    "heartbeatAt": "2020-06-16T00:08:06.124005"
+}
