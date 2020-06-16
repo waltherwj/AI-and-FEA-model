@@ -290,8 +290,25 @@ def create_concat_array(sample_df, empty_array, element_size, dataframe_type):
         concat_array[(*key, [1,2,3])] = concat_array[(*key, [1,2,3])]/nodes_dictionary[key]
     
     
-    ## smooth out material existence feature
-    concat_array[:,:,0:1] = interpolate_array_spatially_2D(concat_array[:,:,0:1])
+    ## smooth out arrays
+    if dataframe_type.lower() == 'input':
+        concat_array[:,:,0:1] = interpolate_array_spatially_2D(concat_array[:,:,0:1])
+        concat_array[:,:,1:2] = interpolate_array_spatially_2D(concat_array[:,:,1:2])
+        concat_array[:,:,2:3] = interpolate_array_spatially_2D(concat_array[:,:,2:3])
+        concat_array[:,:,3:4] = interpolate_array_spatially_2D(concat_array[:,:,3:4])
+        concat_array[:,:,4:5] = interpolate_array_spatially_2D(concat_array[:,:,4:5])
+        concat_array[:,:,5:6] = interpolate_array_spatially_2D(concat_array[:,:,5:6])
+        concat_array[:,:,6:7] = interpolate_array_spatially_2D(concat_array[:,:,6:7])
+        
+    if dataframe_type.lower() == 'output':
+        concat_array[:,:,0:1] = interpolate_array_spatially_2D(concat_array[:,:,0:1])
+        concat_array[:,:,1:2] = interpolate_array_spatially_2D(concat_array[:,:,1:2])
+        concat_array[:,:,2:3] = interpolate_array_spatially_2D(concat_array[:,:,2:3])
+        concat_array[:,:,3:4] = interpolate_array_spatially_2D(concat_array[:,:,3:4])
+    
+    elif dataframe_type.lower() != 'input':
+            raise Exception(f'Incorrect dataframe type. Expected \'input\' or \'output\', got {dataframe_type}')
+    
     return concat_array
     
 def get_unscaled_arrays(data_folder_path, resolution = 32):
@@ -475,4 +492,106 @@ def create_scaled_arrays_iterator(array_folder_path, max_values, glob_parameter 
             
             yield sample_number, scaled_input_array, scaled_output_array
             
+
+
+def get_df_dim_element_size(element_dataframe, resolution = 32):
+     # get the max dimensions of one sample
+    
+        
+    ## get ranges of data in sample
+    range_x = [element_dataframe.loc[:,['x_loc']].max().item(), element_dataframe.loc[:,['x_loc']].min().item()]
+    max_x = abs(range_x[0] - range_x[1])
+
+    range_y = [element_dataframe.loc[:,['y_loc']].max().item(), element_dataframe.loc[:,['y_loc']].min().item()]
+    max_y = abs(range_y[0] - range_y[1])
+
+    range_z = [element_dataframe.loc[:,['z_loc']].max().item(), element_dataframe.loc[:,['z_loc']].min().item()]
+    max_z = abs(range_z[0] - range_z[1])
+
+    max_dimension = max(max_x, max_y, max_z)
+    element_size = max_dimension/resolution
+            
+    return max_dimension, element_size
+
+def get_unscaled_arrays_elementmax(data_folder_path, resolution = 32):
+    ## takes the path to the folder with all samples and creates
+    ## an iterator that goes through all of them and returns the corresponding
+    ## array to each sample
+    
+    
+    # create an iterator for all samples
+    samples_iterator = scale.sample_iterator(data_folder_path)
+    
+    # create empty arrays to use in functions
+    dimensionality = 2
+    input_features = 7
+    output_features = 4
+    empty_arr_input = create_array(dimensionality, input_features, resolution)
+    empty_arr_output = create_array(dimensionality, output_features, resolution)
+    
+    # iterates through all samples
+    for sample_number, input_dataframe, output_dataframe in samples_iterator:
+        
+        # get element size for this dataset
+        max_dimensions, element_size = get_df_dim_element_size(input_dataframe, resolution)
+ 
+        
+        
+        # translate the data
+        translated_input_df = translate_df_elementwise(input_dataframe, max_dimensions)
+        translated_output_df = translate_df_elementwise(output_dataframe, max_dimensions)
+        
+        # creates the arrays
+        concatenated_input = create_concat_array(translated_input_df, empty_arr_input, element_size, dataframe_type='input')
+        concatenated_output = create_concat_array(translated_output_df, empty_arr_output, element_size, dataframe_type='output')
+    
+        yield sample_number, concatenated_input, concatenated_output
+
+def  translate_df_elementwise(sample_df, max_dimensions):
+    ## gets a dataframe and translates the values to the correct position to place in the tensor
+    
+    octant = get_quadrant(sample_df)
+    
+    df_temp = sample_df.copy()
+    largest_dim = max_dimensions
+    
+    ## general translation: translates according to the overall octant
+    for i, direction in enumerate(octant):
+        direction_is_negative = direction < 0
+        if direction_is_negative:
+            if i == 0:
+                df_temp.loc[:,['x_loc']] = df_temp.loc[:,['x_loc']] + largest_dim - df_temp.loc[:,['x_loc']].max().item()
+            if i == 1:
+                df_temp.loc[:,['y_loc']] = df_temp.loc[:,['y_loc']] + largest_dim - df_temp.loc[:,['y_loc']].max().item()
+            if i == 2:
+                df_temp.loc[:,['z_loc']] = df_temp.loc[:,['z_loc']] + largest_dim - df_temp.loc[:,['z_loc']].max().item()
+        
+        ## minor translation: if some parts of the element are still "sticking out"
+        ## after the general translation, move it just enough to ensure that it fits inside
+        if not(direction_is_negative):
+            min_val = df_temp.loc[:,['x_loc','y_loc', 'z_loc']].iloc[:, i].min()
+            
+            if min_val < 0.0:
+                if i == 0:
+                    df_temp.loc[:,['x_loc']] = df_temp.loc[:,['x_loc']] + abs(min_val)
+                    #print('0',min_val)
+                if i == 1:
+                    df_temp.loc[:,['y_loc']] = df_temp.loc[:,['y_loc']] + abs(min_val)
+                    #print('1',min_val)
+                if i == 2:
+                    df_temp.loc[:,['z_loc']] = df_temp.loc[:,['z_loc']] + abs(min_val)
+                    #print('2',min_val)
+    
+    return df_temp
+    
+
+get_df_dim_element_size(element_dataframe = raw_input_data, resolution = 32)
+
+
+
+
+
+
+
+
 print('formatting functions imported')
