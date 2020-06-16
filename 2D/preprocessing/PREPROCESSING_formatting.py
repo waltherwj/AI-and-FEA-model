@@ -585,13 +585,4 @@ def  translate_df_elementwise(sample_df, max_dimensions):
     return df_temp
     
 
-get_df_dim_element_size(element_dataframe = raw_input_data, resolution = 32)
-
-
-
-
-
-
-
-
 print('formatting functions imported')
