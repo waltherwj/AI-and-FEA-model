@@ -1,0 +1,3 @@
+2020-06-21 20:08:16,797 DEBUG   MainThread:24756 [auth.py:find_config_file():47] Trying paths: ['C:\\Users\\Owner\\.docker\\config.json', 'C:\\Users\\Owner\\.dockercfg']
+2020-06-21 20:08:16,797 DEBUG   MainThread:24756 [auth.py:find_config_file():51] Found file at path: C:\Users\Owner\.docker\config.json
+2020-06-21 20:08:16,798 DEBUG   MainThread:24756 [auth.py:load_config():242] Found 'credsStore' section
