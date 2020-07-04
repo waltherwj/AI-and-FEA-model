@@ -1,0 +1,28 @@
+{
+    "root": "D:/Ansys Simulations/Project",
+    "program": "<python with no main file>",
+    "git": {
+        "remote": null,
+        "commit": "d0c4a5a0988ed6006fd098bf97103396e62f0a6e"
+    },
+    "email": "walther.johnson@ucalgary.ca",
+    "startedAt": "2020-07-04T22:25:48.155026",
+    "host": "DESKTOP-SDVPC46",
+    "username": "Walther Wennholz",
+    "executable": "D:\\Anaconda3_2nd\\envs\\AI_FEA\\python.exe",
+    "os": "Windows-10-10.0.19041-SP0",
+    "python": "3.7.7",
+    "gpu": "GeForce GTX 1050",
+    "gpu_count": 1,
+    "cpu_count": 8,
+    "args": [
+        "-f",
+        "C:\\Users\\Owner\\AppData\\Roaming\\jupyter\\runtime\\kernel-607a4a68-ee1d-4f70-831c-b91432252d94.json"
+    ],
+    "state": "running",
+    "jobType": null,
+    "mode": "run",
+    "name": "hearty-galaxy-112",
+    "project": "Project",
+    "heartbeatAt": "2020-07-04T22:25:50.069909"
+}
